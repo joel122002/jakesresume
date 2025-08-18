@@ -1,0 +1,197 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+\usepackage[T1]{fontenc}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+    \small +91 9136349025 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$ 
+    \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+    \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Mumbai}{Mumbai, India}
+      {Bachelor of Engineering in Computer Engineering}{Aug. 2020 -- Jun. 2024}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Software Development Engineer - I}{Apr. 2025 -- Present}
+      {CarWale (CarTrade Tech)}{Mumbai, India}
+      \resumeItemListStart
+        \resumeItem{Worked on a microservices architecture leveraging .NET, C\#, React, RabbitMQ, MySQL, Memcached, and AWS to build scalable distributed systems serving 80M+ monthly users.}
+        \resumeItem{Identified frequently used cacheable APIs and implemented CDN caching, easing load on the most utilized microservice, resulting in a 17\% drop in pod usage and ~45\% reduction in direct service calls.}
+        \resumeItem{Proactively developed a page as a functional component with an optimized memoization strategy, achieving 50\% fewer re-renders than comparable pages.}
+        \resumeItem{Analyzed client side errors and proposed a fix for 60\% of errors, improving overall application stability and SEO.}
+      \resumeItemListEnd
+   \resumeSubSubheading
+    {Associate Software Development Engineer}{Aug. 2024 - Mar. 2025}
+    \resumeItemListStart
+       \resumeItem{Identified unnecessary cache clearances and proposed a fix during a team huddle. Led the initiative to design and implement a new cache-clearing strategy, reducing cache calls and clearances by 98\%.}
+       \resumeItem{Independently identified a bottleneck in the development experience and created a proxy to production data, resolving frontend issues that accounted for 60\% of reported bugs.}
+       \resumeItem{Closed a year-old issue by developing chunk prefetching logic, transforming a poor user experience into a smoother, responsive interface.}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Development Intern}{Apr. 2022 -- Jun. 2024}
+      {YourEngineer}{Mumbai, India}
+      \resumeItemListStart
+        \resumeItem{Migrated a WordPress application to a modern stack with Node.js, React, and PostgreSQL, deployed it on AWS using infrastructure-as-code, and created custom CI/CD pipelines to streamline deployment and maintenance. This led to a 110\% increase in organic traffic.}
+        \resumeItem{Created separate development and production environments, with commit-based hosting for development to enable rapid testing and feedback.}
+        \resumeItem{Independently developed a Reddit-style community platform with posts and comments for YourEngineer, supporting 1,000+ monthly users with 99\% uptime.}
+        \resumeItem{Proposed and led migration from MongoDB to SQL as the data was highly structured, reducing query latency and improving overall performance.}
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Ring A Friend} $|$ \emph{Node.Js, PostgreSQL, Kotlin, Jetpack Compose, Android}}{Jan. 2024 -- Present}
+          \resumeItemListStart
+            \resumeItem{Built a full-stack native Android app with Jetpack Compose (frontend), PostgreSQL (database) and Express REST API (backend), following MVVM best practices.}
+            \resumeItem{Implemented real-time sockets, socket and API auth, and Firebase push notifications with a background service worker to trigger emergency alerts (ring even on silent).}
+            \resumeItem{Enabled external services or users to ring a device with an accompanying text message (e.g., movie tickets, notifications, bots).}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, Kotlin, Python, C/C++, C\#, SQL (Postgres), JavaScript, HTML/CSS} \\
+     \textbf{Frameworks}{: React, Node.js, .NET, Jetpack Compose, Angular, Spring Boot} \\
+     \textbf{Developer Tools}{: Git, Docker, Amazon Web Services, VS Code, PyCharm, IntelliJ, Shell} \\
+     \textbf{Libraries}{: Selenium, Cypress, Axios, Redux, Requests}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
