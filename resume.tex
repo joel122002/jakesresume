@@ -21,8 +21,8 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
-\usepackage[default]{comfortaa}
-\usepackage[T1]{fontenc}
+% \usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
 \usepackage{setspace}
 
 
@@ -31,7 +31,7 @@
 % \usepackage[sfdefault]{FiraSans}
 % \usepackage[sfdefault]{roboto}
 % \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
+\usepackage[default]{sourcesanspro}
 
 % serif
 % \usepackage{CormorantGaramond}
@@ -138,27 +138,27 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Software Development Engineer - I}{Apr. 2025 -- Present}
       {CarWale (CarTrade Tech)}{Mumbai, India}
+      {Software Development Engineer - I}{Apr. 2025 -- Present}
       \resumeItemListStart
         \resumeItem{Worked on a microservices architecture leveraging .NET, C\#, React, RabbitMQ, MySQL, Memcached, and AWS to build scalable distributed systems serving 80M+ monthly users.}
-        \resumeItem{Identified frequently used cacheable APIs and implemented CDN caching, resulting in a 17\% drop in pod usage and ~45\% reduction in direct service calls.}
-        \resumeItem{Optimally memoized functional component, achieving 50\% fewer re-renders.}
-        \resumeItem{Analyzed client side errors and proposed a fix for 60\% of errors, improving overall application stability and SEO.}
+        \resumeItem{Analyzed client side errors and proposed a fix for 60\% of errors, improving SEO metrics.}
+        \resumeItem{Cut pod usage by 17\% and microservice calls by ~45\% via CDN caching for frequent APIs.}
       \resumeItemListEnd
    \resumeSubSubheading
     {Associate Software Development Engineer}{Aug. 2024 - Mar. 2025}
     \resumeItemListStart
-       \resumeItem{Led the initiative to design and implement a new cache-clearing strategy, reducing cache calls and clearances by 98\%.}
+       \resumeItem{Cut cache calls/clearances by 98\% through a new cache-clearing strategy.}
        \resumeItem{Independently identified a bottleneck in the development experience and created a proxy to production data, resolving frontend issues that accounted for 60\% of reported bugs.}
        \resumeItem{Closed a year-old issue by developing chunk prefetching logic, leading to superior UX.}
     \resumeItemListEnd
 
     \resumeSubheading
+      {YourEngineer}{Mumbai, India}  
       {Software Development Intern}{Apr. 2022 -- Jun. 2024}
-      {YourEngineer}{Mumbai, India}
+      
       \resumeItemListStart
-        \resumeItem{Migrated a WordPress application to a stack with Node.js, React, and PostgreSQL, deployed on AWS using AWS CDK, and created custom CI/CD pipelines to streamline deployment and maintenance leading to a 110\% increase in organic traffic.}
+        \resumeItem{Migrated a WordPress application to  Node.js, React, and PostgreSQL, deployed on AWS using Terraform, and created custom CI/CD pipelines to streamline deployment and maintenance leading to a 110\% increase in organic traffic.}
         \resumeItem{Independently developed a Reddit-style community platform with posts and comments, supporting 1,000+ monthly users with 99\% uptime.}
         \resumeItem{Created separate development and production environments, with commit-based hosting for development from scratch.}
         \resumeItem{Proposed and led migration from MongoDB to SQL, reducing query latency and improving overall performance.}
@@ -173,9 +173,9 @@
       \resumeProjectHeading
           {\textbf{Ring A Friend} $|$ \emph{Node.Js, PostgreSQL, Kotlin, Jetpack Compose, Android}}{Jan. 2024 -- Present}
           \resumeItemListStart
-            \resumeItem{Built a full-stack native Android app with Jetpack Compose (frontend), PostgreSQL (database) and Express REST API (backend), following MVVM best practices.}
-            \resumeItem{Implemented real-time sockets, socket and API auth, and Firebase push notifications with a background service worker to trigger emergency alerts (ring even on silent).}
-            \resumeItem{Enabled external services or users to ring a device with an accompanying text message (e.g., movie tickets, notifications, bots).}
+            \resumeItem{Built a full-stack Android app with Jetpack Compose, PostgreSQL, and Express REST API using MVVM.}
+            \resumeItem{Implemented real-time sockets, API authentication, and Firebase push notifications to trigger emergency alerts (ringing even on silent).}
+            \resumeItem{Enabled external services/users to ring devices with custom messages (e.g., tickets, notifications, bots).}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
