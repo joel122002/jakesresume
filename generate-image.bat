@@ -1,1 +1,1 @@
-magick -density 300 resume.pdf -quality 90 resume.png
+magick -density 600 resume.pdf -background white -alpha remove -alpha off -define png:compression-level=0 resume.png
