@@ -1,0 +1,1 @@
+magick -density 300 resume.pdf -quality 90 resume.png
