@@ -5,7 +5,7 @@
 % License : MIT
 %------------------------
 
-% This resume is the base resume which is heavy on data.
+% This resume is a toned down version of the base resume.
 
 \documentclass[letterpaper,11pt]{article}
 
@@ -23,6 +23,7 @@
 \input{glyphtounicode}
 \usepackage[default]{comfortaa}
 \usepackage[T1]{fontenc}
+\usepackage{setspace}
 
 
 %----------FONT OPTIONS----------
@@ -106,7 +107,7 @@
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+\setstretch{1.3} 
 \begin{document}
 
 %----------HEADING----------
@@ -141,26 +142,26 @@
       {CarWale (CarTrade Tech)}{Mumbai, India}
       \resumeItemListStart
         \resumeItem{Worked on a microservices architecture leveraging .NET, C\#, React, RabbitMQ, MySQL, Memcached, and AWS to build scalable distributed systems serving 80M+ monthly users.}
-        \resumeItem{Identified frequently used cacheable APIs and implemented CDN caching, easing load on the most utilized microservice, resulting in a 17\% drop in pod usage and ~45\% reduction in direct service calls.}
-        \resumeItem{Proactively developed a page as a functional component with an optimized memoization strategy, achieving 50\% fewer re-renders than comparable pages.}
+        \resumeItem{Identified frequently used cacheable APIs and implemented CDN caching, resulting in a 17\% drop in pod usage and ~45\% reduction in direct service calls.}
+        \resumeItem{Optimally memoized functional component, achieving 50\% fewer re-renders.}
         \resumeItem{Analyzed client side errors and proposed a fix for 60\% of errors, improving overall application stability and SEO.}
       \resumeItemListEnd
    \resumeSubSubheading
     {Associate Software Development Engineer}{Aug. 2024 - Mar. 2025}
     \resumeItemListStart
-       \resumeItem{Identified unnecessary cache clearances and proposed a fix during a team huddle. Led the initiative to design and implement a new cache-clearing strategy, reducing cache calls and clearances by 98\%.}
+       \resumeItem{Led the initiative to design and implement a new cache-clearing strategy, reducing cache calls and clearances by 98\%.}
        \resumeItem{Independently identified a bottleneck in the development experience and created a proxy to production data, resolving frontend issues that accounted for 60\% of reported bugs.}
-       \resumeItem{Closed a year-old issue by developing chunk prefetching logic, transforming a poor user experience into a smoother, responsive interface.}
+       \resumeItem{Closed a year-old issue by developing chunk prefetching logic, leading to superior UX.}
     \resumeItemListEnd
 
     \resumeSubheading
       {Software Development Intern}{Apr. 2022 -- Jun. 2024}
       {YourEngineer}{Mumbai, India}
       \resumeItemListStart
-        \resumeItem{Migrated a WordPress application to a modern stack with Node.js, React, and PostgreSQL, deployed it on AWS using infrastructure-as-code, and created custom CI/CD pipelines to streamline deployment and maintenance. This led to a 110\% increase in organic traffic.}
-        \resumeItem{Created separate development and production environments, with commit-based hosting for development to enable rapid testing and feedback.}
-        \resumeItem{Independently developed a Reddit-style community platform with posts and comments for YourEngineer, supporting 1,000+ monthly users with 99\% uptime.}
-        \resumeItem{Proposed and led migration from MongoDB to SQL as the data was highly structured, reducing query latency and improving overall performance.}
+        \resumeItem{Migrated a WordPress application to a stack with Node.js, React, and PostgreSQL, deployed on AWS using AWS CDK, and created custom CI/CD pipelines to streamline deployment and maintenance leading to a 110\% increase in organic traffic.}
+        \resumeItem{Independently developed a Reddit-style community platform with posts and comments, supporting 1,000+ monthly users with 99\% uptime.}
+        \resumeItem{Created separate development and production environments, with commit-based hosting for development from scratch.}
+        \resumeItem{Proposed and led migration from MongoDB to SQL, reducing query latency and improving overall performance.}
     \resumeItemListEnd
 
   \resumeSubHeadingListEnd
