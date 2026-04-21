@@ -42,6 +42,13 @@ Instead of immediately clearing cache keys on each event, you implemented a **de
 ---
 ---
 ---
+---
+---
+---
+---
+---
+---
+
 
 **Resume Bullet:**
 > Identified and eliminated 150GB/week of redundant CloudFront data transfer by proactively auditing CDN dashboards, discovering a duplicate apple-touch-icon that had been incorrectly imported for 2 years across all pages, saving ~$600 annually in infrastructure costs.
