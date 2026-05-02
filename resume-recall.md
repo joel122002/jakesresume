@@ -416,3 +416,75 @@ There is a brief window between a RabbitMQ change event being published and the 
 
 **Q: Why does this only affect 60% of traffic?**
 > Make, model and version pages are the ones that depend on masking name resolution and previously made 2 MMV calls. Other pages either don't use masking name resolution or only made 1 MMV call. So the 30% overall reduction reflects the real traffic distribution accurately.
+
+---
+---
+---
+---
+---
+---
+---
+---
+---
+
+**Resume Bullet:**
+> Reduced chunk load errors by 93% (35,033 → 2,595/day) in a React application by diagnosing and resolving a 2-year-old bug through forced replication, implementing retry logic with 2-second backoff and empty component fallbacks within internal lazy loading wrappers, eliminating infinite retry loops that rendered pages unresponsive.
+
+---
+
+**Recall Guide:**
+
+**The Problem:**
+The React frontend was generating 35,033 chunk load errors per day on Grafana. Chunk load errors occur when a browser fails to fetch a JavaScript chunk from the CDN — most commonly due to unstable internet connections. The real problem wasn't the failed fetch itself — it was what happened after:
+- The failed chunk load would trigger a React rerender
+- The rerender would retry the lazy import
+- That would fail again, triggering another rerender
+- Creating an **infinite retry loop** that made the browser progressively unresponsive
+
+This had been a known bug for **2 years** that nobody had been able to fix because nobody could reliably replicate it in a controlled environment.
+
+**How You Replicated It:**
+You used browser devtools to **block the network request to a specific chunk**, instantly and reliably replicating the exact failure condition. This revealed the infinite retry loop happening live, making the root cause immediately obvious. This was the key breakthrough — something nobody else had thought to do in 2 years of the bug existing.
+
+**Your Solution — Two Phases:**
+
+**Phase 1 (Day 1):**
+Identified the highest error-generating chunks via Grafana logs broken down by component name. Applied targeted fallbacks to those specific components — when a chunk fails to load, instead of throwing and breaking the page, an empty component is rendered silently. This eliminated the infinite retry loop for the worst offenders, reducing errors by ~20,000/day immediately.
+
+**Phase 2 (Day 2):**
+Expanded the fix company-wide by implementing the solution inside the internal lazy loading wrapper libraries used across the entire application for on-demand component loading. Added retry logic directly via the chunking library's built-in retry options: **1 retry after a 2 second delay**, then render an empty component if the retry also fails. By fixing it at the wrapper level rather than component by component, the behaviour was automatically applied to every lazily loaded component across the entire application. The single retry with 2 second delay was a deliberate decision — users often scroll past sections and never return, so aggressive retrying is wasteful, and the original infinite retry was clearly catastrophic.
+
+**The Stack:** React, internal lazy loading wrapper libraries, Grafana.
+
+**The Impact:**
+- Chunk load errors reduced by **93%** (35,033 → 2,595/day)
+- Remaining 2,595 are genuine irreducible network failures — users with truly unstable connections where even a retry cannot succeed
+- Pages no longer become unresponsive on chunk load failure
+- Grafana alert noise reduced significantly, making metrics more accurate
+- **2 year old bug resolved in 2 days**
+
+---
+
+**Likely Interview Deep-Dives:**
+
+**Q: How did you replicate a bug nobody could reproduce for 2 years?**
+> I blocked the network request to a specific chunk in browser devtools. That instantly simulated the exact failure condition — a chunk that couldn't be fetched. Once I could see it happening live I could immediately observe the infinite retry loop and understand exactly what was causing it.
+
+**Q: Why hadn't anyone else done that?**
+> It seems obvious in hindsight but the bug only manifested for users with unstable connections which is hard to replicate naturally in a development environment. Blocking a specific network request in devtools is a simple tool but you have to think to use it for this specific scenario.
+
+**Q: Why only 1 retry after 2 seconds?**
+> It was a deliberate tradeoff. Users often scroll past sections and never return to them — aggressively retrying a component the user has already scrolled past is wasteful. More importantly the original infinite retry was clearly catastrophic. A single retry after 2 seconds gives genuinely unstable connections a second chance without being aggressive, and if that fails too the component simply doesn't render — which is far better than an unresponsive page.
+
+**Q: What happens to the user when a chunk permanently fails to load?**
+> The specific component that failed to load is simply not rendered — the user sees an empty space where that component would have been. The rest of the page functions completely normally. This is significantly better than the previous behaviour where the page would become progressively unresponsive due to the infinite retry loop.
+
+**Q: Why were the remaining 2,595 errors irreducible?**
+> Those are genuine network failures where even the retry couldn't fetch the chunk. These represent users with truly unstable internet connections — no amount of retry logic can overcome a connection that fundamentally cannot reach the CDN. The original 35,033 included ~20,000 artificial errors from infinite retries on top of the real failures.
+
+**Q: Why did you fix it at the wrapper library level rather than component by component?**
+> Fixing it component by component would have been impractical — there are hundreds of lazily loaded components across the application. By implementing the fix inside the internal lazy loading wrappers that every component already uses, the retry and fallback behaviour was automatically applied everywhere in one go. That's what made Phase 2 achievable in a single day.
+
+**Q: How did you identify which chunks to fix first in Phase 1?**
+> Grafana had logs broken down by component name showing which chunks were generating the most errors. I targeted the top offenders first which gave the biggest immediate impact — those chunks alone accounted for ~20,000 of the 35,033 daily errors.
+
