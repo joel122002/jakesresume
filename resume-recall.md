@@ -281,3 +281,138 @@ Restructured the Dockerfile to copy `package.json` first, then run `pnpm install
 
 **Q: Was anything at risk when making these changes?**
 > Yes — migrating the dependency management of the organisation's largest and most active monorepo is inherently risky. Broken hoisting meant some things failed unexpectedly during the migration. I worked through these systematically, tested thoroughly before rolling out, and managed it without taking any formal story points or disrupting the team's work.
+
+---
+---
+---
+---
+---
+---
+---
+---
+---
+
+**Resume Bullet:**
+> Reduced Bhrigu microservice average CPU usage by ~62% and RAM by ~43% by implementing client-side batch tracking in React with a debounce mechanism and hard limit of 10, reducing HTTP requests from ~3,000/sec to ~300/sec across 80M monthly users firing 8B tracking events/month, with a beforeunload flush to prevent tracking loss.
+
+---
+
+**Recall Guide:**
+
+**The Problem:**
+Bhrigu is an internal microservice responsible for capturing all user tracking data — page views, clicks, impressions, and viewport-based component tracking — used by Product Owners to track feature performance. With 80M monthly users each firing ~100 tracking events, the system was processing approximately **8 billion tracking requests per month (~3,000 requests/second at peak)**. Every single tracking event was being sent individually via `sendBeacon` — meaning the server had to process each request independently, decoding headers, parsing payloads, and handling connections for what was largely identical header data repeated across thousands of requests per second. You identified this inefficiency after overhearing your VP mention to your manager that the system was firing an excessive number of tracking requests.
+
+**Your Solution:**
+You implemented a **client-side batching mechanism in React** with two components:
+
+- **Debounce with hard limit:** Instead of sending each tracking immediately via `sendBeacon`, trackings are queued and sent together either when there's a 5 second gap in new tracking events, or when the queue hits the hard limit of **10 trackings** — whichever comes first. In practice, on initial page load viewport impression trackings hit the hard limit of 10 almost immediately. During content browsing, batches of 3-4 trackings are sent after the debounce window.
+
+- **beforeunload flush:** Since the new approach introduced the concept of "pending trackings" that hadn't been sent yet — something that didn't exist in the old fire-immediately approach — you added a `beforeunload` event handler that flushes all remaining pending trackings via `sendBeacon` when the user closes or navigates away from the page, ensuring zero tracking loss.
+
+Individual trackings already contained their own timestamps, so batching had no impact on tracking accuracy or ordering for PO analytics.
+
+**The Stack:** React, JavaScript, sendBeacon API, Bhrigu microservice.
+
+**The Impact (via Grafana/Prometheus):**
+- HTTP requests to Bhrigu reduced from **~3,000/sec → ~300/sec (~90% reduction)**
+- Bhrigu pod average CPU usage: **~65% → ~25%**
+- Bhrigu pod average RAM usage: **~70% → ~40%**
+- Zero tracking data loss due to beforeunload flush implementation
+- Self-initiated after overhearing VP observation, no story points allocated
+
+---
+
+**Likely Interview Deep-Dives:**
+
+**Q: How did you identify this as a problem?**
+> I overheard our VP mention to my manager that we were firing an excessive number of tracking requests. I took that observation, looked into how our tracking worked, and realised every single event was being sent individually via sendBeacon — at 80M users firing ~100 events each, that's 8 billion individual HTTP requests a month. Batching felt like an obvious and impactful fix.
+
+**Q: Why a 5 second debounce and hard limit of 10?**
+> The 5 second window balances latency of tracking data reaching the server against batching efficiency. The hard limit of 10 ensures we never hold trackings indefinitely if the user is continuously interacting — on initial page load for example, viewport impression trackings for all visible components fire rapidly and hit the limit of 10 almost immediately, so they get sent without waiting for the full debounce window.
+
+**Q: What about tracking loss when a user closes the tab?**
+> That was a key edge case I specifically addressed. In the old system there were no pending trackings since everything was sent immediately. With batching, you introduce pending trackings that could be lost on tab close. I added a beforeunload event handler that flushes all pending trackings via sendBeacon before the page unloads, ensuring zero data loss.
+
+**Q: Did batching affect tracking accuracy?**
+> No — each individual tracking event already contained its own timestamp before being queued. So even though trackings arrive at the server in batches, the timestamps accurately reflect when each event actually occurred. PO analytics are completely unaffected.
+
+**Q: Why client-side batching rather than server-side aggregation?**
+> Client-side batching reduces the number of HTTP requests hitting the server entirely — which was the core problem. Server-side aggregation would still require processing every individual request. The goal was to reduce server load, so intercepting at the source was the right approach.
+
+**Q: What's the risk of the debounce approach?**
+> The main risk was tracking loss on page exit, which I solved with the beforeunload flush. Another theoretical risk is if the debounce window is too long — but 5 seconds is generous enough that for normal user sessions all trackings are sent well within acceptable latency for PO analytics, which don't require real-time data.
+
+---
+---
+---
+---
+---
+---
+---
+---
+---
+
+**Resume Bullet:**
+> Eliminated a sequential microservice call at the API gateway layer by implementing an in-memory masking name dictionary with RabbitMQ-driven cache invalidation, reducing TTFB by ~23% (112ms → 86ms) and MMV microservice call volume by ~30% across 80M monthly users.
+
+---
+
+**Recall Guide:**
+
+**The Problem:**
+Every page on the platform used URL-based masking names (e.g. `make-masking-name/model-masking-name`) for SEO purposes, but all internal data was stored against numeric make/model IDs. This meant every page request at the API gateway (carwaleweb) required **3 sequential call phases:**
+1. Call MMV microservice to resolve masking names → make ID + model ID
+2. Fan-out parallel calls to multiple microservices using resolved IDs
+3. Final call based on data received in phase 2
+
+This sequential dependency meant users couldn't get their response until all 3 phases completed. Make, model and version pages together account for ~60% of total traffic, and these pages made 2 MMV calls each — one for masking name resolution and one for other MMV data.
+
+**Your Solution:**
+Conceived during an internal company hackathon (where your team won 2nd place), prototyped there and later fully implemented. You built a **masking name dictionary client** as a library in the MMV service, consumed by carwaleweb. The library works as a background worker that:
+- Queries the MMV database on startup to build an in-memory dictionary of all make, model and version masking names with lightweight metadata
+- Listens to existing RabbitMQ change events to detect MMV data updates and requeries the database to refresh the dictionary
+- Resolves masking names → IDs entirely in-memory with no network hop
+
+The in-memory dictionary is lightweight — each entry contains only ints and enums — making the memory footprint negligible even across thousands of makes, models and versions.
+
+**Data Structure:**
+```
+MaskingNameSnapshot
+├── timestamp
+├── maskingNamesDictionary        → resolves masking name to full MMV details (Id, MakeId, ModelId, TrimId, MmvStatus, RootId, BodyStylesIds)
+├── hyphenatedMaskingNameDictionary → resolves hyphenated variants
+└── makeModelDictionary           → ConcurrentBag<ModelInfo> per make-model key
+```
+
+**Eventual Consistency Tradeoff:**
+There is a brief window between a RabbitMQ change event being published and the worker consuming it where the in-memory dictionary could be stale. This was an accepted business tradeoff — new masking name URLs are never exposed to users until the worker has updated, since the sitemap and URL exposure depend on the same data pipeline. So in practice a stale dictionary never serves an invalid URL to a real user.
+
+**The Stack:** .NET 8, carwaleweb (API gateway), MMV microservice, RabbitMQ, in-memory dictionary.
+
+**The Impact (measured via curl and confirmed on Grafana):**
+- TTFB reduced by **~23%** (112ms → 86ms)
+- MMV microservice call volume reduced by **~30%** (60% of pages went from 2 MMV calls → 1)
+- Eliminated one full sequential network hop from every page request
+- Conceived and prototyped at internal hackathon — **won 2nd place**
+
+---
+
+**Likely Interview Deep-Dives:**
+
+**Q: Why not just cache the masking name resolution in Redis/Memcached?**
+> We could have, but in-memory resolution is faster than any network cache — there's literally zero network hop. Given masking names change very infrequently (~300-500 changes a year), keeping the full dictionary in memory is practical and the footprint is negligible. A network cache would still add latency compared to in-memory lookup.
+
+**Q: What happens when masking names change?**
+> We already had RabbitMQ change events in place for MMV data updates. The worker consumes these events and requeries the database to refresh the in-memory dictionary. Changes happen roughly 300-500 times a year so this is a rare operation.
+
+**Q: What about the window between a change event and the worker updating?**
+> There's a brief eventual consistency window, but it's an accepted tradeoff. New masking name URLs are never exposed anywhere — not in the sitemap, not in navigation — until the worker has already updated. So in practice no real user ever hits a stale URL during that window.
+
+**Q: Why was this a hackathon idea?**
+> We had identified that sequential microservice calls at the gateway were contributing to TTFB. The hackathon gave us the time and space to prototype a solution quickly. We demoed the prototype, won 2nd place, and it was subsequently prioritised and fully implemented.
+
+**Q: How did you ensure thread safety with the in-memory dictionary?**
+> The data structure uses ConcurrentBag for the makeModelDictionary which handles concurrent reads safely. The dictionary is replaced atomically on refresh rather than mutated in place, so readers always see a consistent snapshot.
+
+**Q: Why does this only affect 60% of traffic?**
+> Make, model and version pages are the ones that depend on masking name resolution and previously made 2 MMV calls. Other pages either don't use masking name resolution or only made 1 MMV call. So the 30% overall reduction reflects the real traffic distribution accurately.
