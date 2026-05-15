@@ -22,12 +22,12 @@
 \usepackage{tabularx}
 \input{glyphtounicode}
 \usepackage[default]{comfortaa}
-\usepackage[T1]{fontenc}
+% \usepackage[T1]{fontenc}
 
 
 %----------FONT OPTIONS----------
 % sans-serif
-% \usepackage[sfdefault]{FiraSans}
+\usepackage[sfdefault]{FiraSans}
 % \usepackage[sfdefault]{roboto}
 % \usepackage[sfdefault]{noto-sans}
 % \usepackage[default]{sourcesanspro}
@@ -117,7 +117,7 @@
 
 \begin{center}
     \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
-    \small +91 9136349025 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$ 
+    \small (213) 805-9557 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$ 
     \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
     \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
 \end{center}
@@ -127,8 +127,8 @@
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {University of Mumbai}{Mumbai, India}
-      {Bachelor of Engineering in Computer Engineering}{Aug. 2020 -- Jun. 2024}
+      {San Jose State University}{San Jose, CA}
+      {MS in Software Engineering}{Aug. 2026 -- May. 2028}
   \resumeSubHeadingListEnd
 
 
@@ -140,27 +140,27 @@
       {Software Development Engineer - I}{Apr. 2025 -- Present}
       {CarWale (CarTrade Tech)}{Mumbai, India}
       \resumeItemListStart
-        \resumeItem{Worked on a microservices architecture leveraging .NET, C\#, React, RabbitMQ, MySQL, Memcached, and AWS to build scalable distributed systems serving 80M+ monthly users.}
-        \resumeItem{Identified frequently used cacheable APIs and implemented CDN caching, easing load on the most utilized microservice, resulting in a 17\% drop in pod usage and ~45\% reduction in direct service calls.}
-        \resumeItem{Proactively developed a page as a functional component with an optimized memoization strategy, achieving 50\% fewer re-renders than comparable pages.}
-        \resumeItem{Analyzed client side errors and proposed a fix for 60\% of errors, improving overall application stability and SEO.}
+        \resumeItem{Worked on a scalable microservices architecture leveraging \textbf{.NET}, \textbf{C\#}, \textbf{React}, \textbf{gRPC}, \textbf{RabbitMQ}, \textbf{MySQL}, \textbf{Memcached}, \textbf{Grafana}, and \textbf{AWS} to build distributed systems serving \textbf{80M+ monthly users}.}
+        \resumeItem{Redesigned the \textbf{Memcached} strategy in a \textbf{.NET 8} microservice from 6.15M individual keys to 4,000 version-level hashmaps containing 1,539 city entries, resulting in a \textbf{93\% reduction in database calls} and \textbf{$\sim$28\% lower} shared \textbf{MySQL EC2} cluster load.}
+        \resumeItem{Reduced CI pipeline build times by \textbf{$\sim$50\%} (25--30 mins $\rightarrow$ 12--15 mins) across the organisation's largest monorepo in under \textbf{24 hours} using \textbf{Cursor AI} by migrating from Lerna to PNPM workspaces and implementing \textbf{Docker BuildKit} layer caching with mounted PNPM and NuGet cache volumes, saving \textbf{$\sim$5.5 engineering hours daily} across \textbf{90+ developers}.}
+        \resumeItem{Reduced downstream microservice calls by \textbf{22\%} and improved p90 API latency by \textbf{$\sim$31\%} (84ms $\rightarrow$ 58ms) by implementing \textbf{DTO-level Memcached caching} for home and model pages across commonly accessed location-based data, contributing to reduced microservice pod resource utilisation.}
       \resumeItemListEnd
    \resumeSubSubheading
     {Associate Software Development Engineer}{Aug. 2024 - Mar. 2025}
     \resumeItemListStart
-       \resumeItem{Identified unnecessary cache clearances and proposed a fix during a team huddle. Led the initiative to design and implement a new cache-clearing strategy, reducing cache calls and clearances by 98\%.}
-       \resumeItem{Independently identified a bottleneck in the development experience and created a proxy to production data, resolving frontend issues that accounted for 60\% of reported bugs.}
-       \resumeItem{Closed a year-old issue by developing chunk prefetching logic, transforming a poor user experience into a smoother, responsive interface.}
+       \resumeItem{Identified unnecessary cache clearances and led the design and implementation of a new cache-clearing strategy during a team huddle, reducing cache calls and clearances by \textbf{98\%}.}
+       \resumeItem{Identified and eliminated \textbf{150GB/week} of redundant \textbf{CloudFront} data transfer by auditing CDN dashboards and discovering a duplicate \textbf{apple-touch-icon} incorrectly imported across all pages for \textbf{2 years}, saving \textbf{$\sim$\$600 annually} in infrastructure costs.}
+       \resumeItem{Closed a year-old issue by developing \textbf{React.js} chunk prefetching logic, transforming a poor user experience into a smoother, more responsive interface.}
     \resumeItemListEnd
 
     \resumeSubheading
       {Software Development Intern}{Apr. 2022 -- Jun. 2024}
       {YourEngineer}{Mumbai, India}
       \resumeItemListStart
-        \resumeItem{Migrated a WordPress application to a modern stack with Node.js, React, and PostgreSQL, deployed it on AWS using infrastructure-as-code, and created custom CI/CD pipelines to streamline deployment and maintenance. This led to a 110\% increase in organic traffic.}
-        \resumeItem{Created separate development and production environments, with commit-based hosting for development to enable rapid testing and feedback.}
-        \resumeItem{Independently developed a Reddit-style community platform with posts and comments for YourEngineer, supporting 1,000+ monthly users with 99\% uptime.}
-        \resumeItem{Proposed and led migration from MongoDB to SQL as the data was highly structured, reducing query latency and improving overall performance.}
+        \resumeItem{Migrated a WordPress application to a modern stack using \textbf{Node.js}, \textbf{React}, \textbf{PostgreSQL}, and \textbf{AWS}, while building custom \textbf{CI/CD} pipelines and infrastructure-as-code workflows, leading to a \textbf{110\% increase in organic traffic}.}
+        \resumeItem{Built separate \textbf{development} and \textbf{production} environments with \textbf{commit-based hosting} for rapid testing and feedback cycles.}
+        \resumeItem{Independently developed a \textbf{Reddit-style community platform} for \textbf{YourEngineer} with posts and comments, supporting \textbf{1,000+ monthly users} with \textbf{99.99\% uptime}.}
+        \resumeItem{Proposed and led migration from \textbf{MongoDB} to \textbf{SQL} for highly structured data, reducing query latency and improving overall system performance.}
     \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -170,11 +170,11 @@
 \section{Projects}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{Ring A Friend} $|$ \emph{Node.Js, PostgreSQL, Kotlin, Jetpack Compose, Android}}{Jan. 2024 -- Present}
+          {\textbf{Ring A Friend} $|$ \emph{Node.Js, PostgreSQL, Kotlin, Jetpack Compose, Android, WebSockets}}{Jan. 2024 -- Present}
           \resumeItemListStart
             \resumeItem{Built a full-stack native Android app with Jetpack Compose (frontend), PostgreSQL (database) and Express REST API (backend), following MVVM best practices.}
             \resumeItem{Implemented real-time sockets, socket and API auth, and Firebase push notifications with a background service worker to trigger emergency alerts (ring even on silent).}
-            \resumeItem{Enabled external services or users to ring a device with an accompanying text message (e.g., movie tickets, notifications, bots).}
+            \resumeItem{Enabled external services or users to ring a device with an accompanying text message (e.g., bots/AI agents).}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
@@ -183,14 +183,15 @@
 %
 %-----------PROGRAMMING SKILLS-----------
 \section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
+\begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Java, Kotlin, Python, C/C++, C\#, SQL (Postgres), JavaScript, HTML/CSS} \\
-     \textbf{Frameworks}{: React, Node.js, .NET, Jetpack Compose, Angular, Spring Boot} \\
-     \textbf{Developer Tools}{: Git, Docker, Amazon Web Services, VS Code, PyCharm, IntelliJ, Android Studio, Shell} \\
-     \textbf{Libraries}{: Selenium, Cypress, Axios, Redux, Requests}
+        \textbf{Languages}{: Java, Kotlin, Python, C/C++, C\#, SQL (PostgreSQL, MySQL), JavaScript, TypeScript, HTML/CSS, Shell} \\
+        \textbf{Technologies}{: React, Node.js, .NET, ASP.NET, Spring Boot, Angular, Jetpack Compose, RabbitMQ, gRPC, Memcached} \\
+        \textbf{Cloud \& DevOps}{: AWS, Docker, Docker BuildKit, CI/CD, CloudFront, Infrastructure as Code, PNPM, Lerna, Git} \\
+        \textbf{Developer Tools}{: Grafana, Git, VS Code, IntelliJ IDEA, PyCharm, Android Studio, Cursor AI} \\
+        \textbf{Libraries \& Testing}{: Redux, Axios, Selenium, Cypress, Requests}
     }}
- \end{itemize}
+\end{itemize}
 
 
 %-------------------------------------------
