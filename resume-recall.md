@@ -428,6 +428,68 @@ There is a brief window between a RabbitMQ change event being published and the 
 ---
 
 **Resume Bullet:**
+> Built a standalone microservice for used-car inventory management by decomposing a legacy monolith, using dual writes and data reconciliation to achieve 100% data consistency before retiring the legacy system.
+
+---
+
+**Recall Guide:**
+
+**The Problem:**
+The primary application relied on a heavily overloaded legacy database (usedcardb) that tightly coupled completely different business domains: stock inventory, user leads, and recommendations. This "god database" architecture made the system difficult to scale, test, and maintain. Inventory creation requests bottlenecked the main application, and any structural changes to the inventory tables carried a high risk of impacting the leads or recommendation engines.
+
+**Your Solution**
+
+The inventory domain was extracted into a standalone microservice named "Canis" with its own isolated, optimized relational schema (tables for stock details, locations, sellers, etc.). To minimize synchronous network dependencies, core data like MMV (Make, Model, Variant) was duplicated into the new service.
+
+To migrate safely, a 1-year historical data backfill was executed, followed by a dual-write phase. During this phase, new stock entries were written to both the old and new databases. A temporary column (`inquiry_id`) was added to Canis to reference the legacy database, acting as a reconciliation key to monitor for data loss. After 5 months of monitoring and verifying data parity, writes to the legacy database were shut off, and the transitional `inquiry_id` column was dropped.
+
+**The Stack:**
+* C\#, .NET Microservices  
+* Relational Database (SQL/MySQL)  
+* Distributed Architecture (Dual-Write Migration Pattern)  
+* Integration & Unit Testing Frameworks
+
+**The Impact:**
+* **System Decoupling:** Successfully isolated the inventory domain, allowing the Canis microservice to scale independently, deploy faster, and utilize dedicated caching and testing pipelines.  
+* **Risk-Free Migration:** Achieved a zero-data-loss transition for millions of records through a strict dual-write and reconciliation phase.  
+* **Performance:** Reduced load on the monolithic `usedcardb` by offloading all read/write inventory traffic to the dedicated microservice.
+
+---
+
+**Likely Interview Deep-Dives:**
+
+**Q: During the dual-write phase, how did you ensure data consistency between the old and new databases?**
+> We adopted an asynchronous, eventually consistent approach. The primary write was committed to the legacy `usedcardb`. After a successful commit, the payload along with its primary key was published to a RabbitMQ queue. The Canis microservice consumed the queue and populated its own database. This decoupled the systems so temporary outages in Canis never blocked the core application workflow, while RabbitMQ ensured no data was lost.
+
+**Q: How did you manage the routing of reads during the transition so users didn't see stale data?**
+> We performed a phased read cutover using our A/B testing framework. Initially, 100% of reads went to the legacy database while both systems were continuously updated through dual writes. We then gradually shifted traffic to Canis—20%, 40%, 60%, and finally 100%. Since Canis was always receiving the same updates, users never saw stale data. We only stopped legacy writes after Canis had been successfully serving all read traffic.
+
+**Q: Since you duplicated the MMV (Make-Model-Variant) data, how do you keep it synchronized with the master MMV service?**
+> We implemented an event-driven architecture. Whenever the master MMV service creates, updates, or deletes an MMV record, it publishes an event to RabbitMQ. Canis subscribes to those events and asynchronously updates its local MMV tables. This keeps the data eventually consistent while eliminating synchronous API calls to the MMV service on every inventory request.
+
+**Q: How are you generating the 8-character unique alphanumeric ID in a distributed environment?**
+> Our inventory creation throughput is relatively low, so we intentionally avoided introducing a complex distributed ID generator like Snowflake. Instead, we generate a random 8-character alphanumeric ID in the application, check it against the indexed database column, and regenerate it if a collision occurs. The additional lookup is inexpensive at our scale and keeps the implementation simple.
+
+**Q: Running massive backfill scripts for a year's worth of data can lock tables. How did you avoid production downtime?**
+> We first tested and profiled the migration scripts thoroughly in staging to understand their execution characteristics. In production, we scheduled the backfill at 4 AM, which was our lowest traffic period. Because the database load was minimal, the bulk inserts completed without creating resource contention or impacting live user traffic.
+
+**Q: In the old monolith you could simply JOIN inventory with user leads. How did you handle cross-domain queries after splitting the systems?**
+> We used application-side joins. The application executes separate optimized queries against Canis for inventory data and the legacy system for lead data, then combines the results in memory. Since these cross-domain queries are relatively infrequent, the additional network call is an acceptable tradeoff for maintaining strict domain separation.
+
+**Q: Dropping the legacy tables is irreversible. How did you prove no downstream systems were still using them before shutting them down?**
+> We relied on our observability stack. Before disabling legacy writes, we monitored database query logs targeting the old inventory tables and discovered a few legacy client APIs that were still querying them. After updating those clients to use Canis, we continued monitoring until reads against the legacy tables dropped to zero. Only then did we stop dual writes, continue monitoring for production issues over the following weeks, and finally complete the migration.
+
+---
+---
+---
+---
+---
+---
+---
+---
+---
+
+**Resume Bullet:**
 > Reduced chunk load errors by 93% (35,033 → 2,595/day) in a React application by diagnosing and resolving a 2-year-old bug through forced replication, implementing retry logic with 2-second backoff and empty component fallbacks within internal lazy loading wrappers, eliminating infinite retry loops that rendered pages unresponsive.
 
 ---
