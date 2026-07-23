@@ -1,0 +1,47 @@
+Experience
+
+Software Development Engineer - I
+CarTrade Tech
+Apr. 2025 -- Present
+
+Worked on a scalable microservices architecture leveraging .NET, C#, React, gRPC, RabbitMQ, MySQL, Memcached, Grafana, and AWS to build distributed systems serving 80M+ monthly users.
+
+Redesigned the Memcached strategy in a .NET 8 microservice from 6.15M individual keys to 4,000 version-level hashmaps containing 1,539 city entries, resulting in a 93% reduction in database calls and ~28% lower shared MySQL EC2 cluster load.
+
+Reduced CI pipeline build times by ~50% (25–30 mins → 12–15 mins) across the organisation's largest monorepo in under 24 hours using Claude Code by migrating from Lerna to PNPM workspaces and implementing Docker BuildKit layer caching with mounted PNPM and NuGet cache volumes, saving ~5.5 engineering hours daily across 90+ developers.
+
+Built a standalone microservice for used-car inventory management by decomposing a legacy monolith, using dual writes and data reconciliation to achieve 100% data consistency before retiring the legacy system.
+
+Associate Software Development Engineer
+CarTrade Tech
+Aug. 2024 - Mar. 2025
+
+Reduced downstream microservice calls by 22% and improved p90 API latency by ~31% (84ms → 58ms) by implementing DTO-level Memcached caching for home and model pages across commonly accessed location-based data, contributing to reduced microservice pod resource utilisation.
+
+Identified unnecessary cache clearances and led the design and implementation of a new cache-clearing strategy during a team huddle, reducing cache calls and clearances by 98%.
+
+Identified and eliminated 150GB/week of redundant CloudFront data transfer by auditing CDN dashboards and discovering a duplicate icon incorrectly imported across all pages for 2 years, saving ~$600 annually in CDN costs.
+
+Software Development Intern
+YourEngineer
+Apr. 2022 -- Jun. 2024
+
+Migrated a WordPress application to a modern stack using Node.js, React, PostgreSQL, and AWS, while building custom CI/CD pipelines and infrastructure-as-code workflows, leading to a 110% increase in organic traffic.
+
+Built separate development and production environments with commit-based hosting for rapid testing and feedback cycles.
+
+Independently developed a Reddit-style community platform for YourEngineer with posts and comments, supporting 1,000+ monthly users with 99.99% uptime.
+
+Proposed and led migration from MongoDB to SQL for highly structured data, reducing query latency and improving overall system performance.
+
+Projects
+
+Ring A Friend
+Node.js, PostgreSQL, Kotlin, Jetpack Compose, Android, WebSockets
+Jan. 2024 -- Present
+
+Built a full-stack native Android app with Jetpack Compose (frontend), PostgreSQL (database) and Express REST API (backend), following MVVM best practices.
+
+Implemented real-time sockets, socket and API auth, and Firebase push notifications with a background service worker to trigger emergency alerts (ring even on silent).
+
+Enabled external services or users to ring a device with an accompanying text message (e.g., bots/AI agents).
