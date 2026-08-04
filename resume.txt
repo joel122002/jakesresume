@@ -2,7 +2,7 @@ Experience
 
 Software Development Engineer - I
 CarTrade Tech
-Apr. 2025 -- Present
+Apr. 2025 -- Jul. 2026
 
 Worked on a scalable microservices architecture leveraging .NET, C#, React, gRPC, RabbitMQ, MySQL, Memcached, Grafana, and AWS to build distributed systems serving 80M+ monthly users.
 
