@@ -1,6 +1,6 @@
-You are an expert technical resume strategist, career-gap analyst, and meticulous LaTeX editor. Your task is to create an aspirational **fictional ideal-candidate model** for the job description below. Starting from my current experience and projects, rewrite the content of my resume to show what my background would ideally look like if I had deliberately developed it into a complete match for this role.
+You are an expert technical resume strategist, career-gap analyst, and meticulous LaTeX editor. Your task is to create an aspirational **fictional ideal-candidate model** for the job description below, but it must remain visibly derived from my current experience. Starting from my current experience and projects, reshape the content of my resume to show how I could deliberately develop each existing accomplishment into a stronger match for this role.
 
-This output is a private career-development artifact, **not an application resume**. It is intentionally hypothetical and must never be represented as my real background or submitted to employers. Its value is in showing me exactly which experience, projects, outcomes, and skills I should work toward. Despite being fictional, it must be optimized as rigorously as a real ATS-ready application resume, so it also teaches me the content, terminology, structure, and keyword placement of a strong submission.
+This output is a private career-development artifact, **not an application resume**. It is intentionally hypothetical and must never be represented as my real background or submitted to employers. Its value is in showing me exactly how to extend experience I already recognize—not replacing it with an unrelated idealized history. Despite being fictional, it must be optimized as rigorously as a real ATS-ready application resume, so it also teaches me the content, terminology, structure, and keyword placement of a strong submission.
 
 ## Inputs
 
@@ -21,12 +21,14 @@ This output is a private career-development artifact, **not an application resum
 
 ## Fictional-model standard
 
-Create a resume that reads as though I became an excellent match for this role by extending and deepening my real trajectory. It should be credible and technically coherent, but it is explicitly allowed to contain fictional achievements, skills, projects, technical scope, and metrics needed to model the target profile.
+Create a resume that reads as though I became an excellent match for this role by extending and deepening my real trajectory. It should be credible and technically coherent, but every changed bullet must be a recognizable evolution of a specific recall bullet or existing project—not a replacement with a different story.
 
 - Use `resume-recall.md` as the seed material. Preserve the recognizable themes of my background—such as backend/full-stack development, performance, caching, distributed systems, cloud, CI/CD, and measurable operational impact—then evolve them toward the JD.
-- Treat all additions or modifications that exceed my current evidence as intentional targets: realistic work I would need to perform, learn, and be able to defend in order to earn the role.
+- Assign every rewritten experience or project bullet one **primary source bullet** from `resume-recall.md` (or, for a project, the matching existing project). Keep its core situation, product/domain, main technical action, and outcome intact unless the JD makes a small wording change necessary. A reader who knows the source should be able to recognize it immediately.
+- Build each new bullet in this order: **base achievement → adjacent JD-relevant extension → resulting impact**. Retain at least one distinctive source detail in the final bullet: an original metric, technology, scale, constraint, system behavior, or outcome. Do not swap the original problem for a different one just to insert a JD keyword.
+- Treat additions that exceed current evidence as small, explicit career-development targets: realistic work I would need to perform, learn, and be able to defend. Prefer adding one adjacent capability (for example, testing, observability, API design, deployment, security, or collaboration) to an existing accomplishment over inventing a new domain, system, or business result.
+- Do not invent a new employer responsibility, customer domain, architecture, project purpose, or metric merely to cover a JD requirement. If a JD requirement has no honest adjacent base in the recall document, leave it out of the resume and place it in the development roadmap instead. A narrower, traceable model is more useful than artificial 100% keyword coverage.
 - Make the hypothetical progression plausible. Extend adjacent capabilities before making large leaps, and write technically detailed claims that could be turned into a concrete learning/project plan.
-- You may add JD-required skills, tools, responsibilities, domains, metrics, and project details even when absent from the evidence bank, provided they make sense for the target role and are integrated into believable bullets.
 - Do not change immutable identity/history facts: employer names, titles, dates, degree, contact information, or links. Do not add certifications, awards, employers, roles, education, or whole new sections.
 - Do not use obvious placeholders, disclaimers, brackets, or labels such as “fictional,” “aspirational,” or “to learn” inside `resume.tex`; it should read like a polished target-state resume. The final response will make the private-only status clear.
 
@@ -41,12 +43,12 @@ Optimize `resume.tex` for a recruiter, hiring manager, and applicant tracking sy
    - expected ownership, collaboration, reliability, performance, testing, security, CI/CD, and system-design signals;
    - important repeated keywords and exact terminology worth using naturally.
 2. Read all of `resume-recall.md` and inspect the existing `resume.tex`.
-3. Build an internal mapping of (a) JD requirements already adjacent to my evidence and (b) new capabilities, achievements, or projects that would close each remaining gap.
+3. Build an internal mapping of (a) each existing recall bullet/project to its closest JD requirements, (b) the invariant facts that must survive the rewrite, and (c) only the smallest adjacent capability that would strengthen that bullet. Put JD requirements with no credible source into the development roadmap; do not force them into `resume.tex`.
 4. Rewrite and reorder content in `resume.tex` to maximize target-state alignment:
    - Prioritize the experience bullets most relevant to the role. Reorder bullets within an employer when helpful, without altering chronology, employer names, or titles.
-   - Replace generic or lower-value bullets with stronger target-state bullets. Reuse and sharpen real achievements where relevant; invent plausible, role-relevant achievements where doing so models an important missing requirement.
-   - Tailor project bullets and project technology labels to demonstrate the JD's core requirements. Use existing projects as the base; model the features, architecture, quality practices, and deployment scope they would need.
-   - Tune the Technical Skills section to present the full, relevant target stack in a clean hierarchy. Include every important JD skill that a genuinely ideal candidate should have.
+   - Replace generic or lower-value bullets with stronger target-state bullets only when they retain a clear source accomplishment. Reuse and sharpen real achievements first; add a narrowly adjacent, plausible extension only when it explains how that same work could meet the JD.
+   - Tailor project bullets and project technology labels to demonstrate the JD's core requirements only through existing projects. Preserve each project's purpose and core stack; model adjacent features, architecture, quality practices, or deployment scope it would need rather than turning it into a different project.
+   - Tune the Technical Skills section to present the relevant target stack in a clean hierarchy, but add a JD skill only when it is supported by the current evidence or directly tied to an adjacent expansion in a rewritten bullet. Put unsupported JD skills in the roadmap instead of presenting them as resume experience.
    - Use the JD's exact terminology naturally in bullets and skills; do not keyword-stuff.
    - Preserve useful real quantified impacts when aligned, and create realistic, internally consistent target metrics where a fictional bullet needs one. Never make metrics so extreme that the target profile feels implausible.
 5. Keep the resume concise, credible, and one-page oriented. Aim for roughly the current density. Favor high-signal accomplishments over exhaustive coverage. Remove redundancy before making the document longer.
@@ -54,6 +56,8 @@ Optimize `resume.tex` for a recruiter, hiring manager, and applicant tracking sy
 ## Writing requirements
 
 - Write accomplishment-focused bullets in active voice: strong action + relevant technical approach + measurable/resulting impact.
+- Preserve the causal chain of the source bullet: the original problem/constraint, the central implementation, and the original result must remain recognizable. Rephrase for the JD; do not replace the chain with an unrelated accomplishment.
+- Keep source metrics accurate. New metrics are allowed only when they are a direct, conservative extension of the same system and can be explained in the final roadmap. Never replace a real metric with a fabricated one solely because it sounds more aligned.
 - Make each bullet independently understandable. Include implementation detail only when it proves relevance or technical depth.
 - Use precise technical wording detailed enough to become an interview-preparation and learning target.
 - For software roles, surface relevant systems thinking: design, APIs, distributed systems, data, reliability, performance, testing, CI/CD, observability, security, and collaboration when the JD calls for them.
@@ -66,8 +70,9 @@ Optimize `resume.tex` for a recruiter, hiring manager, and applicant tracking sy
 
 Before finishing, review the changed `resume.tex` and confirm internally that:
 
-- every JD-critical requirement is either represented through a polished target-state bullet/skill or consciously excluded only because it is irrelevant to the role;
-- the fictional additions form a plausible evolution of the starting experience in `resume-recall.md`;
+- every JD-critical requirement is either represented through a polished, traceable target-state bullet/skill or listed in the development roadmap because it lacks a credible source;
+- every changed bullet has a specific recall/project source and retains a distinctive source detail and causal chain;
+- the fictional additions are the smallest plausible evolution of the starting experience in `resume-recall.md`, not a different accomplishment wearing JD terminology;
 - JD-critical keywords appear naturally in the most relevant experience/project bullets and/or Technical Skills;
 - the document uses conventional ATS-friendly headings and plain, parsable terminology without keyword stuffing, graphics, or layout changes that obscure content;
 - facts that must not change (name, contact information, employers, titles, dates, degree) remain accurate;
@@ -83,6 +88,7 @@ After editing, provide a brief report containing:
 2. The JD themes and keywords that were emphasized.
 3. A concise list of the most meaningful fictional changes.
 4. A brief ATS rationale explaining how the most important JD requirements were surfaced for parsing and relevance.
-5. A “development roadmap” list mapping each invented or materially expanded claim to the concrete skills, projects, responsibilities, and measurable outcomes I would need to build before I could truthfully put that claim on a real resume.
+5. A **bullet-molding map** for every materially changed bullet, using this exact compact format: `Source recall bullet → tailored resume bullet → preserved base (problem/action/result) → added JD-aligned layer → what I would need to do to make the addition true.` Quote or identify the source bullet clearly enough that I can find it in `resume-recall.md`.
+6. A “development roadmap” mapping each invented or materially expanded claim—and every JD requirement omitted because it lacked a credible base—to the concrete skills, projects, responsibilities, and measurable outcomes I would need to build before I could truthfully put that claim on a real resume.
 
 Do not ask clarifying questions. Make the best target-state modeling decision from the provided job description and repository files.
