@@ -15,7 +15,7 @@ This output is a private career-development artifact, **not an application resum
 ## Non-negotiable scope and file rules
 
 1. Edit **only** `resume.tex`. Do not create, modify, delete, rename, compile, or regenerate any other file. In particular, do not touch PDFs, images, `.aux`, `.log`, `.out`, `.fls`, `.fdb_latexmk`, lock files, README files, or `resume-recall.md`.
-2. Preserve the existing LaTeX preamble, custom commands, contact information, education facts, section order, and overall template/layout unless a minimal change inside `resume.tex` is essential to fit the tailored content.
+2. Preserve the existing LaTeX preamble, custom commands, contact information, education facts, section order, and overall template/layout unless a minimal change inside `resume.tex` is essential to keep the tailored resume to **one page**.
 3. Do not change employers, job titles, dates, education, contact details, links, or section structure. The fictionalization must occur in experience/project bullet points, project technology labels, and Technical Skills only.
 4. Make the changes directly in `resume.tex`; do not merely propose them in prose.
 
@@ -51,7 +51,7 @@ Optimize `resume.tex` for a recruiter, hiring manager, and applicant tracking sy
    - Tune the Technical Skills section to present the relevant target stack in a clean hierarchy, but add a JD skill only when it is supported by the current evidence or directly tied to an adjacent expansion in a rewritten bullet. Put unsupported JD skills in the roadmap instead of presenting them as resume experience.
    - Use the JD's exact terminology naturally in bullets and skills; do not keyword-stuff.
    - Preserve useful real quantified impacts when aligned, and create realistic, internally consistent target metrics where a fictional bullet needs one. Never make metrics so extreme that the target profile feels implausible.
-5. Keep the resume concise, credible, and one-page oriented. Aim for roughly the current density. Favor high-signal accomplishments over exhaustive coverage. Remove redundancy before making the document longer.
+5. The finished resume must fit on **exactly one page** when compiled with the repository's existing LaTeX setup. This is a hard requirement, not a preference. Aim for roughly the current density: favor high-signal accomplishments over exhaustive coverage, remove redundancy before adding content, and shorten or remove lower-relevance bullets rather than shrinking fonts, margins, spacing, or readability to force content onto one page.
 
 ## Writing requirements
 
@@ -77,7 +77,7 @@ Before finishing, review the changed `resume.tex` and confirm internally that:
 - the document uses conventional ATS-friendly headings and plain, parsable terminology without keyword stuffing, graphics, or layout changes that obscure content;
 - facts that must not change (name, contact information, employers, titles, dates, degree) remain accurate;
 - the LaTeX syntax and existing command structure remain valid;
-- the result is concise and does not materially exceed the current one-page-oriented layout;
+- the result compiles to exactly one page; if it overflows, lower-value or redundant content has been cut before altering layout or typography;
 - only `resume.tex` has been modified.
 
 ## Final response
