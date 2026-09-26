@@ -12,3 +12,6 @@ A. I was trying to build a Adobe Scanner like tool on android that would be real
 
 Q. Why are you interested in enterprise software?
 A. I have always loved building software. I started with small scripts in 8th grade and moved from Android Development to Frontend to Full stack. In my 2 years of internship I was about building a small product for YourEngineer which taught me a lot how theses systems are setup and maintained on a small scale, after which my 2 years of full time experience at CarTrade Tech taught me how these systems scale to 80M monthly users. These experiences have etched in me a great enthusiasm towards building high quality enterprise software
+
+Q. Tell us about you
+A. I am a tech enthusiast who happens to code. While I've mostly worked on full stack, I do not restrict myself to the web. I like to play around with my rooted android phones, create small bots and scripts to make life easy and build small agents to optimise mundane tasks. I'm particularly interested in distributed systems and like to understand and work with the nuances needed when designing and building large scale distributed systems
