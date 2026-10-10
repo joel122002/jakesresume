@@ -1,0 +1,196 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Supported distributed services built with \textbf{.NET}, \textbf{C\#}, \textbf{React}, \textbf{gRPC}, \textbf{RabbitMQ}, \textbf{MySQL}, and \textbf{AWS}, serving \textbf{80M+ monthly users}; investigated production behavior with \textbf{Grafana} and service metrics.}
+\resumeItem{Reduced database calls by \textbf{93\%} and shared MySQL EC2 cluster load by \textbf{$\sim$28\%} by replacing 6.15M individual Memcached keys with 4,000 version-level hashmaps covering 1,539 cities.}
+\resumeItem{Cut CI build times by \textbf{$\sim$50\%} (25--30 to 12--15 minutes) in the largest monorepo by migrating Lerna to PNPM workspaces and adding Docker BuildKit cache mounts, saving \textbf{$\sim$5.5 engineering hours daily} across 90+ developers.}
+\resumeItem{Decomposed a legacy monolith into a used-car inventory microservice; validated dual writes through data reconciliation and reached \textbf{100\% data consistency} before retiring the legacy system.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Reduced downstream service calls by \textbf{22\%} and p90 API latency by \textbf{$\sim$31\%} (84ms to 58ms) through DTO-level Memcached caching for location-based home and model page data.}
+\resumeItem{Identified unnecessary cache clearances and led a revised invalidation strategy, reducing cache calls and clearances by \textbf{98\%}.}
+\resumeItem{Audited CloudFront dashboards, traced 150GB/week of redundant transfer to a duplicate icon loaded across pages, and removed it, saving \textbf{$\sim$\$600 annually}.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Migrated a WordPress application to \textbf{Node.js}, \textbf{React}, \textbf{PostgreSQL}, and \textbf{AWS}; built CI/CD pipelines and infrastructure-as-code workflows, contributing to a \textbf{110\% increase in organic traffic}.}
+\resumeItem{Created separate development and production environments with commit-based hosting to support rapid testing and feedback.}
+\resumeItem{Independently built a Reddit-style community platform with posts and comments, supporting \textbf{1,000+ monthly users} at \textbf{99.99\% uptime}.}
+\resumeItem{Proposed and led migration from MongoDB to SQL for structured data, reducing query latency and improving system performance.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Parallel Monte Carlo Methods Study} $|$ \emph{Python, NumPy, SciPy, C++, OpenMP}}{ }
+\resumeItemListStart
+\resumeItem{Implemented and benchmarked serial and OpenMP-parallel Monte Carlo estimators for uncertainty propagation in a nonlinear model; used seeded workloads, convergence plots, and confidence intervals to compare accuracy and scaling, achieving a modeled \textbf{4x speedup} on an 8-core host while keeping estimates within 1\% of the reference.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Reproducible Scientific Data Pipeline} $|$ \emph{Python, pandas, SciPy, pytest, Docker}}{ }
+\resumeItemListStart
+\resumeItem{Built a containerized workflow that validates tabular sensor data, records provenance and parameters, runs statistical analysis, and exports documented results; added unit tests and deterministic fixtures to make reruns reproducible and catch malformed inputs before analysis.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Python, C/C++, Java, Kotlin, C\#, SQL, JavaScript, TypeScript, Shell} \\
+        \textbf{Scientific Computing}{: NumPy, SciPy, pandas, numerical methods, Monte Carlo methods, parallel computing, statistical analysis} \\
+        \textbf{Software \& Systems}{: React, Node.js, .NET, PostgreSQL, MySQL, RabbitMQ, gRPC, Memcached, AWS, Docker, CI/CD, Git} \\
+        \textbf{Quality \& Communication}{: pytest, Selenium, Cypress, Grafana, technical documentation, data validation, Microsoft Word, Excel, PowerPoint}
+        }}
+\end{itemize}
+
+
+%-------------------------------------------
+\end{document}

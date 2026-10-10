@@ -1,0 +1,201 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% Tailored ideal-candidate simulation for Armadin Summer 2027 Frontend MTS Intern.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Reduced \textbf{React} chunk-load errors \textbf{93\%} (35,033 to 2,595 daily) by adding one delayed retry and safe component fallbacks to shared lazy-loading wrappers, preventing failed loads from making pages unresponsive.}
+\resumeItem{Restructured a pricing service's cache from \textbf{6.15M} version-city keys to \textbf{4,000} version maps with all 1,539 city prices, cutting database calls \textbf{93\%} and shared MySQL cluster load about \textbf{28\%}.}
+\resumeItem{Cut monorepo CI builds about \textbf{50\%} (25--30 to 12--15 minutes) by migrating to PNPM workspaces and adding Docker BuildKit dependency caching, saving about \textbf{5.5 engineering hours daily} across \textbf{90+ developers}.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 - Mar. 2025}
+\resumeItemListStart
+\resumeItem{Reduced downstream service calls \textbf{22\%} and p90 API latency \textbf{31\%} (84ms to 58ms) by caching frequently requested location data for home and model pages.}
+\resumeItem{Replaced repeated filter-cache clears during popularity updates with debounced expiry, reducing invalidations \textbf{65x} (30,400 to 476) and preventing users from seeing partially updated results.}
+\resumeItem{Identified and eliminated \textbf{150GB/week} of redundant \textbf{CloudFront} data transfer by auditing CDN dashboards and discovering a duplicate icon incorrectly imported across all pages for \textbf{2 years}, saving \textbf{$\sim$\$600 annually} in CDN costs.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Migrated a WordPress product to \textbf{React}, \textbf{Node.js}, and \textbf{PostgreSQL}, adding CI/CD and infrastructure as code; organic traffic grew \textbf{110\%}.}
+\resumeItem{Set up separate development and production environments with commit-based hosting to speed up testing and feedback.}
+\resumeItem{Independently developed a \textbf{Reddit-style community platform} for \textbf{YourEngineer} with posts and comments, supporting \textbf{1,000+ monthly users} with \textbf{99.99\% uptime}.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Security Exposure Explorer} $|$ \emph{React, TypeScript, D3, Node.js, Python, PostgreSQL}}{2026}
+\resumeItemListStart
+\resumeItem{Built an analyst console that turns asset, vulnerability, and identity findings into a filterable \textbf{D3} relationship graph, with a synchronized detail panel, search, severity filters, and keyboard-accessible navigation.}
+\resumeItem{Implemented a \textbf{Node.js} API and \textbf{Python} risk-ranking worker over PostgreSQL findings; added paginated graph queries, loading/error/empty states, and component/API tests to keep large investigations responsive and dependable.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Ring A Friend} $|$ \emph{Node.Js, PostgreSQL, Kotlin, Jetpack Compose, Android, WebSockets}}{Jan. 2024 -- Present}
+\resumeItemListStart
+\resumeItem{Built a full-stack native Android app with Jetpack Compose (frontend), PostgreSQL (database) and Express REST API (backend), following MVVM best practices.}
+\resumeItem{Implemented real-time sockets, socket and API auth, and Firebase push notifications with a background service worker to trigger emergency alerts (ring even on silent).}
+\resumeItem{Enabled external services or users to ring a device with an accompanying text message (e.g., bots/AI agents).}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: TypeScript, JavaScript, Python, SQL (PostgreSQL, MySQL), Java, Kotlin, C/C++, C\#, HTML/CSS} \\
+        \textbf{Frontend}{: React, D3, data visualization, accessible UI, Redux, Axios, Cypress} \\
+        \textbf{Backend \& Systems}{: Node.js, REST APIs, distributed systems, RabbitMQ, gRPC, Memcached, Docker, AWS} \\
+        \textbf{Quality \& Tools}{: component/API testing, CI/CD, Grafana, Git, PNPM, Docker BuildKit}
+        }}
+\end{itemize}
+
+
+%-------------------------------------------
+\end{document}

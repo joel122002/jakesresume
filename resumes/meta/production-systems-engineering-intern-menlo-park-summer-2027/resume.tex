@@ -1,0 +1,193 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\Large Joel Varghese} & Email : \href{mailto:joel02varghese@gmail.com}{joel02varghese@gmail.com}\\
+% \end{tabular*}
+
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Supported distributed services serving \textbf{80M+ monthly users}, using Linux, SQL, dashboards, and cloud infrastructure to investigate production behavior.}
+\resumeItem{Reshaped a high-volume pricing cache into \textbf{4,000 version-level maps} from 6.15M keys, cutting database calls \textbf{93\%} and shared MySQL cluster load about \textbf{28\%}; used per-key stampede protection to keep refreshes bounded.}
+\resumeItem{Traced a monorepo CI bottleneck and added dependency and container layer caching, cutting builds \textbf{50\%} (25--30 to 12--15 minutes) and saving about \textbf{5.5 engineering hours daily} across 90+ developers.}
+\resumeItem{Split used-car inventory from a legacy monolith using dual writes and reconciliation, verifying \textbf{100\% data consistency} before retiring the old path.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Cached high-traffic page data, reducing downstream calls \textbf{22\%} and p90 latency \textbf{31\%} (84ms to 58ms) while lowering pod resource use.}
+\resumeItem{Traced redundant event-driven cache invalidations and led a debounced expiry redesign, cutting operations \textbf{65x} (30,400 to 476) and preventing partial results.}
+\resumeItem{Found a duplicate asset by auditing CDN telemetry; removed \textbf{150GB/week} of transfer and about \textbf{\$600/year} in cost.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Migrated a WordPress application to a modern stack and automated CI/CD, contributing to \textbf{110\% organic traffic growth}.}
+\resumeItem{Built separate development and production environments with commit-based deployments for faster validation.}
+\resumeItem{Built a posts-and-comments platform supporting \textbf{1,000+ monthly users} at \textbf{99.99\% uptime}.}
+\resumeItem{Led a document-database to SQL migration for structured data, improving query latency.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Linux Server Fault Triage Toolkit} $|$ \emph{Python, Linux, Bash, SQLite, pytest}}{ }
+\resumeItemListStart
+\resumeItem{Built a Python/Linux CLI that snapshots kernel logs, SMART, PCIe, memory, and service health into normalized incident bundles; fixture-tested injected faults to target component-level diagnosis and under-2-minute evidence capture.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Fleet Telemetry Anomaly Pipeline} $|$ \emph{Python, pandas, SQL, Prometheus, Grafana}}{ }
+\resumeItemListStart
+\resumeItem{Built a Python/pandas and SQL pipeline to baseline server telemetry, detect memory, disk, thermal, and device-reset anomalies, and surface host-level evidence in Prometheus/Grafana; replay tests target 5-minute detection with fewer than 2 false alerts per 100 host-days.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Python, C/C++, Java, Kotlin, SQL, Bash, C\#, JavaScript, TypeScript} \\
+        \textbf{Systems}{: Linux, x86 server architecture, CPU, GPU, memory, storage, PCIe, kernel logs, SMART, distributed systems} \\
+        \textbf{Data \& Observability}{: pandas, MySQL, PostgreSQL, SQLite, Prometheus, Grafana, telemetry analysis, anomaly detection} \\
+        \textbf{Engineering}{: pytest, CI/CD, Docker, AWS, Git, debugging, root cause analysis, automation, health checks}
+        }}
+\end{itemize}
+
+%-------------------------------------------
+\end{document}
+
