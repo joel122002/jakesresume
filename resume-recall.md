@@ -488,3 +488,91 @@ Expanded the fix company-wide by implementing the solution inside the internal l
 **Q: How did you identify which chunks to fix first in Phase 1?**
 > Grafana had logs broken down by component name showing which chunks were generating the most errors. I targeted the top offenders first which gave the biggest immediate impact — those chunks alone accounted for ~20,000 of the 35,033 daily errors.
 
+---
+---
+---
+---
+---
+---
+---
+---
+---
+
+**Resume Bullet:**
+> Improved Lighthouse mobile score from ~50 → 85 and reduced TBT by 83% (2,300ms → 400ms) by implementing route-based code splitting and granular webpack chunk strategies reducing the largest bundle by 69% (1.6MB → 500KB), migrating non-critical GTM tags to Partytown web workers, and breaking React hydration into microtasks using Suspense boundaries and hydrateRoot, improving FCP from 4s → 2.5s and maintaining SEO #1 ranking.
+
+---
+
+**Recall Guide:**
+
+**The Problem:**
+The Carwale frontend had a Lighthouse mobile score of ~50, with a TBT of ~2,300ms. Since 80% of users were on mobile, this was directly impacting user experience. Three main culprits were identified:
+- **Large JavaScript bundles** with over 60% unused code being parsed and executed on the main thread
+- **Google Tag Manager (GTM)** running entirely on the main thread and contributing heavily to TBT
+- **React hydration** happening as one large synchronous blocking task
+
+This was measured on mobile Lighthouse both locally and via PageSpeed Insights across multiple runs for statistical reliability.
+
+**Your Solution — Multiple Fronts:**
+
+**1. Bundle Splitting (webpack):**
+Studied how Next.js handles bundling and replicated their approach on the existing webpack setup with modifications:
+- Implemented **route-based code splitting** — splitting bundles by route so each page only loads what it needs
+- Separated **vendor chunks from app chunks** — third party libraries bundled separately so they can be cached independently
+- Implemented **granular chunk splitting** — breaking down large shared chunks into smaller focused pieces
+
+The largest bundle went from **1.6MB → 500KB (~69% reduction)**. Dead code was identified using Chrome DevTools Coverage tab which showed over 60% of the largest bundle was unused code.
+
+**2. GTM → Partytown Migration:**
+GTM was the biggest single contributor to TBT. The solution had two parts:
+- **Split GTM into two containers** — Product defined which tags were critical (conversion tracking, revenue-critical tags) and which were non-critical. Critical tags stayed in a main-thread GTM container. Non-critical tags moved to a separate container
+- **Moved non-critical GTM container to Partytown** — Partytown runs scripts in a web worker off the main thread, completely eliminating their TBT contribution. GTM in Partytown required configuration around DOM API proxying since workers don't have direct DOM access, but Partytown's proxy mechanism handled this
+
+**3. React Hydration Breakdown:**
+React hydration was happening as one large synchronous task blocking the main thread. Using React 18:
+- Implemented **Suspense boundaries** to break the component tree into independently hydratable sections
+- Used **hydrateRoot** API to enable concurrent hydration
+- This broke hydration into microtasks, allowing the browser to handle user input between hydration chunks rather than blocking until the entire tree was hydrated
+- Hydration mismatches surfaced during this process and were fixed by each team owning their respective components/pages
+
+**4. Ad Script Deferral:**
+Ad scripts were deferred by an additional **500ms** from their existing load time, pushing them outside the critical rendering window. This directly contributed to FCP improvement since ads were previously contributing to FCP.
+
+**The Stack:** React 18, webpack, Partytown, GTM, Chrome DevTools, PageSpeed Insights.
+
+**The Impact:**
+- Lighthouse mobile score: **~50 → 85**
+- TBT: **2,300ms → 400ms (83% reduction)**
+- FCP: **4s → 2.5s (37.5% improvement)**
+- Largest bundle: **1.6MB → 500KB (69% reduction)**
+- Core Web Vitals: **achieved green rating**
+- SEO **#1 ranking maintained**
+- Entirely self-researched and implemented over **2 weeks**
+
+---
+
+**Likely Interview Deep-Dives:**
+
+**Q: How did you know where to start?**
+> I used Chrome DevTools Coverage tab to identify unused JavaScript — over 60% of our largest bundle was dead code. I also profiled the main thread in DevTools Performance tab which showed GTM and React hydration as the two biggest blocking tasks. That gave me a clear prioritised list of what to tackle.
+
+**Q: How did you replicate Next.js bundling on a non-Next.js stack?**
+> I studied Next.js's webpack configuration to understand their chunk splitting strategy — route-based splitting, vendor/app separation, and granular chunk strategies. I then implemented the same approach in our existing webpack config with modifications to suit our specific setup. The principle is the same — ensure each route only loads what it needs and shared code is split into cacheable chunks.
+
+**Q: Why Partytown specifically for GTM?**
+> Partytown runs third party scripts in a web worker, completely removing their main thread execution cost. GTM was our single biggest TBT contributor. Moving it off the main thread was the highest leverage thing we could do. The challenge was that GTM loads tags dynamically and workers don't have direct DOM access, so Partytown's DOM API proxy mechanism was needed to make it work.
+
+**Q: Why split GTM into two containers?**
+> Some tags are revenue-critical — conversion tracking, for example — and can't afford any delay or worker-related issues. Product defined which tags were critical and which weren't. Critical tags stayed on the main thread in their own container. Non-critical tags moved to the worker container via Partytown. This gave us the TBT benefit without risking revenue-critical tracking.
+
+**Q: How does breaking React hydration into microtasks help TBT?**
+> TBT measures time the main thread is blocked by tasks longer than 50ms. React's default hydration is one large synchronous task — it blocks the main thread until the entire component tree is hydrated. Using Suspense boundaries and React 18's hydrateRoot, hydration is broken into smaller concurrent chunks. The browser can handle user input between these chunks, dramatically reducing the longest blocking task duration.
+
+**Q: Did anything break in production?**
+> Yes — breaking hydration into smaller chunks surfaced hydration mismatches that had existed but gone unnoticed. These were fixed by each team owning their respective components and pages. It was a good forcing function to clean up long-standing issues across the codebase.
+
+**Q: How did this affect SEO?**
+> Core Web Vitals — which Google uses as a ranking signal — went green across the board after these changes. We were already ranked #1 in our category and these improvements helped us maintain that ranking. A Lighthouse score of 85 on mobile with green Core Web Vitals is a strong signal to Google's ranking algorithm.
+
+
+
