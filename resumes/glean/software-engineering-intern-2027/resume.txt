@@ -1,0 +1,60 @@
+Education
+
+San Jose State University
+San Jose, CA
+MS in Software Engineering
+Aug. 2026 -- May. 2028
+
+Experience
+
+Software Development Engineer - I
+CarTrade Tech
+Apr. 2025 -- Jul. 2026
+
+Restructured a .NET 8 service's Memcached strategy from 6.15M version-city keys to 4,000 version-level hashmaps containing 1,539 city entries, reducing database calls 93% and shared MySQL cluster load ~28% for a platform serving 80M+ monthly users.
+
+Cut CI build times ~50% (25--30 to 12--15 min) across the largest monorepo by migrating a React workspace from Lerna to PNPM and adding Docker BuildKit dependency caching, saving ~5.5 engineering hours daily for 90+ developers.
+
+Decomposed a legacy inventory monolith into a standalone microservice; used dual writes, reconciliation, and staged cutover to verify 100% data consistency before retiring the legacy path.
+
+Associate Software Development Engineer
+CarTrade Tech
+Aug. 2024 -- Mar. 2025
+
+Added DTO-level Memcached caching for home and model APIs across city-unset and top 10 cities, reducing downstream service calls 22% and p90 latency ~31% (84ms to 58ms).
+
+Designed a debounced cache-expiry strategy for nightly popularity updates, cutting invalidations 65x (30,400 to 476) and preventing users from seeing partially reordered filters.
+
+Audited CloudFront usage and removed a duplicate site icon request, eliminating 150GB/week of redundant transfer and saving ~$600/year.
+
+Software Development Intern
+YourEngineer
+Apr. 2022 -- Jun. 2024
+
+Migrated a WordPress application to Node.js, React, PostgreSQL, and AWS, building CI/CD and infrastructure-as-code workflows that supported a 110% increase in organic traffic.
+
+Independently shipped a Node.js/React community platform with posts and comments for 1,000+ monthly users, sustaining 99.99% uptime.
+
+Led migration of structured application data from MongoDB to SQL, improving query latency and overall system performance.
+
+Projects
+
+Ring A Friend
+Node.js, PostgreSQL, Kotlin, Jetpack Compose, Android, WebSockets
+Jan. 2024 -- Present
+
+Built and maintain an Android alerting app with an Express API, authenticated WebSockets, and Firebase push notifications; external scripts and AI agents trigger text-bearing alerts that ring through silent mode.
+
+Enterprise Knowledge Assistant
+Python, FastAPI, React, PostgreSQL, pgvector, AWS
+May 2026 -- Aug. 2026
+
+Built a searchable knowledge assistant that ingests documents, chunks and embeds content, applies user-level access filters during hybrid retrieval, and returns cited answers; added connector sync retries, audit logs, and a 200-query relevance suite targeting 90% citation precision.
+
+Technical Skills
+
+Languages: Java, Kotlin, Python, C/C++, C#, SQL (PostgreSQL, MySQL), JavaScript, TypeScript, HTML/CSS, Shell
+Technologies: React, Node.js, .NET, ASP.NET, FastAPI, Spring Boot, Angular, Jetpack Compose, RabbitMQ, gRPC, Memcached, PostgreSQL, MongoDB
+Cloud & DevOps: AWS, Docker, Docker BuildKit, CI/CD, CloudFront, Infrastructure as Code, PNPM, Git
+Developer Tools: Grafana, Git, VS Code, IntelliJ IDEA, PyCharm, Android Studio, Cursor AI
+Libraries & Testing: Redux, Axios, Selenium, Cypress, Requests, API testing, regression testing

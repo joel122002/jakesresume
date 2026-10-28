@@ -1,0 +1,62 @@
+Education
+
+San Jose State University — San Jose, CA
+MS in Software Engineering
+Aug. 2026 -- May. 2028
+
+Experience
+
+Software Development Engineer - I
+CarTrade Tech
+Apr. 2025 -- Jul. 2026
+
+Supported .NET services for 80M+ monthly users, using production metrics across distributed systems built with C#, gRPC, RabbitMQ, MySQL, Memcached, Grafana, and AWS.
+
+Restructured .NET 8/Memcached caching from 6.15M version-city keys to 4,000 hashmaps; measured 93% fewer database calls and ~28% lower shared MySQL load.
+
+Cut monorepo CI builds ~50% (25–30 to 12–15 min) with PNPM workspaces and Docker BuildKit caching, saving ~5.5 engineering hours daily for 90+ developers.
+
+Decomposed used-car inventory from a legacy monolith; implemented dual writes and data reconciliation, verifying 100% data consistency before retiring the legacy system.
+
+Associate Software Development Engineer
+CarTrade Tech
+Aug. 2024 -- Mar. 2025
+
+Applied DTO-level Memcached caching to high-traffic pages, reducing downstream calls 22% and p90 latency ~31% (84ms to 58ms).
+
+Identified excessive cache invalidations and led a revised expiry strategy; reduced cache calls and clearances by 98% while preventing inconsistent filter results during nightly updates.
+
+Audited CloudFront transfer metrics, traced 150GB/week of waste to a duplicate asset reference, and removed it, saving ~$600 annually.
+
+Software Development Intern
+YourEngineer
+Apr. 2022 -- Jun. 2024
+
+Migrated a WordPress application to Node.js, React, PostgreSQL, and AWS; established CI/CD and infrastructure-as-code workflows, contributing to a 110% increase in organic traffic.
+
+Set up separate development and production environments with commit-based hosting to support repeatable testing and faster feedback.
+
+Projects
+
+Avionics Reliability Test
+Python, KiCad, HALT, FMEA
+Jan. 2026 -- Apr. 2026
+
+Built a repeatable qualification workflow for a KiCad sensor interface board: documented requirements, performed design FMEA, and logged baseline electrical measurements before and after thermal cycling and vibration exposure.
+
+Automated Python ingestion of oscilloscope and chamber logs, limit checks, plots, and test reports; tracked anomalies to board revisions and corrective actions, cutting review time 40% and leaving zero untriaged failures.
+
+Reliability Data and Failure Analysis
+Python, SciPy, SQL, Weibull
+May 2026 -- Aug. 2026
+
+Created a traceable analysis pipeline joining component, test, and field-return records; standardized failure codes and used Pareto, Weibull, and FMEA views to rank failure modes and flag reliability risks for design and supplier review.
+
+Added validation rules, reproducible notebooks, and review-ready reports to preserve data provenance and support corrective-action tracking; dashboard surfaced top recurring failure modes in under 5 minutes.
+
+Technical Skills
+
+Languages: Python, Java, Kotlin, C/C++, C#, SQL, JavaScript, TypeScript
+Reliability & Test: HALT, Environmental Testing, Failure Analysis, Root Cause Analysis, FMEA, Weibull Analysis, Corrective Actions, Test Reporting
+Hardware & Data Tools: KiCad, Oscilloscope, pandas, SciPy, MySQL, PostgreSQL, Grafana
+Systems & Delivery: AWS, Docker, CI/CD, Git, Memcached, gRPC, RabbitMQ, React, Node.js

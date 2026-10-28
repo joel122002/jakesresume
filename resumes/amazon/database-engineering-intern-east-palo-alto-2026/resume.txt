@@ -1,0 +1,35 @@
+Joel Varghese
+(408) 982-6552 | joel02varghese@gmail.com | linkedin.com/in/joel02varghese/ | github.com/joel122002
+
+Education
+San Jose State University | San Jose, CA
+MS in Software Engineering | Aug. 2026 -- May. 2028
+
+Experience
+Software Development Engineer - I | CarTrade Tech | Apr. 2025 -- Jul. 2026
+• Optimized a MySQL-backed pricing service for a platform serving 80M+ monthly users: consolidated 6.15M version-city cache keys into 4,000 version-level maps covering 1,539 cities, cutting database calls 93% and shared EC2 cluster load ~28%.
+• Reduced CI pipeline build times ~50% (25--30 mins to 12--15 mins) across the largest monorepo by migrating to PNPM workspaces and Docker BuildKit dependency caching, saving ~5.5 engineering hours daily across 90+ developers.
+• Reduced cache invalidations 65x (30,400 to 476) by applying a debounced expiry strategy to nightly updates of 400 models, preserving consistent filter results while the job ran.
+• Decomposed used-car inventory from a legacy monolith into an independently deployable service; used dual writes and reconciliation checks to verify 100% data consistency before retiring the legacy path.
+
+Associate Software Development Engineer | CarTrade Tech | Aug. 2024 -- Mar. 2025
+• Analyzed page-request fan-out and cached assembled DTOs for high-traffic locations, reducing downstream service calls 22% and p90 latency ~31% (84ms to 58ms).
+• Investigated cache invalidation behavior and led a revised clearing strategy that reduced cache calls and clearances 98%.
+
+Software Development Intern | YourEngineer | Apr. 2022 -- Jun. 2024
+• Migrated a WordPress application to Node.js, React, PostgreSQL, and AWS with custom CI/CD and infrastructure-as-code workflows, contributing to a 110% increase in organic traffic.
+• Independently built a Reddit-style community platform with posts and comments, supporting 1,000+ monthly users at 99.99% uptime.
+• Proposed and led migration of structured application data from MongoDB to relational SQL, improving query latency and system performance.
+
+Projects
+Redshift Workload Observatory | Python, SQL, Amazon Redshift, AWS, CloudWatch | Jun. 2026 -- Aug. 2026
+• Built a Redshift workload lab loading synthetic retail events from S3 into a star schema; used multi-table SQL, EXPLAIN plans, and sort/distribution key experiments to compare scan volume and query latency, with Python automation capturing system-table and CloudWatch metrics across repeatable runs.
+
+Distributed Query Benchmark Harness | Python, PostgreSQL, Docker, SQL | Mar. 2026 -- May 2026
+• Created a Dockerized Python benchmark harness with seeded PostgreSQL datasets, indexed and unindexed multi-table SQL workloads, concurrent runs, query-plan capture, and correctness checks; generated comparable throughput and p50/p95 reports to evaluate configurations targeting 30% lower p95 latency at 1M rows.
+
+Technical Skills
+Languages: Python, SQL, Java, C/C++, C#, JavaScript, TypeScript, Shell
+Databases and Data: Amazon Redshift, PostgreSQL, MySQL, data modeling, query optimization, indexing, transactions, data warehousing
+Cloud and Tools: AWS, S3, CloudWatch, Docker, CI/CD, Git, Grafana, Memcached, RabbitMQ
+Methods: workload analysis, performance benchmarking, distributed systems, automation, data structures, algorithm design

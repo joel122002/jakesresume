@@ -1,0 +1,56 @@
+Joel Varghese
+(408) 982-6552 | joel02varghese@gmail.com | linkedin.com/in/joel02varghese/ | github.com/joel122002
+
+Education
+
+San Jose State University | San Jose, CA
+MS in Software Engineering | Aug. 2026 -- May. 2028
+
+Experience
+
+Software Development Engineer - I
+CarTrade Tech
+Apr. 2025 -- Jul. 2026
+
+• Built and operated Java Spring Boot microservices in a distributed platform serving 80M+ monthly users, integrating REST APIs, gRPC, RabbitMQ, MySQL, Memcached, React, AWS, and Grafana.
+• Restructured a pricing service's Memcached model from 6.15M version-city keys to 4,000 version-level hashmaps; reduced database calls by 93% and shared MySQL cluster load by ~28%.
+• Cut monorepo CI builds ~50% (25--30 to 12--15 min) by moving to PNPM workspaces and adding Docker BuildKit dependency-layer/cache mounts, saving ~5.5 engineering hours daily across 90+ developers.
+• Decomposed used-car inventory from a legacy monolith into an independently deployable microservice; used dual writes and reconciliation to verify 100% data consistency before retiring the legacy system.
+
+Associate Software Development Engineer
+CarTrade Tech
+Aug. 2024 -- Mar. 2025
+
+• Added DTO-level Memcached caching for home and model REST APIs, reducing downstream service calls 22% and p90 latency ~31% (84ms to 58ms) while lowering pod resource use.
+• Designed and implemented a debounced cache-expiry strategy for nightly model updates, reducing cache invalidations 65x (30,400 to 476) and preventing users from seeing partially updated filter results.
+• Audited CloudFront dashboards and removed a duplicate page icon request, eliminating 150GB/week of redundant transfer and saving ~$600/year.
+
+Software Development Intern
+YourEngineer
+Apr. 2022 -- Jun. 2024
+
+• Migrated a WordPress application to Node.js, React, PostgreSQL, and AWS; built CI/CD and infrastructure-as-code workflows that contributed to a 110% increase in organic traffic.
+• Created separate development and production environments with commit-based hosting to enable rapid, isolated testing and feedback.
+• Independently built a Reddit-style community platform with posts and comments, supporting 1,000+ monthly users at 99.99% uptime.
+• Led migration of structured application data from MongoDB to SQL, reducing query latency and improving system performance.
+
+Projects
+
+Ring A Friend | Node.js, PostgreSQL, Kotlin, Jetpack Compose, Android, WebSockets
+Jan. 2024 -- Present
+
+• Built an Android app and Express REST API with PostgreSQL persistence and MVVM architecture; authenticated users and external services can trigger real-time device alerts.
+• Added WebSocket delivery, Firebase push notifications, and a background service to route emergency alerts with text through silent mode.
+
+Network Service Health API | Java, Spring Boot, PostgreSQL, Docker, AWS
+Jun. 2026 -- Sep. 2026
+
+• Built a REST service that ingests TCP/IP probe results, stores time-series health data, and exposes service/region availability and latency summaries for operations dashboards.
+• Containerized API and PostgreSQL, deployed on AWS, and added GitHub Actions tests plus readiness checks; designed for 99.9% availability and p95 query latency below 200ms under a 100-service load.
+
+Technical Skills
+
+Languages: Java, Python, JavaScript, TypeScript, Kotlin, C/C++, C#, SQL, HTML/CSS, Shell
+Technologies: Spring Boot, REST APIs, React, Node.js, PostgreSQL, MySQL, RabbitMQ, gRPC, Memcached, WebSockets
+Cloud & DevOps: AWS, Docker, CI/CD, GitHub Actions, Jenkins, Infrastructure as Code, Git, Linux, CloudFront
+Practices: Object-Oriented Programming, Microservices, Distributed Systems, TCP/IP, Grafana, Automated Testing

@@ -1,0 +1,39 @@
+Joel Varghese
+(408) 982-6552 | joel02varghese@gmail.com | linkedin.com/in/joel02varghese/ | github.com/joel122002
+
+Education
+San Jose State University — San Jose, CA
+MS in Software Engineering | Aug. 2026 -- May. 2028
+
+Experience
+Software Development Engineer - I | CarTrade Tech | Apr. 2025 -- Jul. 2026
+• Built a React and TypeScript customer platform backed by distributed APIs for 80M+ monthly users, collaborating across frontend and service teams.
+• Restructured service cache from 6.15M version-city keys to 4,000 maps, cutting database calls 93% and shared MySQL load ~28%.
+• Cut monorepo CI builds ~50% (25–30 to 12–15 minutes) with PNPM workspaces and Docker BuildKit caches, saving ~5.5 hours daily across 90+ developers.
+• Decomposed inventory workflows into a standalone API service; dual writes and reconciliation confirmed 100% data consistency before monolith retirement.
+
+Associate Software Development Engineer | CarTrade Tech | Aug. 2024 -- Mar. 2025
+• Cached assembled home and model page data for the top 10 cities, cutting downstream API calls 22% and p90 latency ~31% (84ms to 58ms).
+• Debounced cache expiry during nightly model updates, reducing invalidations 65x (30,400 to 476) and preventing partially updated filters.
+• Audited CDN delivery metrics and removed a duplicate site-wide icon request, eliminating 150GB/week of redundant transfer and saving ~$600/year.
+
+Software Development Intern | YourEngineer | Apr. 2022 -- Jun. 2024
+• Migrated WordPress to Node.js, React, TypeScript, PostgreSQL, and AWS; CI/CD and IaC deployment supported 110% organic traffic growth.
+• Set up isolated development and production environments with commit-based hosting for faster integration tests and release feedback.
+• Built a REST-backed posts and comments platform serving 1,000+ monthly users at 99.99% uptime.
+• Led migration of structured data from MongoDB to PostgreSQL, improving query latency and system performance.
+
+Projects
+Remote Flight Deck Simulator | React, TypeScript, WebGL, Three.js, WebSockets, MapLibre | May. 2026 -- Jul. 2026
+• Built a React/Three.js multi-drone console with synchronized video, MapLibre flight map, and WebSocket telemetry/control streams; isolated stale feeds from active controls.
+• Added reconnect handling, stale-data indicators, accessible controls, and replay tests; kept UI updates under 150ms across four aircraft and recovered within 30 seconds.
+
+Video Focus and Exposure Controls | React, TypeScript, WebRTC, Canvas, Node.js | Jan. 2026 -- Apr. 2026
+• Built click-to-focus and exposure controls for live WebRTC video, mapping pointer coordinates to camera commands through an acknowledged Node.js API.
+• Added latency/error telemetry and camera integration tests, keeping interaction feedback under 200ms and controls responsive during stream interruptions.
+
+Technical Skills
+Languages: TypeScript, JavaScript, SQL, Python, Java, Kotlin, C/C++, C#, Shell
+Frontend: React, HTML/CSS, WebGL, Three.js, Canvas, WebRTC, MapLibre
+APIs & Data: REST, GraphQL, WebSockets, Node.js, gRPC, PostgreSQL, MySQL, RabbitMQ, Memcached
+Cloud & Quality: AWS, Docker, CI/CD, Infrastructure as Code, Grafana, integration testing, Git

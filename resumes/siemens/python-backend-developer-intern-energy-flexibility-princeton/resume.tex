@@ -1,0 +1,193 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Built Python services in a distributed microservices platform serving \textbf{80M+ monthly users}, integrating REST APIs, PostgreSQL, asynchronous messaging, and AWS-backed observability.}
+\resumeItem{Redesigned a high-volume data access path with \textbf{SQLAlchemy} and versioned cache snapshots, collapsing 6.15M keys into 4,000 hash maps across 1,539 cities; reduced database calls \textbf{93\%} and shared database load \textbf{$\sim$28\%}.}
+\resumeItem{Cut CI build time \textbf{$\sim$50\%} (25--30 to 12--15 minutes) across the largest monorepo by restructuring dependency layers and adding Docker BuildKit cache mounts, saving \textbf{$\sim$5.5 engineering hours daily} for 90+ developers.}
+\resumeItem{Decomposed legacy inventory workflows into a standalone \textbf{FastAPI} service with PostgreSQL dual writes and reconciliation, verifying \textbf{100\% data consistency} before retiring the monolith path.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Reduced downstream API calls \textbf{22\%} and p90 latency \textbf{$\sim$31\%} (84ms to 58ms) by caching typed response models for frequently requested location data with bounded TTLs and stampede protection.}
+\resumeItem{Designed a debounced cache-expiry strategy for nightly updates, reducing invalidation operations from 30,400 to 476 (\textbf{65x fewer}) while preventing partially refreshed results.}
+\resumeItem{Audited production dashboards and removed a duplicate static asset, eliminating \textbf{150GB/week} of CloudFront transfer and saving \textbf{$\sim$\$600 annually}.}
+\resumeItemListEnd
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Migrated a WordPress application to a modern platform with a \textbf{Python REST API}, React, PostgreSQL, and AWS CI/CD, contributing to a \textbf{110\% increase in organic traffic}.}
+\resumeItem{Created isolated development and production environments with commit-based deployments, enabling repeatable testing and faster feedback.}
+\resumeItem{Independently built a Reddit-style community platform with authenticated post and comment APIs, supporting \textbf{1,000+ monthly users} at \textbf{99.99\% uptime}.}
+\resumeItem{Led a MongoDB-to-relational SQL migration for structured records, redesigning schemas and queries to reduce latency and improve data consistency.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Energy Flex API} $|$ \emph{FastAPI, SQLAlchemy, PostgreSQL, Alembic, AWS}}{Aug. 2026 -- Oct. 2026}
+\resumeItemListStart
+\resumeItem{Built versioned REST endpoints for generation and storage assets, validating telemetry with Pydantic and persisting dispatch availability, constraints, and market bids through SQLAlchemy and Alembic migrations.}
+\resumeItem{Integrated a market-data provider with OAuth2/JWT, bounded retries, idempotency keys, ETag/If-Match concurrency, and pytest contract tests; documented OpenAPI and targeted \textbf{under 200ms p95} reads across 10k assets.}
+\resumeItem{Containerized the service with Docker and an AWS RDS/SQS/Secrets Manager deployment path; CI ran lint, mypy, unit and mocked-provider integration tests to gate API and migration changes.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Ring A Friend} $|$ \emph{Python, FastAPI, PostgreSQL, Webhooks, Docker}}{Jan. 2024 -- Present}
+\resumeItemListStart
+\resumeItem{Maintained a webhook-driven notification service used by personal availability and restock bots; modeled typed requests, persisted delivery state, and added retry-safe event handling to sustain long-running operation.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Python, SQL, JavaScript, TypeScript, Java, Kotlin, C\#, C/C++} \\
+        \textbf{Backend}{: FastAPI, Flask, REST, OpenAPI, Pydantic, SQLAlchemy, Alembic, PostgreSQL, MySQL, pytest} \\
+        \textbf{Cloud \& DevOps}{: AWS, Docker, CI/CD, Git, BuildKit, RabbitMQ, OAuth2/JWT, Linux} \\
+        \textbf{Practices}{: Unit/integration testing, type hints, schema design, migrations, API documentation, retries, observability}
+        }}
+\end{itemize}
+
+%-------------------------------------------
+\end{document}

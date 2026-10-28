@@ -1,0 +1,39 @@
+Joel Varghese
+(408) 982-6552 | joel02varghese@gmail.com | linkedin.com/in/joel02varghese/ | github.com/joel122002
+
+Education
+San Jose State University | San Jose, CA
+MS in Software Engineering | Aug. 2026 -- May. 2028
+
+Experience
+Software Development Engineer - I | CarTrade Tech | Apr. 2025 -- Jul. 2026
+• Developed distributed services for a platform serving 80M+ monthly users, collaborating across backend and React teams with Java, gRPC, RabbitMQ, MySQL, Memcached, Grafana, and AWS.
+• Reworked a Java service's Memcached model from 6.15M version-city keys to 4,000 version-level hashmaps holding 1,539 city prices each; reduced database calls 93% and shared MySQL cluster load about 28%.
+• Cut CI builds about 50% (25--30 to 12--15 minutes) by migrating a large monorepo to PNPM workspaces and adding Docker BuildKit cache mounts, saving about 5.5 engineering hours daily across 90+ developers.
+• Decomposed used-car inventory from a legacy monolith into an independently deployable Java service; used dual writes and reconciliation to verify 100% data consistency before retiring the legacy path.
+
+Associate Software Development Engineer | CarTrade Tech | Aug. 2024 -- Mar. 2025
+• Added DTO-level Memcached caching for frequently requested location data, cutting downstream service calls 22% and p90 API latency 31% (84ms to 58ms).
+• Replaced per-event cache clears with a debounced expiry strategy for nightly model updates, reducing invalidations 65x (30,400 to 476) and preventing users from seeing partially refreshed filter results.
+
+Software Development Intern | YourEngineer | Apr. 2022 -- Jun. 2024
+• Migrated a WordPress application to Node.js, React, PostgreSQL, and AWS, building CI/CD and infrastructure-as-code workflows that supported a 110% increase in organic traffic.
+• Built separate development and production environments with commit-based hosting for rapid testing and feedback cycles.
+• Independently developed a Reddit-style community platform with posts and comments, supporting 1,000+ monthly users with 99.99% uptime.
+• Proposed and led migration from MongoDB to SQL for highly structured data, reducing query latency and improving overall system performance.
+
+Projects
+Ring A Friend | Java, MongoDB, Kotlin, Jetpack Compose, Android, WebSockets | Jan. 2024 -- Present
+• Built a full-stack Android alert app with Jetpack Compose, a Java REST service, and MongoDB persistence for users, devices, and alert history.
+• Implemented authenticated WebSocket delivery and Firebase push notifications with retry-safe alert handling, enabling external services to ring a device with a message.
+
+Campus Catalog Search | Java, MongoDB, Spring Boot, JUnit, Docker | Jan. 2026 -- May 2026
+• Built a catalog API that ingests course and review records into MongoDB, models flexible course metadata as documents, and serves indexed filters and text search through paginated Java endpoints.
+• Added schema validation, compound indexes, query-plan checks, JUnit integration tests, and Docker Compose seed data; benchmarked 10K records at under 100ms p95 for common filtered searches.
+
+Technical Skills
+Languages: Java, Kotlin, Python, C/C++, JavaScript, TypeScript, SQL, HTML/CSS, Shell
+Technologies: MongoDB, Spring Boot, Node.js, React, Jetpack Compose, RabbitMQ, gRPC, Memcached, WebSockets
+Cloud & DevOps: AWS, Docker, Docker BuildKit, CI/CD, Infrastructure as Code, Git
+Developer Tools: Grafana, IntelliJ IDEA, Android Studio
+Libraries & Testing: JUnit, Redux, Axios, Selenium, Cypress

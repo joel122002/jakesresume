@@ -1,0 +1,45 @@
+Education
+
+San Jose State University | San Jose, CA
+MS in Software Engineering | Aug. 2026 -- May. 2028
+
+Experience
+
+Software Development Engineer - I | CarTrade Tech | Apr. 2025 -- Jul. 2026
+
+• Built and operated distributed microservices using .NET, C#, React, gRPC, RabbitMQ, MySQL, Memcached, Grafana, and AWS for a platform serving 80M+ monthly users.
+• Restructured a .NET 8/Memcached pricing service from 6.15M version-city keys to 4,000 version-level hashmaps, cutting database calls 93% and shared MySQL EC2 load ~28%.
+• Cut monorepo CI builds ~50% (25–30 to 12–15 minutes) by migrating Lerna to PNPM workspaces and adding Docker BuildKit cache mounts, saving ~5.5 engineering hours daily across 90+ developers.
+• Decomposed used-car inventory from a legacy monolith into a standalone microservice; dual writes and reconciliation verified 100% data consistency before legacy retirement.
+
+Associate Software Development Engineer | CarTrade Tech | Aug. 2024 -- Mar. 2025
+
+• Added DTO-level Memcached caching for location-based data, reducing downstream service calls 22% and p90 API latency ~31% (84ms to 58ms).
+• Designed a debounced cache-expiry strategy for peak-hour model updates, reducing invalidations 65x (30,400 to 476) and eliminating inconsistent filter results.
+• Audited CloudFront dashboards, traced excess transfer to a duplicate site-wide icon request, and removed 150GB/week of redundant traffic, saving ~$600/year.
+
+Software Development Intern | YourEngineer | Apr. 2022 -- Jun. 2024
+
+• Migrated a WordPress application to Node.js, React, PostgreSQL, and AWS; built CI/CD and infrastructure-as-code workflows supporting a 110% increase in organic traffic.
+• Built separate development and production environments with commit-based hosting, enabling rapid testing and feedback cycles.
+• Independently developed a Reddit-style community platform with posts and comments, supporting 1,000+ monthly users at 99.99% uptime.
+• Led migration of structured data from MongoDB to SQL, reducing query latency and improving system performance.
+
+Projects
+
+Linux Network Operations Lab | Python, Linux, TCP/IP, DNS, DHCP, NTP, SNMP, Docker | Jan. 2026 -- Apr. 2026
+
+• Built Python health checks and a Dockerized Linux lab to exercise TCP/IP services (DNS, DHCP, NTP) and SNMP device telemetry; emitted structured logs and Grafana-ready metrics for protocol failures and host health.
+• Added pytest fault cases for packet loss, DNS timeout, lease exhaustion, and stale NTP responses; automated diagnostics to identify injected faults in under 60 seconds across 20 repeat runs.
+
+Resilient Telemetry and Alerting Service | Python, AWS, MQTT, Lambda, DynamoDB | May. 2026 -- Aug. 2026
+
+• Implemented an MQTT ingestion path for simulated equipment health events, validating device payloads in Lambda and storing idempotent state in DynamoDB for operational queries.
+• Added bounded retries, dead-letter handling, replay tests, and CloudWatch alarms; verified duplicate delivery and reconnect recovery, surfacing stale-device alerts within 30 seconds.
+
+Technical Skills
+
+Languages: Python, C/C++, C#, Java, SQL, JavaScript, TypeScript, Shell
+Systems & Networking: Linux, TCP/IP, DNS, DHCP, NTP, SNMP, distributed systems, operating systems, data structures, algorithms
+Backend & Data: .NET, Node.js, React, REST APIs, gRPC, RabbitMQ, MySQL, PostgreSQL, Memcached, DynamoDB
+Cloud & Operations: AWS, Docker, MQTT, CI/CD, infrastructure as code, CloudFront, Grafana, CloudWatch, pytest, Git

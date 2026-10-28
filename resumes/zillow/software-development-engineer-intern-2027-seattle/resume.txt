@@ -1,0 +1,48 @@
+Joel Varghese
+(408) 982-6552 | joel02varghese@gmail.com | linkedin.com/in/joel02varghese/ | github.com/joel122002
+
+Education
+
+San Jose State University | San Jose, CA
+MS in Software Engineering | Aug. 2026 -- May. 2028
+
+Experience
+
+Software Development Engineer - I | Apr. 2025 -- Jul. 2026
+CarTrade Tech
+
+- Built distributed services with C#, .NET, React, gRPC, RabbitMQ, MySQL, and AWS, supporting a consumer platform with 80M+ monthly users.
+- Reworked Memcached data structures in a .NET 8 service, replacing 6.15M keys with 4,000 versioned hashmaps; reduced database calls 93% and shared MySQL cluster load ~28%.
+- Used Claude Code to accelerate a monorepo CI redesign: migrated Lerna to PNPM workspaces and added Docker BuildKit caches, cutting builds ~50% and saving ~5.5 engineering hours/day for 90+ developers.
+- Decomposed used-car inventory from a legacy monolith into a standalone microservice; used dual writes and reconciliation to verify 100% data consistency before retiring the legacy system.
+
+Associate Software Development Engineer | Aug. 2024 -- Mar. 2025
+CarTrade Tech
+
+- Added DTO-level Memcached caching for location data on home and model pages, cutting downstream calls 22% and p90 API latency ~31% (84ms to 58ms).
+- Led a team design discussion and implemented debounced cache expiry for model popularity updates, reducing invalidations 65x (30,400 to 476) and preventing partially updated filters.
+- Audited CloudFront dashboards and removed a duplicate icon request, eliminating 150GB/week of transfer and saving ~$600/year.
+
+Software Development Intern | Apr. 2022 -- Jun. 2024
+YourEngineer
+
+- Migrated a WordPress site to Node.js, React, PostgreSQL, and AWS; built CI/CD and infrastructure-as-code workflows that supported a 110% increase in organic traffic.
+- Created separate development and production environments with commit-based hosting to speed testing and feedback.
+- Independently built a Reddit-style community platform with posts and comments, supporting 1,000+ monthly users at 99.99% uptime.
+- Proposed and led a MongoDB-to-SQL migration for structured data, reducing query latency and improving system performance.
+
+Projects
+
+Ring A Friend | Kotlin, Jetpack Compose, Node.js, PostgreSQL, WebSockets | Jan. 2024 -- Present
+- Built an Android alert app and Express API with authenticated WebSockets, PostgreSQL, and Firebase notifications; external services can trigger a message and audible alert, including when the phone is silent.
+
+Self-Hosted Media and Game Streaming | Linux, Jellyfin, Moonlight, ZeroTier, AWS | Jan. 2023 -- Dec. 2025
+- Configured Linux media and game streaming for friends across private networks, using ZeroTier UDP hole punching, public IPv6 access, and an AWS VPC route as layered connectivity fallbacks; achieved 7ms ping for game streaming.
+
+Technical Skills
+
+Languages: Java, Kotlin, Python, C/C++, C#, SQL, JavaScript, TypeScript, HTML/CSS, Shell
+Technologies: React, Node.js, .NET, PostgreSQL, MySQL, RabbitMQ, gRPC, Memcached, WebSockets
+Cloud & DevOps: AWS, Docker, Docker BuildKit, CI/CD, CloudFront, Infrastructure as Code, PNPM, Git, Linux
+Developer Tools: Claude Code, Cursor AI, Grafana, VS Code, IntelliJ IDEA, Android Studio
+Libraries & Testing: Redux, Axios, Selenium, Cypress, Requests

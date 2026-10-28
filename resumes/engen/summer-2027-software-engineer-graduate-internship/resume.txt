@@ -1,0 +1,56 @@
+Joel Varghese
+(408) 982-6552 | joel02varghese@gmail.com | linkedin.com/in/joel02varghese/ | github.com/joel122002
+
+Education
+
+San Jose State University | San Jose, CA
+MS in Software Engineering | Aug. 2026 -- May. 2028
+
+Experience
+
+Software Development Engineer - I
+CarTrade Tech
+Apr. 2025 -- Jul. 2026
+
+- Developed enterprise applications in a distributed microservices architecture serving 80M+ monthly users, collaborating across application, API, and infrastructure teams with .NET, C#, React, RabbitMQ, MySQL, and AWS.
+- Modernized a .NET 8 service data-access path by consolidating 6.15M city-version cache keys into 4,000 version snapshots; reduced database calls 93% and shared MySQL cluster load ~28%.
+- Improved delivery workflow by migrating the largest monorepo to PNPM workspaces and adding Docker BuildKit dependency caching; cut CI builds ~50% and saved ~5.5 engineering hours daily across 90+ developers.
+- Modernized used-car inventory workflows by extracting a standalone microservice from a legacy monolith; used dual writes and reconciliation to verify 100% data consistency before retiring the legacy path.
+
+Associate Software Development Engineer
+CarTrade Tech
+Aug. 2024 -- Mar. 2025
+
+- Improved API response performance by caching assembled DTOs for high-traffic pages, reducing downstream service calls 22% and p90 latency ~31% (84ms to 58ms) while preserving a 15-minute data freshness window.
+- Analyzed inconsistent filter results during nightly catalog updates and led a debounced cache-expiry design, reducing invalidations from 30,400 to 476 (65x fewer) while keeping results consistent.
+- Identified and eliminated 150GB/week of redundant CloudFront data transfer by auditing CDN dashboards and discovering a duplicate icon incorrectly imported across all pages for 2 years, saving ~$600 annually in CDN costs.
+
+Software Development Intern
+YourEngineer
+Apr. 2022 -- Jun. 2024
+
+- Modernized a WordPress application with Node.js, React, PostgreSQL, and AWS; built CI/CD and infrastructure-as-code workflows, contributing to a 110% increase in organic traffic.
+- Created isolated development and production environments with commit-based deployments for repeatable testing and faster feedback.
+- Independently built a Reddit-style community platform with post and comment APIs, supporting 1,000+ monthly users at 99.99% uptime.
+- Led migration from MongoDB to relational SQL for structured records, redesigning schemas and queries to reduce latency and improve data consistency.
+
+Projects
+
+Healthcare Eligibility API Sandbox | C#, ASP.NET Core, PostgreSQL, Docker, OpenAPI
+Jun. 2026 -- Aug. 2026
+
+- Built a versioned REST service that validates member and coverage requests, maps them to a FHIR-aligned eligibility model, and persists auditable request status in PostgreSQL.
+- Added OAuth2/JWT authorization, input validation, idempotency keys, structured logs, and contract/integration tests; documented API behavior in OpenAPI and targeted under 250ms p95 on a 10,000-request test set.
+
+Ring A Friend | Node.js, PostgreSQL, Kotlin, Jetpack Compose, Android, WebSockets
+Jan. 2024 -- Present
+
+- Built an Android alerting app and Express API with authenticated WebSocket events, PostgreSQL delivery records, and Firebase push notifications, enabling trusted services to trigger device alerts with a message.
+
+Technical Skills
+
+Languages: C#, Java, Kotlin, Python, SQL (PostgreSQL, MySQL), JavaScript, TypeScript, HTML/CSS, Shell
+Technologies: ASP.NET Core, .NET, React, Node.js, REST, OpenAPI, PostgreSQL, MySQL, RabbitMQ, Memcached, Jetpack Compose
+Cloud & DevOps: AWS, Docker, Docker BuildKit, CI/CD, Infrastructure as Code, PNPM, Git
+Developer Tools: Grafana, Git, VS Code, IntelliJ IDEA, Android Studio
+Libraries & Testing: OAuth2/JWT, xUnit, Cypress, Selenium, API integration testing

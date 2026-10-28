@@ -1,0 +1,40 @@
+Joel Varghese
+(408) 982-6552 | joel02varghese@gmail.com | linkedin.com/in/joel02varghese/ | github.com/joel122002
+
+Education
+
+San Jose State University | San Jose, CA
+MS in Software Engineering | Aug. 2026 -- May. 2028
+
+Experience
+
+Software Development Engineer - I | CarTrade Tech | Apr. 2025 -- Jul. 2026
+• Built distributed services for a platform serving 80M+ monthly users, working across Linux, Docker, Python, service APIs, messaging, MySQL, and Grafana.
+• Restructured a distributed cache from 6.15M city-version keys to 4,000 version-level hashmaps in a Python service, cutting database calls 93% and shared MySQL cluster load ~28%.
+• Cut monorepo CI/CD build time ~50% (25--30 to 12--15 min) in under 24 hours by migrating to PNPM workspaces and adding Docker BuildKit layer and dependency caching, saving ~5.5 engineering hours daily across 90+ developers.
+• Decomposed used-car inventory from a legacy monolith into a standalone service, using dual writes, reconciliation, and integration checks to verify 100% data consistency before retirement.
+
+Associate Software Development Engineer | CarTrade Tech | Aug. 2024 -- Mar. 2025
+• Added DTO-level Memcached caching for location-based home and model data, reducing downstream service calls 22% and p90 API latency ~31% (84ms to 58ms).
+• Designed a debounced cache-expiry strategy for nightly model updates, reducing invalidations 65x (30,400 to 476) and eliminating inconsistent filter results during concurrent updates.
+• Audited CloudFront asset metrics, traced 150GB/week of redundant transfer to a duplicate icon reference, and eliminated it with a one-line fix, saving ~$600 annually.
+
+Software Development Intern | YourEngineer | Apr. 2022 -- Jun. 2024
+• Migrated WordPress to Node.js, React, PostgreSQL, and AWS; built CI/CD pipelines and infrastructure as code, contributing to a 110% increase in organic traffic.
+• Created isolated development and production environments with commit-based deployments for repeatable testing and faster feedback.
+• Built and operated a Reddit-style community platform with posts and comments, supporting 1,000+ monthly users at 99.99% uptime.
+• Led migration planning from MongoDB to SQL for structured data, improving query latency and system performance.
+
+Projects
+
+Containerized Test Harness | Python, Docker Compose, pytest, Linux networking | Apr. 2026 -- Jun. 2026
+• Built a configurable multi-service harness that starts isolated containers on one Linux host, injects latency, packet loss, and service failures, then tears down resources; pytest scenarios reproduce network-sensitive defects and run on each CI change, targeting setup under 2 minutes and 20% lower test-host use than a dedicated VM.
+
+Twenty-Node Service Failure Simulator | Python, Bash, Docker, Linux networking, CI/CD | Jan. 2026 -- Mar. 2026
+• Orchestrated a central service and 20 containerized nodes with scripted health checks, configurable topology, and deterministic fault profiles; automated integration tests validate recovery after node and link failures, targeting 50% faster environment startup than a VM-based setup.
+
+Technical Skills
+
+Languages: Python, Bash, Java, Kotlin, C/C++, C#, SQL, JavaScript, TypeScript
+Systems & Testing: Linux, Docker, Docker Compose, distributed systems, networking, fault injection, pytest, integration testing
+CI/Infrastructure: CI/CD, GitHub Actions, Docker BuildKit, AWS, infrastructure as code, Git, Grafana, MySQL, Memcached

@@ -1,0 +1,55 @@
+Education
+
+San Jose State University
+San Jose, CA
+MS in Software Engineering
+Aug. 2026 -- May. 2028
+
+Experience
+
+Software Development Engineer - I
+CarTrade Tech
+Apr. 2025 -- Jul. 2026
+
+• Built AWS-hosted .NET/C# microservices with React, gRPC, RabbitMQ, MySQL, Memcached, and Grafana for 80M+ monthly users.
+• Restructured .NET 8/Memcached pricing from 6.15M version-city keys to 4,000 version-level hashmaps, cutting database calls 93% and shared MySQL EC2 load ~28%.
+• Cut monorepo CI builds ~50% (25–30 to 12–15 minutes) with Lerna-to-PNPM migration and Docker BuildKit cache mounts; used Claude Code to compare and execute options after profiling the bottleneck, saving ~5.5 engineering hours daily.
+• Decomposed used-car inventory into a microservice; dual writes and reconciliation verified 100% data consistency before legacy retirement.
+
+Associate Software Development Engineer
+CarTrade Tech
+Aug. 2024 -- Mar. 2025
+
+• Cached home and model DTOs in Memcached for top-city traffic, reducing downstream calls 22% and p90 latency ~31% (84ms to 58ms).
+• Reproduced a long-standing React chunk-load failure by blocking network requests; added one retry with a 2-second backoff and fallback UI, cutting errors 93% (35,033 to 2,595/day).
+• Debounced cache expiry during peak-hour model updates, reducing invalidations 65x (30,400 to 476) and eliminating inconsistent filters.
+• Audited CloudFront dashboards and removed a duplicate site-wide icon request, eliminating 150GB/week transfer and saving ~$600/year.
+
+Software Development Intern
+YourEngineer
+Apr. 2022 -- Jun. 2024
+
+• Migrated WordPress to Node.js, React, PostgreSQL, and AWS; built CI/CD and IaC workflows, contributing to 110% organic traffic growth.
+• Created separate development and production environments with commit-based hosting for rapid testing.
+• Independently built a Reddit-style community platform serving 1,000+ monthly users at 99.99% uptime.
+• Led structured-data migration from MongoDB to SQL, reducing query latency.
+
+Projects
+
+Home Media & Game Streaming
+Linux, ZeroTier, UDP, IPv6, AWS, Moonlight
+Jan. 2024 -- Present
+• Hosted media and Moonlight streaming from a Linux PC without public IPv4, using ZeroTier UDP hole punching with public IPv6 and an AWS VPC relay as fallbacks; measured 7ms ping and verified access across restrictive firewalls.
+
+Ring A Friend Alerting Platform
+Node.js, PostgreSQL, Kotlin, Android, WebSockets, GCP
+Jan. 2024 -- Present
+• Built and maintained a Kotlin/Android alert app with a Jetpack Compose client and Node.js webhook backend; authenticated API/WebSocket requests trigger push notifications that ring through silent mode.
+• Integrated monitoring and restock bots for real-time alerts; maintained the self-hosted app, network paths, and CI/CD workflow for 2+ years.
+
+Technical Skills
+
+Languages: Java, Python, C++, C#, JavaScript, TypeScript, Kotlin, SQL, Shell
+Backend & Data: .NET, Node.js, React, REST APIs, gRPC, RabbitMQ, MySQL, PostgreSQL, MongoDB, Memcached
+Cloud & Operations: AWS, GCP, Docker, CI/CD, infrastructure as code, CloudFront, Grafana, Git, Linux, TCP/IP, UDP, IPv6
+Practices: distributed systems, data structures, algorithms, object-oriented design, service decomposition, monitoring, troubleshooting, AI-assisted development

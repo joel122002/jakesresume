@@ -1,0 +1,175 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{}
+\resumeItemListStart
+\resumeItem{Built Java services in a distributed platform serving \textbf{80M+ monthly users}, integrating \textbf{gRPC}, \textbf{RabbitMQ}, \textbf{MySQL}, \textbf{Memcached}, and AWS-backed APIs.}
+\resumeItem{Restructured a Java service's Memcached model from \textbf{6.15M} version-city keys to \textbf{4,000} version-level maps; cut database calls \textbf{93\%} and shared MySQL cluster load \textbf{$\sim$28\%}.}
+\resumeItem{Cut monorepo CI builds \textbf{$\sim$50\%} (25--30 to 12--15 minutes) with PNPM workspaces and Docker BuildKit cache mounts, saving \textbf{$\sim$5.5 engineering hours daily} across 90+ developers.}
+\resumeItem{Decomposed used-car inventory from a legacy monolith into a Java service; used dual writes and reconciliation checks to verify \textbf{100\% data consistency} before retiring the legacy path.}
+\resumeItemListEnd
+\resumeSubSubheading{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Added DTO-level Memcached caching for high-traffic APIs, reducing downstream service calls \textbf{22\%} and p90 latency \textbf{$\sim$31\%} (84ms to 58ms).}
+\resumeItem{Designed debounced cache expiry for nightly popularity updates, reducing invalidations \textbf{65x} (30,400 to 476) and preventing inconsistent results during processing.}
+\resumeItem{Audited CloudFront asset analytics and removed a duplicate icon request, eliminating \textbf{150GB/week} of transfer and saving \textbf{$\sim$\$600/year}.}
+\resumeItemListEnd
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{}
+\resumeItemListStart
+\resumeItem{Migrated a production WordPress app to Node.js, React, PostgreSQL, and AWS; built CI/CD and infrastructure-as-code workflows supporting \textbf{110\% organic traffic growth}.}
+\resumeItem{Built separate development and production environments with commit-based deployments for rapid testing and feedback.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Columnar Query Engine} $|$ \emph{Rust, Apache Arrow, DataFusion, Criterion, GitHub Actions}}{Aug. 2026 -- Oct. 2026}
+\resumeItemListStart
+\resumeItem{Implemented a DataFusion physical-plan extension with predicate and projection pushdown over Parquet row groups; used Arrow batches, bounded parallel scans, and explain-plan tests to target \textbf{2x faster} selective queries on a reproducible benchmark corpus.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Snapshot Table Pipeline} $|$ \emph{Java, Apache Spark, Apache Iceberg, Gradle, Pytest}}{Jun. 2026 -- Aug. 2026}
+\resumeItemListStart
+\resumeItem{Built an idempotent Spark ingestion pipeline writing partitioned Iceberg tables with schema evolution, atomic snapshots, and concurrent-reader validation; replay and rollback suites target \textbf{zero duplicate rows} and reliable recovery from failed writes.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Java, Rust, Python, C/C++, SQL, Kotlin, C\#, JavaScript, TypeScript} \\
+        \textbf{Data Systems}{: Apache Spark, DataFusion, Iceberg, Arrow, Parquet, query planning, columnar execution, distributed processing} \\
+        \textbf{Systems \& Tools}{: concurrency, algorithms, data structures, MySQL, PostgreSQL, Memcached, RabbitMQ, Gradle, Cargo, GitHub, Docker, AWS, Grafana, CI/CD}
+        }}
+\end{itemize}
+
+\end{document}

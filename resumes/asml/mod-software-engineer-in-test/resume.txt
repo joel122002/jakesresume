@@ -1,0 +1,47 @@
+Joel Varghese
+(408) 982-6552 | joel02varghese@gmail.com | linkedin.com/in/joel02varghese/ | github.com/joel122002
+
+Education
+
+San Jose State University
+MS in Software Engineering | San Jose, CA | Aug. 2026 -- May. 2028
+
+Experience
+
+Software Development Engineer - I
+CarTrade Tech | Apr. 2025 -- Jul. 2026
+
+• Supported distributed client/server services serving 80M+ monthly users, using Python, Linux, MySQL, Memcached, RabbitMQ, and Grafana to reproduce, diagnose, and validate production behavior.
+• Reworked a concurrent cache/data retrieval path from 6.15M city-variant keys to 4,000 version hashmaps; regression-checked 1,539 city entries and cut database calls 93% and shared cluster load ~28%.
+• Diagnosed monorepo CI bottlenecks and stabilized dependency/build workflows with Git, Docker BuildKit, and cached Python/package layers, reducing pipeline time ~50% and saving ~5.5 engineering hours daily for 90+ developers.
+• Decomposed legacy inventory workflows into an independently testable service; used dual-write comparison and reconciliation checks to verify 100% data consistency before retirement.
+
+Associate Software Development Engineer
+CarTrade Tech | Aug. 2024 -- Mar. 2025
+
+• Added repeatable functional and performance checks around cached client/server responses, reducing downstream calls 22% and p90 latency ~31% (84ms to 58ms).
+• Investigated cache invalidation race conditions and implemented a debounced expiry strategy, reducing clear operations 65x (30,400 to 476) and eliminating inconsistent filter results during concurrent updates.
+• Audited CloudFront telemetry to isolate a duplicate asset request; verified the fix across page loads, eliminating 150GB/week of transfer and saving ~$600/year.
+
+Software Development Intern
+YourEngineer | Apr. 2022 -- Jun. 2024
+
+• Migrated a WordPress application to Node.js, React, and PostgreSQL on AWS; built CI/CD and infrastructure-as-code workflows and validated releases as organic traffic grew 110%.
+• Created isolated development and production environments with commit-based deployments, enabling controlled feature verification and faster feedback.
+• Independently built a Reddit-style community platform with posts and comments, supporting 1,000+ monthly users at 99.99% uptime.
+• Led migration of structured data from MongoDB to SQL, validating query behavior and improving latency and system performance.
+
+Projects
+
+Concurrent Service Regression Harness | Python, pytest, Linux, PostgreSQL, Docker, Git | Jun. 2026 -- Aug. 2026
+• Built a client/server test harness that seeds relational fixtures, drives parallel requests and RabbitMQ-style event sequences, and asserts isolation, ordering, retries, and recovery; parameterized TPS cases in pytest and captured reproducible logs, and benchmarked AI-agent-generated cases against seeded defects and an oracle suite, targeting 90%+ branch coverage and repeatable race detection.
+
+Linux System Integration Test Bench | Python, Bash, Linux, SQL, Git | Aug. 2026 -- Oct. 2026
+• Authored functional, performance, and integration TPS for a multi-process service, with setup/teardown scripts, boundary and fault-injection cases, SQL state checks, and CI regression reports; targeted under 10-minute runs and deterministic reproduction of service failures.
+
+Technical Skills
+
+Languages: Python, Bash/Shell, Java, C/C++, SQL
+Test Engineering: Test plan specification (TPS), functional, regression, performance, system integration, concurrency, fault injection, defect triage
+Systems: Linux/Unix, operating systems, client/server, concurrent computing, relational databases, PostgreSQL, MySQL
+Tools: pytest, Git, Docker, CI/CD, Grafana, RabbitMQ, Jira, Confluence

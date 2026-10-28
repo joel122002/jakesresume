@@ -1,0 +1,187 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Supported distributed client/server services serving \textbf{80M+ monthly users}, using \textbf{Python}, \textbf{Linux}, \textbf{MySQL}, \textbf{Memcached}, \textbf{RabbitMQ}, and \textbf{Grafana} to reproduce, diagnose, and validate production behavior.}
+\resumeItem{Reworked a concurrent cache/data retrieval path from 6.15M city-variant keys to 4,000 version hashmaps; regression-checked 1,539 city entries and cut database calls \textbf{93\%} and shared cluster load \textbf{$\sim$28\%}.}
+\resumeItem{Diagnosed monorepo CI bottlenecks and stabilized dependency/build workflows with \textbf{Git}, \textbf{Docker BuildKit}, and cached Python/package layers, reducing pipeline time \textbf{$\sim$50\%} and saving \textbf{$\sim$5.5 engineering hours daily} for 90+ developers.}
+\resumeItem{Decomposed legacy inventory workflows into an independently testable service; used dual-write comparison and reconciliation checks to verify \textbf{100\% data consistency} before retirement.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Added repeatable functional and performance checks around cached client/server responses, reducing downstream calls \textbf{22\%} and p90 latency \textbf{$\sim$31\%} (84ms to 58ms).}
+\resumeItem{Investigated cache invalidation race conditions and implemented a debounced expiry strategy, reducing clear operations \textbf{65x} (30,400 to 476) and eliminating inconsistent filter results during concurrent updates.}
+\resumeItem{Audited CloudFront telemetry to isolate a duplicate asset request; verified the fix across page loads, eliminating \textbf{150GB/week} of transfer and saving \textbf{$\sim$600/year}.}
+\resumeItemListEnd
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Migrated a WordPress application to \textbf{Node.js}, \textbf{React}, and \textbf{PostgreSQL} on AWS; built CI/CD and infrastructure-as-code workflows and validated releases as organic traffic grew \textbf{110\%}.}
+\resumeItem{Created isolated development and production environments with commit-based deployments, enabling controlled feature verification and faster feedback.}
+\resumeItem{Independently built a Reddit-style community platform with posts and comments, supporting \textbf{1,000+ monthly users} at \textbf{99.99\% uptime}.}
+\resumeItem{Led migration of structured data from MongoDB to \textbf{SQL}, validating query behavior and improving latency and system performance.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Concurrent Service Regression Harness} $|$ \emph{Python, pytest, Linux, PostgreSQL, Docker, Git}}{Jun. 2026 -- Aug. 2026}
+\resumeItemListStart
+\resumeItem{Built a client/server test harness that seeds relational fixtures, drives parallel requests and RabbitMQ-style event sequences, and asserts isolation, ordering, retries, and recovery; parameterized TPS cases in pytest and captured reproducible logs, and benchmarked AI-agent-generated cases against seeded defects and an oracle suite, targeting \textbf{90\%+ branch coverage} and repeatable detection of race regressions.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Linux System Integration Test Bench} $|$ \emph{Python, Bash, Linux, SQL, Git}}{Aug. 2026 -- Oct. 2026}
+\resumeItemListStart
+\resumeItem{Authored functional, performance, and integration TPS for a multi-process service, with setup/teardown scripts, boundary and fault-injection cases, SQL state checks, and CI regression reports; targeted \textbf{under 10-minute} runs and deterministic reproduction of service failures.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Python, Bash/Shell, Java, C/C++, SQL} \\
+        \textbf{Test Engineering}{: Test plan specification (TPS), functional, regression, performance, system integration, concurrency, fault injection, defect triage} \\
+        \textbf{Systems}{: Linux/Unix, operating systems, client/server, concurrent computing, relational databases, PostgreSQL, MySQL} \\
+        \textbf{Tools}{: pytest, Git, Docker, CI/CD, Grafana, RabbitMQ, Jira, Confluence}
+        }}
+\end{itemize}
+
+%-------------------------------------------
+\end{document}
+
+

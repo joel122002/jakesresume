@@ -1,0 +1,57 @@
+Education
+
+San Jose State University
+San Jose, CA
+MS in Software Engineering
+Aug. 2026 -- May. 2028
+
+Experience
+
+Software Development Engineer - I
+CarTrade Tech
+Apr. 2025 -- Jul. 2026
+
+Reproduced a two-year React lazy-load failure by blocking chunk requests, then added a bounded retry and fallback in shared loading wrappers; reduced errors 93% (35,033 to 2,595/day) and kept pages responsive.
+
+Redesigned a .NET 8/Memcached cache from 6.15M variant-city keys to 4,000 per-variant maps, cutting database calls 93% and shared MySQL EC2 load ~28% while preserving three-hour data freshness.
+
+Used Claude Code to accelerate a PNPM workspace and Docker BuildKit cache migration across the largest monorepo; independently diagnosed dependency graph issues, cut CI builds ~50%, and saved ~5.5 engineering hours daily across 90+ developers.
+
+Decomposed used-car inventory from a legacy monolith into a standalone microservice, using dual writes and reconciliation to verify 100% data consistency before retiring the old path.
+
+Associate Software Development Engineer
+CarTrade Tech
+Aug. 2024 -- Mar. 2025
+
+Added DTO-level Memcached caching for home and model pages, reducing downstream service calls 22% and improving p90 API latency ~31% (84ms to 58ms).
+
+Led a debounce-based cache expiry redesign that cut unnecessary invalidations 65x (30,400 to 476), eliminating inconsistent filter results during nightly model updates.
+
+Software Development Intern
+YourEngineer
+Apr. 2022 -- Jun. 2024
+
+Migrated a WordPress application to Node.js, React, PostgreSQL, and AWS, building custom CI/CD and infrastructure-as-code workflows that contributed to a 110% increase in organic traffic.
+
+Independently built a Reddit-style community platform with posts and comments, supporting 1,000+ monthly users at 99.99% uptime.
+
+Projects
+
+Unreal Mesh Workbench | C++, UE5, Interactive Tools Framework, Geometry Script
+Jan. 2026 -- Apr. 2026
+
+Built an Unreal Editor mode for artists to generate and refine modular terrain meshes with brush-based stamping, parameterized noise, slope masks, and live previews; separated geometry operations from Slate controls and used transactional undo, deterministic seeds, and automation tests to target sub-second previews for 100K vertices.
+
+Added a validated command layer for agentic workflows: structured JSON actions map to allow-listed mesh operations, preview in the viewport, and commit through the same undoable tool path, targeting 30% fewer repetitive setup steps in a 10-task workflow study.
+
+Texture Cleanup Lab | C++, OpenCV, image processing, profiling
+May 2026 -- Jul. 2026
+
+Created a graphics utility that converts scanned art into clean black-and-white masks using tiled adaptive thresholding, denoising, and adjustable previews; compared optimized OpenCV matrix operations against a reference implementation with image fixtures, targeting 4x faster processing on 12MP textures while preserving thin edges.
+
+Technical Skills
+
+Languages: C++, C/C++, C#, Java, Kotlin, Python, SQL, JavaScript, TypeScript
+Graphics & Tools: Unreal Engine 5, Unreal Editor, Interactive Tools Framework, Geometry Script, OpenCV, procedural generation, mesh processing
+Systems: React, Node.js, .NET, Memcached, MySQL, gRPC, RabbitMQ, AWS, Docker BuildKit, CI/CD
+Developer Tools: Claude Code, Cursor AI, Grafana, Git, Visual Studio, VS Code, Android Studio

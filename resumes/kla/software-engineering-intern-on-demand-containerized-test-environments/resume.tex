@@ -1,0 +1,195 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Built distributed services for a platform serving \textbf{80M+ monthly users}, working across \textbf{Linux}, \textbf{Docker}, \textbf{Python}, service APIs, messaging, MySQL, and Grafana.}
+\resumeItem{Restructured a distributed cache from 6.15M city-version keys to 4,000 version-level hashmaps in a \textbf{Python} service, cutting database calls \textbf{93\%} and shared MySQL cluster load \textbf{$\sim$28\%}.}
+\resumeItem{Cut monorepo \textbf{CI/CD} build time \textbf{$\sim$50\%} (25--30 to 12--15 min) in under 24 hours by migrating to PNPM workspaces and adding \textbf{Docker BuildKit} layer and dependency caching, saving \textbf{$\sim$5.5 engineering hours daily} across 90+ developers.}
+\resumeItem{Decomposed used-car inventory from a legacy monolith into a standalone service, using dual writes, reconciliation, and integration checks to verify \textbf{100\% data consistency} before retirement.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Added DTO-level \textbf{Memcached} caching for location-based home and model data, reducing downstream service calls \textbf{22\%} and p90 API latency \textbf{$\sim$31\%} (84ms to 58ms).}
+\resumeItem{Designed a debounced cache-expiry strategy for nightly model updates, reducing invalidations \textbf{65x} (30,400 to 476) and eliminating inconsistent filter results during concurrent updates.}
+\resumeItem{Audited \textbf{CloudFront} asset metrics, traced 150GB/week of redundant transfer to a duplicate icon reference, and eliminated it with a one-line fix, saving \textbf{$\sim$\$600 annually}.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Migrated WordPress to \textbf{Node.js}, React, PostgreSQL, and AWS; built \textbf{CI/CD} pipelines and infrastructure as code, contributing to a \textbf{110\% increase in organic traffic}.}
+\resumeItem{Created isolated development and production environments with commit-based deployments for repeatable testing and faster feedback.}
+\resumeItem{Built and operated a Reddit-style community platform with posts and comments, supporting \textbf{1,000+ monthly users} at \textbf{99.99\% uptime}.}
+\resumeItem{Led migration planning from MongoDB to SQL for structured data, improving query latency and system performance.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Containerized Test Harness} $|$ \emph{Python, Docker Compose, pytest, Linux networking}}{Apr. 2026 -- Jun. 2026}
+\resumeItemListStart
+\resumeItem{Built a configurable multi-service harness that starts isolated containers on one Linux host, injects latency, packet loss, and service failures, then tears down resources; pytest scenarios reproduce network-sensitive defects and run on each CI change, targeting setup under 2 minutes and 20\% lower test-host use than a dedicated VM.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Twenty-Node Service Failure Simulator} $|$ \emph{Python, Bash, Docker, Linux networking, CI/CD}}{Jan. 2026 -- Mar. 2026}
+\resumeItemListStart
+\resumeItem{Orchestrated a central service and 20 containerized nodes with scripted health checks, configurable topology, and deterministic fault profiles; automated integration tests validate recovery after node and link failures, targeting 50\% faster environment startup than a VM-based setup.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Python, Bash, Java, Kotlin, C/C++, C\#, SQL, JavaScript, TypeScript} \\
+        \textbf{Systems \& Testing}{: Linux, Docker, Docker Compose, distributed systems, networking, fault injection, pytest, integration testing} \\
+        \textbf{CI/Infrastructure}{: CI/CD, GitHub Actions, Docker BuildKit, AWS, infrastructure as code, Git, Grafana, MySQL, Memcached}
+        }}
+\end{itemize}
+
+
+%-------------------------------------------
+\end{document}

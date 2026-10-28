@@ -1,0 +1,177 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{}
+\resumeItemListStart
+\resumeItem{Reduced database calls by \textbf{93\%} in a .NET 8 service by consolidating 6.15M Memcached keys into 4,000 version-level maps; Grafana showed shared MySQL cluster load fell \textbf{$\sim$28\%}.}
+\resumeItem{Cut monorepo CI builds \textbf{$\sim$50\%} (25--30 to 12--15 minutes) in under 24 hours by moving to PNPM workspaces and Docker BuildKit cache mounts, saving \textbf{$\sim$5.5 engineering hours daily} across 90+ developers.}
+\resumeItem{Decomposed legacy used-car inventory into a standalone microservice; dual writes and reconciliation verified \textbf{100\% data consistency} before legacy retirement.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Reproduced and fixed a two-year-old intermittent production defect by simulating packet loss locally, then validating the correction against the previously unreproducible failure.}
+\resumeItem{Reduced cache invalidations \textbf{65x} (30,400 to 476) with a debounced Memcached expiry strategy, preventing inconsistent filter results during nightly model updates.}
+\resumeItem{Reduced downstream service calls \textbf{22\%} and p90 API latency \textbf{$\sim$31\%} (84ms to 58ms) using DTO-level caching for frequently accessed location data.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{}
+\resumeItemListStart
+\resumeItem{Migrated a WordPress application to Node.js, React, PostgreSQL, and AWS, building CI/CD and infrastructure-as-code workflows that supported a \textbf{110\% increase in organic traffic}.}
+\resumeItem{Created separate development and production environments with commit-based hosting to support rapid feature testing and feedback.}
+\resumeItem{Built and operated a community platform for \textbf{1,000+ monthly users} with \textbf{99.99\% uptime}.}
+\resumeItem{Proposed migrating highly structured data from MongoDB to SQL to reduce query latency and improve overall system performance.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Ring A Friend} $|$ \emph{Python, Node.js, PostgreSQL, Kotlin, Android, GCP}}{Jan. 2024 -- Present}
+\resumeItemListStart
+\resumeItem{Built an Android alerting app and REST backend with authenticated API requests, PostgreSQL persistence, and Google Cloud notifications to deliver critical alerts even when a phone is silent.}
+\resumeItem{Enabled external services and personal automation scripts to trigger the device with a custom message, extending the alert API to bots and other user-controlled workflows.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Fab Equipment Operations Simulator} $|$ \emph{Python, Linux, FastAPI, pytest, Git, Splunk}}{Aug. 2026 -- Oct. 2026}
+\resumeItemListStart
+\resumeItem{Built a Linux-hosted simulator that ingests equipment telemetry through REST APIs, validates operating limits, and emits timestamped events to a Python service with structured Splunk monitoring.}
+\resumeItem{Added pytest coverage for malformed, delayed, and out-of-range events plus a Git-based change/release workflow and incident runbook; dashboards and recovery checks cut fault triage time \textbf{30\%} in repeatable drills.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Python, Java, Kotlin, C/C++, C\#, SQL, JavaScript, TypeScript, Shell} \\
+        \textbf{Software}{: REST APIs, Microservices, Linux, Unix, Agile, Incident Troubleshooting, Documentation} \\
+        \textbf{DevOps \& Monitoring}{: Git, CI/CD, Docker, AWS, GCP, Splunk, Grafana, Azure DevOps} \\
+        \textbf{Testing \& Tools}{: pytest, Selenium, Cypress, Requests, PostgreSQL, MySQL, Memcached, VS Code}
+        }}
+\end{itemize}
+
+%-------------------------------------------
+\end{document}

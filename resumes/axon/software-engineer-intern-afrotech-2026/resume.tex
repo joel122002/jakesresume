@@ -1,0 +1,145 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+\usepackage[sfdefault]{FiraSans}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Developed customer-facing features across a distributed microservices platform serving \textbf{80M+ monthly users}, collaborating across \textbf{C\#/.NET}, \textbf{React}, \textbf{gRPC}, \textbf{RabbitMQ}, \textbf{MySQL}, and AWS services.}
+\resumeItem{Reworked a .NET 8 \textbf{Memcached} data model from 6.15M version-city keys to 4,000 version hashmaps covering 1,539 cities; cut database calls \textbf{93\%} and shared MySQL EC2 load \textbf{$\sim$28\%}, with Grafana monitoring.}
+\resumeItem{Cut CI builds \textbf{$\sim$50\%} (25--30 to 12--15 minutes) by migrating the monorepo from Lerna to PNPM workspaces and adding Docker BuildKit cache volumes, saving \textbf{$\sim$5.5 engineering hours daily} across 90+ developers.}
+\resumeItem{Decomposed used-car inventory from a legacy monolith into a standalone microservice; used dual writes and data reconciliation to verify \textbf{100\% consistency} before retiring the legacy system.}
+\resumeItemListEnd
+\resumeSubSubheading{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Added DTO-level Memcached caching for location-based home and model data, reducing downstream service calls \textbf{22\%} and p90 API latency \textbf{31\%} (84ms to 58ms).}
+\resumeItem{Designed a debounce-based cache expiry strategy for nightly model popularity updates, reducing invalidations \textbf{65x} (30,400 to 476) and preventing users from seeing partially updated filter rankings.}
+\resumeItem{Audited CloudFront asset analytics, found and removed a duplicate icon request on every page, eliminating \textbf{150GB/week} of transfer and about \$600/year in cost.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Migrated a WordPress application to \textbf{Node.js, React, PostgreSQL, and AWS}; built CI/CD and infrastructure-as-code workflows that supported a \textbf{110\% increase in organic traffic}.}
+\resumeItem{Built isolated development and production environments with commit-based hosting to speed up testing and feedback.}
+\resumeItem{Independently built a Reddit-style community platform with posts and comments, supporting \textbf{1,000+ monthly users} at \textbf{99.99\% uptime}.}
+\resumeItem{Led migration of structured data from MongoDB to SQL, reducing query latency and improving application performance.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading{\textbf{Ring A Friend} $|$ \emph{Node.js, PostgreSQL, Kotlin, Android, WebSockets}}{Jan. 2024 -- Present}
+\resumeItemListStart
+\resumeItem{Built an Android emergency alert app and Express API with authenticated WebSocket triggers, PostgreSQL persistence, and push notifications that ring through silent mode; designed the API for trusted external alerting services.}
+\resumeItemListEnd
+\resumeProjectHeading{\textbf{Incident Coordination Simulator} $|$ \emph{Java, Spring Boot, PostgreSQL, Redis, Linux, Docker}}{Jan. 2026 -- Apr. 2026}
+\resumeItemListStart
+\resumeItem{Built a dispatch simulation that ingests incident reports through a REST API, validates and persists them in PostgreSQL, and streams status changes to an operator dashboard; added role-based access, audit history, integration tests, and Docker deployment, targeting sub-250ms p95 updates at 100 concurrent sessions.}
+\resumeItemListEnd
+\resumeProjectHeading{\textbf{Resilient Alert Delivery Service} $|$ \emph{Java, Spring Boot, PostgreSQL, RabbitMQ, Linux}}{May 2026 -- Aug. 2026}
+\resumeItemListStart
+\resumeItem{Implemented a queue-backed notification service with idempotency keys, bounded retries, dead-letter handling, and delivery receipts; added health checks and structured logs, targeting 99.9\% successful processing under a 1,000-event load test.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Java, Kotlin, Python, C\#, JavaScript, TypeScript, SQL} \\
+        \textbf{Technologies}{: Spring Boot, .NET, React, Node.js, PostgreSQL, MySQL, Memcached, Redis, RabbitMQ, gRPC, WebSockets} \\
+        \textbf{Systems \& Tools}{: Linux/Unix, AWS, Docker, CI/CD, Git, Grafana, Infrastructure as Code, REST APIs, distributed systems, code review, integration testing}
+        }}
+\end{itemize}
+
+\end{document}

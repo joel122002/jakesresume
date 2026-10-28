@@ -1,0 +1,182 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Reproduced a two-year React lazy-load failure by blocking chunk requests, then added a bounded retry and fallback in shared loading wrappers; reduced errors \textbf{93\%} (35,033 to 2,595/day) and kept pages responsive.}
+\resumeItem{Redesigned a .NET 8/Memcached cache from 6.15M variant-city keys to 4,000 per-variant maps, cutting database calls \textbf{93\%} and shared MySQL EC2 load ~\textbf{28\%} while preserving three-hour data freshness.}
+\resumeItem{Used \textbf{Claude Code} to accelerate a PNPM workspace and Docker BuildKit cache migration across the largest monorepo; independently diagnosed dependency graph issues, cut CI builds ~\textbf{50\%}, and saved ~5.5 engineering hours daily across 90+ developers.}
+\resumeItem{Decomposed used-car inventory from a legacy monolith into a standalone microservice, using dual writes and reconciliation to verify 100\% data consistency before retiring the old path.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Added DTO-level Memcached caching for home and model pages, reducing downstream service calls \textbf{22\%} and improving p90 API latency ~\textbf{31\%} (84ms to 58ms).}
+\resumeItem{Led a debounce-based cache expiry redesign that cut unnecessary invalidations \textbf{65x} (30,400 to 476), eliminating inconsistent filter results during nightly model updates.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Migrated a WordPress application to Node.js, React, PostgreSQL, and AWS, building custom CI/CD and infrastructure-as-code workflows that contributed to a \textbf{110\% increase in organic traffic}.}
+\resumeItem{Independently built a Reddit-style community platform with posts and comments, supporting \textbf{1,000+ monthly users} at \textbf{99.99\% uptime}.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Unreal Mesh Workbench} $|$ \emph{C++, UE5, Interactive Tools Framework, Geometry Script}}{Jan. 2026 -- Apr. 2026}
+\resumeItemListStart
+\resumeItem{Built an Unreal Editor mode for artists to generate and refine modular terrain meshes with brush-based stamping, parameterized noise, slope masks, and live previews; separated geometry operations from Slate controls and used transactional undo, deterministic seeds, and automation tests to target sub-second previews for 100K vertices.}
+\resumeItem{Added a validated command layer for agentic workflows: structured JSON actions map to allow-listed mesh operations, preview in the viewport, and commit through the same undoable tool path, targeting 30\% fewer repetitive setup steps in a 10-task workflow study.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Texture Cleanup Lab} $|$ \emph{C++, OpenCV, image processing, profiling}}{May 2026 -- Jul. 2026}
+\resumeItemListStart
+\resumeItem{Created a graphics utility that converts scanned art into clean black-and-white masks using tiled adaptive thresholding, denoising, and adjustable previews; compared optimized OpenCV matrix operations against a reference implementation with image fixtures, targeting 4x faster processing on 12MP textures while preserving thin edges.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: C++, C/C++, C\#, Java, Kotlin, Python, SQL, JavaScript, TypeScript} \\
+        \textbf{Graphics \& Tools}{: Unreal Engine 5, Unreal Editor, Interactive Tools Framework, Geometry Script, OpenCV, procedural generation, mesh processing} \\
+        \textbf{Systems}{: React, Node.js, .NET, Memcached, MySQL, gRPC, RabbitMQ, AWS, Docker BuildKit, CI/CD} \\
+        \textbf{Developer Tools}{: Claude Code, Cursor AI, Grafana, Git, Visual Studio, VS Code, Android Studio}
+        }}
+\end{itemize}
+
+%-------------------------------------------
+\end{document}

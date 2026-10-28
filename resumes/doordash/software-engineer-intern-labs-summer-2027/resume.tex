@@ -1,0 +1,191 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Contributed to Java/Spring microservices serving \textbf{80M+ monthly users}, integrating REST/gRPC APIs, RabbitMQ events, SQL persistence, caching, AWS deployments, and Grafana monitoring.}
+\resumeItem{Restructured a high-volume pricing cache from 6.15M city-version keys to \textbf{4,000 version-level maps} in a Java service, reducing database calls \textbf{93\%} and shared MySQL cluster load about \textbf{28\%}; retained per-key stampede protection.}
+\resumeItem{Traced a monorepo CI bottleneck and introduced workspace dependency reuse and Docker BuildKit layer caching, cutting build time \textbf{about 50\%} (25--30 to 12--15 min) and saving \textbf{5.5 engineering hours daily} across 90+ developers.}
+\resumeItem{Decomposed used-car inventory from a legacy monolith into an independently deployable service; used dual writes and reconciliation to verify \textbf{100\% data consistency} before retiring the legacy path.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Cached high-traffic location data at the API layer, reducing downstream service calls \textbf{22\%} and p90 latency \textbf{31\%} (84ms to 58ms) while lowering pod resource use.}
+\resumeItem{Replaced repeated cache clears during popularity updates with debounced expiry, reducing invalidations \textbf{65x} (30,400 to 476) and preventing users from seeing partially updated filter results.}
+\resumeItem{Audited CDN telemetry and removed a duplicate asset request, eliminating \textbf{150GB/week} of transfer and about \textbf{\$600/year} in delivery cost.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Migrated a WordPress application to Node.js, React, PostgreSQL, and AWS; automated CI/CD and infrastructure workflows, contributing to \textbf{110\% organic traffic growth}.}
+\resumeItem{Built isolated development and production environments with commit-based deployments, enabling rapid validation of changes before release.}
+\resumeItem{Independently built a posts-and-comments platform for \textbf{1,000+ monthly users} with \textbf{99.99\% uptime}; led a MongoDB-to-SQL migration for structured data to improve query latency.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Delivery Ops Event Simulator} $|$ \emph{Python, FastAPI, PostgreSQL, Docker, pytest}}{ }
+\resumeItemListStart
+\resumeItem{Built an event-driven delivery workflow that evaluates order eligibility, assigns simulated robots, and tracks merchant handoff through completion; added versioned REST APIs, idempotent event consumers, SQL state history, replayable telemetry, and CI tests targeting 30 concurrent robots, under-200ms p95 state updates, and zero invalid transitions.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Robot Fleet Telemetry Monitor} $|$ \emph{Python, FastAPI, PostgreSQL, Prometheus, Grafana}}{ }
+\resumeItemListStart
+\resumeItem{Ingested robot heartbeats and mission events through idempotent APIs, persisted sequenced state in PostgreSQL, and exposed Prometheus health metrics; replay and fault-injection scenarios target detection of stale robots within 30 seconds with no duplicate mission transitions.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Ring A Friend} $|$ \emph{Kotlin, Android, Node.js, PostgreSQL, WebSockets}}{Jan. 2024 -- Present}
+\resumeItemListStart
+\resumeItem{Built a real-time alert service with authenticated REST/WebSocket APIs, PostgreSQL-backed device registrations, and push notifications that ring through silent mode; used by external scripts to deliver time-sensitive alerts.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Java, Python, Kotlin, C/C++, C\#, SQL, JavaScript, TypeScript, Bash} \\
+        \textbf{Backend \& Data}{: Spring Boot, FastAPI, Node.js, REST APIs, gRPC, PostgreSQL, MySQL, Redis, RabbitMQ} \\
+        \textbf{Cloud \& Reliability}{: AWS, Docker, CI/CD, Git, unit testing, pytest, Grafana, Prometheus, Linux, distributed systems}
+        }}
+\end{itemize}
+
+%-------------------------------------------
+\end{document}

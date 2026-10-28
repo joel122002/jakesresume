@@ -1,0 +1,197 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Restructured a Java service's Memcached model from 6.15M version-city keys to 4,000 version-level hash maps, cutting database calls 93\% and shared MySQL cluster load about 28\% across a platform serving 80M+ monthly users.}
+\resumeItem{Cut CI builds roughly 50\% (25--30 to 12--15 minutes) in the largest monorepo by migrating to PNPM workspaces and adding Docker BuildKit dependency-layer caching, saving about 5.5 engineering hours daily across 90+ developers.}
+\resumeItem{Decomposed used-car inventory from a legacy monolith into an independently deployable service; used dual writes and reconciliation to verify 100\% data consistency before retiring the legacy path.}
+\resumeItem{Debounced cache expiry during nightly model updates, reducing invalidation operations 65x (30,400 to 476) and preventing users from seeing partially reordered filters.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Added DTO-level Memcached caching for high-traffic home and model pages, reducing downstream service calls 22\% and p90 API latency about 31\% (84ms to 58ms).}
+\resumeItem{Traced a two-year-old React chunk failure to an infinite retry loop by reproducing dropped network requests; added one delayed retry and safe fallbacks, reducing daily errors 93\% (35,033 to 2,595).}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Migrated a WordPress application to Node.js, React, PostgreSQL, and AWS, and built CI/CD and infrastructure-as-code workflows that supported a 110\% increase in organic traffic.}
+\resumeItem{Independently built a Reddit-style community platform with posts and comments, supporting 1,000+ monthly users at 99.99\% uptime.}
+\resumeItem{Led a MongoDB-to-SQL migration for structured data, simplifying relational queries and improving application performance.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{MiniLake: Distributed Columnar Query Engine} $|$ \emph{Java, Spark, Parquet, JUnit}}{Jan. 2026 -- Apr. 2026}
+\resumeItemListStart
+\resumeItem{Built a Java query executor that scans partitioned Parquet data and runs filter, projection, hash-join, and aggregation operators across Spark workers; added predicate pushdown and column pruning to reduce bytes read by 60\% on a 10GB benchmark.}
+\resumeItem{Implemented task retries, partition-level metrics, deterministic output checks, and JUnit coverage; benchmarked throughput and skew against a single-node baseline to guide tuning.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Dataset Quality and Lineage Service} $|$ \emph{Python, FastAPI, PostgreSQL, Docker}}{May 2026 -- Aug. 2026}
+\resumeItemListStart
+\resumeItem{Created a metadata service that profiles uploaded CSV/Parquet datasets, runs configurable schema and null checks, and stores versioned results and dependency lineage through an asynchronous worker queue.}
+\resumeItem{Added idempotent jobs, structured logs, API validation, and integration tests; indexed lineage queries to return dataset impact paths in under 200ms on a 100K-edge fixture.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Java, Python, C/C++, Kotlin, C\#, JavaScript, TypeScript, SQL} \\
+        \textbf{Core}{: Data structures, algorithms, object-oriented design, distributed systems, concurrency, API design} \\
+        \textbf{Technologies}{: Apache Spark, Parquet, PostgreSQL, MySQL, Memcached, RabbitMQ, React, Node.js, FastAPI} \\
+        \textbf{Cloud \& DevOps}{: AWS, Docker, Docker BuildKit, CI/CD, Infrastructure as Code, Git, Grafana} \\
+        \textbf{Testing \& Tools}{: JUnit, integration testing, Selenium, Cypress, Linux, IntelliJ IDEA, VS Code}
+        }}
+\end{itemize}
+
+
+%-------------------------------------------
+\end{document}

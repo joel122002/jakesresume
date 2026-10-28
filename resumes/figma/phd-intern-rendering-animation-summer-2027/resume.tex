@@ -1,0 +1,124 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+\usepackage[sfdefault]{FiraSans}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{\vspace{-2pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\\textit{\small#3} & \textit{\small #4} \\\end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeSubSubheading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\textit{\small#1} & \textit{\small #2} \\\end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeProjectHeading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2 \\\end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Built distributed microservices for a platform serving \textbf{80M+ monthly users} across React, .NET, gRPC, RabbitMQ, MySQL, Memcached, and AWS.}
+\resumeItem{Profiled a React platform serving \textbf{80M+ monthly users}; route-based code splitting, granular webpack chunks, worker-based scripts, and concurrent hydration raised mobile Lighthouse from \textbf{50 to 85} and cut Total Blocking Time \textbf{83\%} (2,300ms to 400ms).}
+\resumeItem{Reproduced a two-year React lazy-load loop by blocking chunk requests; shared-wrapper retry and fallback logic cut errors \textbf{93\%} (35,033 to 2,595/day) and kept pages responsive.}
+\resumeItem{Reduced database calls \textbf{93\%} and shared MySQL load ~\textbf{28\%} by redesigning a .NET 8/Memcached cache from 6.15M variant-city keys to 4,000 per-variant maps, preserving three-hour freshness with stampede protection.}
+\resumeItem{Cut monorepo CI time ~\textbf{50\%} by migrating Lerna to PNPM and adding Docker BuildKit caches; used Claude Code to optimize the pipeline, saving ~5.5 engineering hours daily across 90+ developers.}
+\resumeItem{Decomposed used-car inventory from a legacy monolith into a standalone microservice; dual writes and reconciliation verified 100\% data consistency before cutover.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Reduced downstream calls \textbf{22\%} and p90 API latency ~\textbf{31\%} (84ms to 58ms) with DTO-level Memcached caching for frequently accessed location data.}
+\resumeItem{Led a cache-expiry redesign that cut unnecessary cache calls and clears by \textbf{98\%}, aligning the implementation with the team during review.}
+\resumeItem{Audited CloudFront asset analytics and removed a duplicate icon request present across pages for two years, eliminating \textbf{150GB/week} of transfer and ~\$600 annual cost.}
+\resumeItemListEnd
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Migrated a WordPress application to Node.js, React, PostgreSQL, and AWS with CI/CD and infrastructure as code, contributing to a \textbf{110\% increase in organic traffic}.}
+\resumeItem{Built separate development and production environments with commit-based hosting for rapid previews, testing, and feedback.}
+\resumeItem{Independently built a Reddit-style community platform with posts and comments, supporting \textbf{1,000+ monthly users} at \textbf{99.99\% uptime}.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{WebGPU Vector Canvas} $|$ \emph{Rust, WebAssembly, WebGPU, WGSL, TypeScript}}{Jan. 2026 -- Mar. 2026}
+\resumeItemListStart
+\resumeItem{Built a browser 2D vector editor with Rust/WebAssembly geometry, cubic-path tessellation, antialiased WebGPU instancing, WGSL fill/stroke shaders, spatial-index hit testing, and GPU timestamp profiling; benchmarked against a CPU reference with a 60-FPS target on 10,000 paths.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Realtime Motion Curves} $|$ \emph{C++, WebGPU, WGSL, spline geometry, profiling}}{Apr. 2026 -- Jun. 2026}
+\resumeItemListStart
+\resumeItem{Created a C++ spline-animation playground with arc-length parameterization and WebGPU/WGSL motion-trail rendering; deterministic tests and sampling benchmarks target subpixel path error and 60-FPS previews for 1,000 objects.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Graphics}{: WebGPU, WGSL, 2D rendering, vector geometry, antialiasing, spline animation, GPU profiling} \\
+        \textbf{Languages}{: C++, Rust, WebAssembly, TypeScript, JavaScript, Python, C\#, SQL} \\
+        \textbf{Web \& Systems}{: React, Web Workers, Node.js, .NET, Memcached, MySQL, gRPC, RabbitMQ} \\
+        \textbf{Tools}{: Chrome DevTools, Grafana, Claude Code, Docker BuildKit, AWS, Git, CI/CD}
+        }}
+\end{itemize}
+\end{document}

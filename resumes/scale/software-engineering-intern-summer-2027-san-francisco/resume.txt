@@ -1,0 +1,46 @@
+Joel Varghese
+(408) 982-6552 | joel02varghese@gmail.com | linkedin.com/in/joel02varghese/ | github.com/joel122002
+
+Education
+
+San Jose State University — San Jose, CA
+MS in Software Engineering | Aug. 2026 -- May. 2028
+
+Experience
+
+Software Development Engineer - I | CarTrade Tech | Apr. 2025 -- Jul. 2026
+
+• Built full-stack services for 80M+ monthly users with Python, TypeScript, React, FastAPI, RabbitMQ, MySQL, Redis, Grafana, and AWS, shipping features across distributed systems.
+• Restructured a Python service's Redis cache from 6.15M version-city keys to 4,000 version-level hashmaps containing 1,539 city entries, cutting database calls 93% and shared MySQL cluster load ~28%.
+• Cut CI build times ~50% (25--30 to 12--15 min) across the largest monorepo by migrating the React/TypeScript workspace to PNPM and adding Docker BuildKit dependency-layer caching, saving ~5.5 engineering hours daily for 90+ developers.
+• Decomposed a legacy inventory monolith into a standalone Python/FastAPI microservice; used dual writes, reconciliation, and staged cutover to verify 100% data consistency before retiring the legacy path.
+
+Associate Software Development Engineer | CarTrade Tech | Aug. 2024 -- Mar. 2025
+
+• Added Redis response caching to Python APIs for home and model pages across high-traffic locations, reducing downstream service calls 22% and p90 latency ~31% (84ms to 58ms).
+• Led a debounced Redis invalidation design for nightly popularity updates, reducing cache clears 98% and preventing users from seeing partially reordered model filters.
+
+Software Development Intern | YourEngineer | Apr. 2022 -- Jun. 2024
+
+• Migrated a WordPress product to Node.js, React, PostgreSQL, and AWS; built CI/CD and infrastructure-as-code workflows that supported a 110% increase in organic traffic.
+• Independently shipped a React/Node.js community platform with posts and comments for 1,000+ monthly users, sustaining 99.99% uptime.
+• Led migration of highly structured records from MongoDB to PostgreSQL, improving query latency and data consistency through a staged backfill and validation.
+
+Projects
+
+Ring A Friend | Node.js, PostgreSQL, Kotlin, Jetpack Compose, Android, WebSockets | Jan. 2024 -- Present
+• Built an Android alerting app with a PostgreSQL-backed Express API, authenticated WebSockets, and Firebase push notifications; external scripts and AI agents trigger text-bearing alerts that ring through silent mode.
+
+LLM Reliability Evaluation Platform | Python, TypeScript, React, FastAPI, MongoDB, AWS | Jan. 2026 -- Apr. 2026
+• Built a workbench to version prompts and datasets, score model responses with rubric-based and pairwise review, and store traceable results in MongoDB; regression suites and failure dashboards target repeatable quality gates across 1,000+ cases.
+
+Contributor Quality and Matching Service | Python, FastAPI, React, MongoDB, Redis, AWS | May 2026 -- Aug. 2026
+• Built explainable task-quality and contributor-risk scoring with reviewer feedback and queue-based rechecks; matched contributors to tasks by skill and availability, targeting 20% faster assignment with audit logs and offline precision/recall evaluation.
+
+Technical Skills
+
+Languages: Python, TypeScript, JavaScript, Java, Kotlin, C/C++, SQL (PostgreSQL, MySQL), HTML/CSS, Shell
+Technologies: React, Node.js, FastAPI, MongoDB, PostgreSQL, MySQL, Redis, RabbitMQ, WebSockets, Jetpack Compose
+Cloud & DevOps: AWS, Docker, Docker BuildKit, CI/CD, CloudFront, Infrastructure as Code, PNPM, Git
+Developer Tools: Grafana, Git, VS Code, IntelliJ IDEA, PyCharm, Android Studio
+Libraries & Testing: Redux, Axios, Selenium, Cypress, Requests

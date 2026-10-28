@@ -1,0 +1,66 @@
+Education
+
+San Jose State University, San Jose, CA
+MS in Software Engineering | Aug. 2026 -- May. 2028
+
+
+Experience
+
+Software Development Engineer - I
+CarTrade Tech
+Apr. 2025 -- Jul. 2026
+
+Built Go and React services for a distributed marketplace serving 80M+ monthly users on AWS.
+
+Restructured a MySQL/Memcached location-pricing cache from 6.15M keys to 4,000 variant hashmaps (1,539 cities each), cutting database calls 93% and shared cluster load ~28%.
+
+Cut the largest monorepo’s builds ~50% (25--30 to 12--15 min) in 24 hours using PNPM workspaces and Docker BuildKit caches, saving ~5.5 hours daily across 90+ developers.
+
+Decomposed legacy used-car inventory functionality into a standalone service; used dual writes and reconciliation to verify 100% data consistency before retiring the monolith path.
+
+Associate Software Development Engineer
+CarTrade Tech
+Aug. 2024 -- Mar. 2025
+
+Added DTO-level Memcached caching for location-based home and model data, reducing downstream service calls by 22% and p90 API latency from 84ms to 58ms.
+
+Designed a debounced cache-expiry strategy for nightly model updates, cutting invalidations from 30,400 to 476 and preventing users from seeing partially updated filter rankings.
+
+Audited CloudFront usage, traced 150GB/week of redundant transfer to a duplicate site-wide icon request, and removed it to save ~$600 annually.
+
+Software Development Intern
+YourEngineer
+Apr. 2022 -- Jun. 2024
+
+Migrated a WordPress application to Node.js, React, PostgreSQL, and AWS; built CI/CD and infrastructure-as-code workflows that supported a 110% increase in organic traffic.
+
+Created isolated development and production environments with commit-based deployments to shorten testing and feedback cycles.
+
+Independently built a Reddit-style community platform with posts and comments, supporting 1,000+ monthly users at 99.99% uptime.
+
+Led the migration of highly structured application data from MongoDB to SQL, improving query latency and system performance.
+
+
+Projects
+
+Ring A Friend | Go, PostgreSQL, Kotlin, Android, WebSockets, GCP
+Jan. 2024 -- Present
+
+Built an Android emergency-alert app with a Go REST API, PostgreSQL, authenticated WebSockets, and push notifications that reach devices while silent or backgrounded.
+
+Added an authenticated webhook for bot-triggered alerts and failure handling for reliable end-to-end delivery; supports live stock and event notifications.
+
+Mobility Event Replay | Go, Python, PostgreSQL, Docker, AWS
+Aug. 2026 -- Sep. 2026
+
+Built a Go trip-assignment API with a Python event generator, PostgreSQL state transitions, and versioned ETA endpoints for repeatable local and AWS replay.
+
+Used idempotency keys, bounded retries, structured logs, automated tests, and load tests to validate 1,000 events/sec, p95 latency below 200ms, and no duplicate assignments across 100,000 replayed events.
+
+
+Technical Skills
+
+Languages: Go, Python, Java, Kotlin, C/C++, C#, SQL, JavaScript, TypeScript
+Systems: Distributed services, REST, gRPC, WebSockets, RabbitMQ, PostgreSQL, MySQL, Memcached
+Cloud & DevOps: AWS, Docker, Docker BuildKit, CI/CD, Infrastructure as Code, Git, Grafana
+Application & Quality: React, Node.js, Android, automated testing, idempotency, observability

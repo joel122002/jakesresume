@@ -1,0 +1,195 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Contributed to Java and Spring Boot microservices with \textbf{React} web clients, REST/gRPC APIs, RabbitMQ, MySQL, Memcached, Grafana, and \textbf{AWS}, supporting distributed applications serving \textbf{80M+ monthly users}.}
+\resumeItem{Redesigned a Spring Boot service's \textbf{Memcached} strategy from 6.15M version-city keys to 4,000 version-level hashmaps containing 1,539 city entries, cutting database calls \textbf{93\%} and shared \textbf{MySQL on EC2} load by \textbf{$\sim$28\%}.}
+\resumeItem{Cut CI pipeline builds \textbf{$\sim$50\%} (25--30 to 12--15 minutes) across the largest monorepo by migrating Lerna to PNPM workspaces and adding \textbf{Docker BuildKit} caching; saved \textbf{$\sim$5.5 engineering hours daily} for 90+ developers.}
+\resumeItem{Decomposed legacy inventory functionality into an independently deployable Java \textbf{microservice}, using dual writes and reconciliation to confirm 100\% data consistency before retiring the monolith.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Reduced downstream API calls \textbf{22\%} and p90 latency \textbf{$\sim$31\%} (84ms to 58ms) with DTO-level \textbf{Memcached} caching for location-based home and model data, lowering service resource use.}
+\resumeItem{Designed and implemented a debounced cache-expiry strategy for nightly popularity updates, reducing cache invalidations \textbf{65x} (30,400 to 476) and eliminating inconsistent filter results.}
+\resumeItem{Audited \textbf{CloudFront} dashboards, traced 150GB/week of redundant transfer to a duplicate HTML icon reference, and removed it, saving \textbf{$\sim$\$600 annually}.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Migrated a WordPress site to \textbf{Node.js}, \textbf{React}, \textbf{PostgreSQL}, and \textbf{AWS}; built CI/CD pipelines and infrastructure-as-code workflows that supported a \textbf{110\% increase in organic traffic}.}
+\resumeItem{Created isolated development and production environments with commit-based hosting, enabling rapid validation of web application changes.}
+\resumeItem{Independently built a Reddit-style community web application with posts and comments, supporting \textbf{1,000+ monthly users} at \textbf{99.99\% uptime}.}
+\resumeItem{Led migration from MongoDB to relational \textbf{SQL} for structured application data, reducing query latency and improving service performance.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Ring A Friend} $|$ \emph{Kotlin, Android, Node.js, PostgreSQL, WebSockets}}{Jan. 2024 -- Oct. 2026}
+\resumeItemListStart
+\resumeItem{Built a full-stack alert service with authenticated REST/WebSocket APIs, PostgreSQL-backed device registrations, and push notifications that ring through silent mode; integrated external scripts for time-sensitive alerts.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{IT Service Request Portal} $|$ \emph{React, Java, Spring Boot, DocumentDB, AWS Lambda, ECS, Git}}{Jan. 2026 -- May 2026}
+\resumeItemListStart
+\resumeItem{Built a stakeholder-facing portal for submitting and tracking internal IT requests, with a React interface calling documented Spring Boot APIs on ECS and DocumentDB persistence; used Lambda for assignment notifications and status events.}
+\resumeItem{Added role-based access, request validation, API integration tests, Git-based CI/CD, and CloudWatch health monitoring; demonstrated end-to-end request tracking with a modeled goal of under 250ms p95 API latency at 100 concurrent users.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Java, Python, JavaScript, TypeScript, Kotlin, SQL, Bash, C/C++, C\#} \\
+        \textbf{Web \& Backend}{: React, Spring Boot, Node.js, REST APIs, gRPC, RabbitMQ, PostgreSQL, MySQL, DocumentDB, Memcached} \\
+        \textbf{Cloud \& DevOps}{: AWS (ECS, Lambda, EC2, CloudFront), Docker, Docker BuildKit, CI/CD, Git, Infrastructure as Code, Linux/UNIX, Grafana}
+        }}
+\end{itemize}
+
+%-------------------------------------------
+\end{document}
+

@@ -1,0 +1,52 @@
+Education
+
+San Jose State University — San Jose, CA
+MS in Software Engineering
+Aug. 2026 -- May. 2028
+
+Experience
+
+Software Development Engineer - I
+CarTrade Tech
+Apr. 2025 -- Jul. 2026
+
+• Built and supported distributed microservices serving 80M+ monthly users, integrating C#/.NET, React, gRPC, RabbitMQ, MySQL, Memcached, AWS, and Grafana.
+• Restructured a pricing service's Memcached model from 6.15M version-city keys to 4,000 version-level hashmaps; reduced database calls by 93% and shared MySQL cluster load by ~28%.
+• Cut monorepo CI builds ~50% (25–30 to 12–15 min) by moving to PNPM workspaces and adding Docker BuildKit dependency-layer/cache mounts, saving ~5.5 engineering hours daily across 90+ developers.
+• Decomposed used-car inventory from a legacy monolith into an independently deployable microservice; used dual writes and reconciliation to verify 100% data consistency before retiring the legacy system.
+
+Associate Software Development Engineer
+CarTrade Tech
+Aug. 2024 -- Mar. 2025
+
+• Added DTO-level Memcached caching for home and model REST APIs, reducing downstream service calls 22% and p90 latency ~31% (84ms to 58ms) while lowering pod resource use.
+• Designed a debounced Memcached expiry strategy for nightly model updates, reducing cache invalidations 65x (30,400 to 476) and preventing users from seeing partially updated filter results.
+
+Software Development Intern
+YourEngineer
+Apr. 2022 -- Jun. 2024
+
+• Migrated a WordPress application to Node.js, React, PostgreSQL, and AWS; built CI/CD and infrastructure-as-code workflows that contributed to a 110% increase in organic traffic.
+• Independently built a Reddit-style community platform with posts and comments, supporting 1,000+ monthly users at 99.99% uptime.
+• Led migration of structured application data from MongoDB to SQL, reducing query latency and improving system performance.
+
+Projects
+
+Ring A Friend | Node.js, PostgreSQL, Kotlin, Android, WebSockets
+Jan. 2024 -- Present
+
+• Built an Android app and Express REST API with PostgreSQL persistence and MVVM architecture; authenticated users and external services trigger real-time device alerts.
+• Added authenticated WebSocket delivery, Firebase Cloud Messaging, and an Android background service to deliver emergency alerts with text through silent mode.
+
+Network Service Health API | Java, Spring Boot, PostgreSQL, Docker, AWS
+May. 2026 -- Jul. 2026
+
+• Built a Java Spring Boot REST API that ingests TCP/IP probe results, persists service and region health in PostgreSQL, and serves availability and latency summaries to an operations dashboard.
+• Deployed Dockerized API and PostgreSQL on AWS with Terraform; GitHub Actions CI/CD, contract tests, readiness checks, and Prometheus/Grafana monitoring targeted 99.9% availability and p95 latency below 200ms at 100 services.
+
+Technical Skills
+
+Languages: Java, Python, JavaScript, TypeScript, Kotlin, C/C++, C#, SQL, HTML/CSS, Shell
+Technologies: .NET, Spring Boot, REST APIs, React, Node.js, PostgreSQL, MySQL, MongoDB, RabbitMQ, gRPC, Memcached, WebSockets
+Cloud & DevOps: AWS, GCP, Docker, Terraform, CI/CD, GitHub Actions, Jenkins, Infrastructure as Code, Git, Linux, CloudFront
+Practices: Object-Oriented Programming, Microservices, Distributed Systems, TCP/IP, Prometheus, Grafana, Automated Testing

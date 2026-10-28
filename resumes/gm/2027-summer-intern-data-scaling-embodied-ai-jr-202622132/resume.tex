@@ -1,0 +1,122 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+%----------FONT OPTIONS----------
+\usepackage[sfdefault]{FiraSans}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{\vspace{-2pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\\textit{\small#3} & \textit{\small #4} \\\end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeSubSubheading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\textit{\small#1} & \textit{\small #2} \\\end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeProjectHeading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2 \\\end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading{San Jose State University}{San Jose, CA}{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheading{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}{CarTrade Tech}{}
+\resumeItemListStart
+\resumeItem{Built data-intensive microservices and React tooling for a distributed platform serving \textbf{80M+ monthly users}, using Python, SQL, messaging, caching, AWS, and Grafana.}
+\resumeItem{Restructured a high-volume pricing data cache from \textbf{6.15M version-city keys} to 4,000 version-level hashmaps covering 1,539 cities; reduced database calls \textbf{93\%} and shared MySQL cluster load \textbf{$\sim$28\%} through batch retrieval and cache-stampede protection.}
+\resumeItem{Cut monorepo CI build time \textbf{$\sim$50\%} (25--30 to 12--15 minutes) by migrating to PNPM workspaces and adding BuildKit layer/dependency caching, saving \textbf{$\sim$5.5 engineering hours daily} across 90+ developers.}
+\resumeItem{Decomposed used-car inventory from a legacy monolith into an independently deployable service; dual writes and reconciliation verified \textbf{100\% data consistency} before cutover.}
+\resumeItemListEnd
+\resumeSubSubheading{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Added DTO-level caching for frequently requested location and model data, reducing downstream service calls \textbf{22\%} and p90 API latency \textbf{$\sim$31\%} (84ms to 58ms) while lowering pod resource use.}
+\resumeItem{Analyzed cache behavior with service metrics and led a revised invalidation strategy that reduced cache calls and clearances \textbf{98\%}, improving stability of data refresh workflows.}
+\resumeItem{Audited CDN usage dashboards and removed a duplicate asset request, eliminating \textbf{150GB/week} of redundant CloudFront transfer and saving \textbf{$\sim$\$600 annually}.}
+\resumeItemListEnd
+
+\resumeSubheading{Software Development Intern}{Apr. 2022 -- Jun. 2024}{YourEngineer}{}
+\resumeItemListStart
+\resumeItem{Migrated a WordPress application to a modern Node.js, React, PostgreSQL, and AWS stack, building CI/CD and infrastructure-as-code workflows that supported a \textbf{110\% increase in organic traffic}.}
+\resumeItem{Created isolated development and production environments with commit-based deployments for repeatable pre-release validation.}
+\resumeItem{Independently built a Reddit-style community platform with posts and comments, supporting \textbf{1,000+ monthly users} at \textbf{99.99\% uptime}.}
+\resumeItem{Proposed and led migration of structured application data from MongoDB to SQL, improving query performance and data consistency.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading{\textbf{Long-Tail Scenario Mining and Coverage} $|$ \emph{Python, PyTorch, DuckDB, Parquet}}{Jan. 2026 -- Mar. 2026}
+\resumeItemListStart
+\resumeItem{Built a Python/PyTorch pipeline over public driving trajectories to mine rare cut-ins and hard braking, report coverage and label quality, and increase rare-event yield 3x versus uniform sampling in a fixed-size evaluation set.}
+\resumeItemListEnd
+\resumeProjectHeading{\textbf{Multimodal Data and Motion Training} $|$ \emph{Python, PyArrow, Airflow, PyTorch DDP}}{Apr. 2026 -- Sep. 2026}
+\resumeItemListStart
+\resumeItem{Built a manifest-driven camera/lidar/telemetry pipeline with timestamp and label checks, versioned Parquet lineage, and parallel release validation (90 to 24 minutes); trained trajectory models with PyTorch DDP and MLflow, increasing throughput 1.8x while holding accuracy within 1\% of baseline.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+\textbf{Languages}{: Python, SQL, C/C++, Java, Kotlin, C\#, JavaScript, TypeScript} \\
+\textbf{Data / ML / Systems}{: PyTorch, pandas, PyArrow, DuckDB, Parquet, SQL, dataset curation, scenario mining, Airflow, DDP, CUDA, AWS, Docker, Grafana, MLflow, CI/CD}
+}}
+\end{itemize}
+\end{document}

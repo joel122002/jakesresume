@@ -1,0 +1,65 @@
+Education
+
+San Jose State University
+San Jose, CA
+MS in Software Engineering
+Aug. 2026 -- May. 2028
+
+Experience
+
+Software Development Engineer - I
+CarTrade Tech
+Apr. 2025 -- Jul. 2026
+
+Worked on a scalable microservices architecture leveraging .NET, C#, React, gRPC, RabbitMQ, MySQL, Memcached, Grafana, and AWS to build distributed systems serving 80M+ monthly users.
+
+Restructured a .NET 8 / C# service's Memcached cache from 6.15M keys to 4,000 version-level maps, reducing database calls 93% and shared MySQL cluster load ~28%; confirmed impact in Grafana and database telemetry.
+
+Improved monorepo CI feedback by migrating Lerna to PNPM workspaces and adding Docker BuildKit dependency caches, cutting build time ~50% and saving ~5.5 engineering hours daily across 90+ developers.
+
+Decomposed used-car inventory from a legacy monolith into a standalone microservice; used dual writes and reconciliation checks to validate 100% data consistency before retiring the legacy path.
+
+Associate Software Development Engineer
+CarTrade Tech
+Aug. 2024 -- Mar. 2025
+
+Added Memcached caching for home and model response DTOs across the top 10 cities and unset-city traffic, reducing downstream service calls 22% and p90 latency 31% (84ms to 58ms); tracked health in Grafana.
+
+Debounced cache expiry during nightly popularity updates, reducing invalidations 65x (30,400 to 476) and preventing users from seeing partially updated filter rankings.
+
+Audited CloudFront dashboards, traced excess requests to a duplicate site-wide asset, and removed it, eliminating 150GB/week of transfer and about $600/year in cost.
+
+Software Development Intern
+YourEngineer
+Apr. 2022 -- Jun. 2024
+
+Built separate development and production environments with commit-based hosting for rapid testing and feedback cycles.
+
+Independently built a Node.js community platform with posts and comments, supporting 1,000+ monthly users at 99.99% uptime.
+
+Led migration from MongoDB to relational SQL for structured data, reducing query latency and improving consistency in downstream workflows.
+
+Projects
+
+Ring A Friend
+Node.js, PostgreSQL, Kotlin, Jetpack Compose, Android, WebSockets
+Jan. 2024 -- May 2026
+
+Built an Android alert app with a Kotlin/Jetpack Compose client, Express API, and PostgreSQL-backed service; authenticated API and WebSocket requests before accepting alert triggers.
+
+Delivered real-time alerts through Firebase push notifications and a background worker, allowing trusted users and external services to ring a device with a message, including when silent.
+
+Identity Policy Gateway
+C#, ASP.NET Core, JWT, RBAC, PostgreSQL, Docker
+Jun. 2026 -- Aug. 2026
+
+Implemented an ASP.NET Core identity and access management gateway that validates JWT issuer, audience, signature, and expiry, then enforces deny-by-default RBAC governance controls; documented trust boundaries with threat models.
+
+Added audit events, tests for privilege escalation and token expiry, and Docker-based CI checks; reached 100% policy-branch test coverage and recorded an auditable decision for each request.
+
+Technical Skills
+
+Languages: C#, Python, Java, Kotlin, SQL, JavaScript, TypeScript, C/C++, Shell
+Security: Identity and access management, authentication, authorization, JWT, RBAC, threat modeling, secure coding, audit logging
+Technologies: .NET 8, ASP.NET Core, Node.js, React, PostgreSQL, MySQL, Memcached, RabbitMQ, gRPC
+Cloud & Operations: AWS, Docker, CI/CD, Grafana, CloudFront, infrastructure as code, Git

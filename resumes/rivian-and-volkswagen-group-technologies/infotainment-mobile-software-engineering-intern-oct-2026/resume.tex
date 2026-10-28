@@ -1,0 +1,201 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Developed customer-facing features across distributed services and \textbf{React} applications serving \textbf{80M+ monthly users}, using \textbf{Java}, \textbf{Spring Boot}, \textbf{gRPC}, \textbf{RabbitMQ}, \textbf{MySQL}, \textbf{Memcached}, and \textbf{AWS}.}
+\resumeItem{Reworked a \textbf{Java} service's \textbf{Memcached} data model from 6.15M version-city keys to 4,000 version hashmaps covering 1,539 cities; reduced database calls \textbf{93\%} and shared \textbf{MySQL} cluster load \textbf{$\sim$28\%}.}
+\resumeItem{Cut CI build time \textbf{$\sim$50\%} (25--30 to 12--15 minutes) across the largest monorepo by migrating to \textbf{PNPM} workspaces and adding \textbf{Docker BuildKit} dependency-cache mounts, saving \textbf{$\sim$5.5 engineering hours daily} for \textbf{90+ developers}.}
+\resumeItem{Decomposed a legacy inventory monolith into a standalone \textbf{Java/Spring Boot} service, using dual writes and reconciliation to verify \textbf{100\% data consistency} before retiring the legacy path.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Reduced downstream service calls \textbf{22\%} and p90 API latency \textbf{$\sim$31\%} (84 to 58 ms) by caching assembled location-aware page DTOs in \textbf{Memcached}, lowering service pod utilization.}
+\resumeItem{Diagnosed inconsistent filter state during nightly popularity updates and implemented a debounced \textbf{Memcached} expiry strategy, cutting invalidations \textbf{65x} (30,400 to 476) and reducing cache operations \textbf{98\%}.}
+\resumeItem{Audited \textbf{CloudFront} asset metrics, found a duplicate icon fetched on every page for two years, and removed it to eliminate \textbf{150 GB/week} transfer and save \textbf{$\sim$\$600/year}.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Migrated a WordPress application to \textbf{React}, \textbf{Node.js}, and \textbf{PostgreSQL} on \textbf{AWS}, adding \textbf{CI/CD} and infrastructure-as-code workflows that supported a \textbf{110\% increase in organic traffic}.}
+\resumeItem{Created isolated \textbf{development} and \textbf{production} environments with commit-based deployments for faster feature testing and feedback.}
+\resumeItem{Independently built a \textbf{Reddit-style} community app with posts and comments, serving \textbf{1,000+ monthly users} at \textbf{99.99\% uptime}.}
+\resumeItem{Led migration of highly structured data from \textbf{MongoDB} to \textbf{PostgreSQL}, reducing query latency and improving application performance.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Ring A Friend} $|$ \emph{Kotlin, Android, Jetpack Compose, MVVM, WebSockets, PostgreSQL}}{Jan. 2024 -- Present}
+\resumeItemListStart
+\resumeItem{Built and maintain a native Android alert app with a \textbf{Jetpack Compose} UI, \textbf{MVVM} architecture, authenticated REST/WebSocket APIs, and a \textbf{PostgreSQL} backend; webhook clients trigger persistent, high-priority alerts.}
+\resumeItem{Added \textbf{Firebase Cloud Messaging} and Android background handling to deliver alerts through silent-mode use cases; self-hosted and monitored the service for more than two years.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{EV Infotainment Companion} $|$ \emph{Kotlin, Android Automotive OS, AndroidX, JUnit, Espresso}}{Aug. 2026 -- Oct. 2026}
+\resumeItemListStart
+\resumeItem{Built a driver-safe vehicle status and trip-log app for an \textbf{Android Automotive OS} emulator, reading vehicle properties through \textbf{CarPropertyManager}; tested lifecycle and reconnect paths with \textbf{JUnit} and \textbf{Espresso}, achieving sub-2-second recovery.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Kotlin, Java, Python, C/C++, SQL, JavaScript, TypeScript} \\
+        \textbf{Android}{: Android SDK, Android Automotive OS, Jetpack Compose, AndroidX, MVVM, Firebase Cloud Messaging} \\
+        \textbf{Backend}{: Spring Boot, Node.js, REST, WebSockets, gRPC, RabbitMQ, PostgreSQL, MySQL, Memcached} \\
+        \textbf{Testing \& Tools}{: JUnit, Espresso, Selenium, Cypress, Android Studio, Grafana, Git, Docker, AWS, CI/CD}
+        }}
+\end{itemize}
+
+
+%-------------------------------------------
+\end{document}

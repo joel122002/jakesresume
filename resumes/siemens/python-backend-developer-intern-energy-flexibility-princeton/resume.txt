@@ -1,0 +1,64 @@
+Education
+
+San Jose State University
+MS in Software Engineering
+Aug. 2026 -- May. 2028
+
+Experience
+
+Software Development Engineer - I
+CarTrade Tech
+Apr. 2025 -- Jul. 2026
+
+Built Python services in a distributed microservices platform serving 80M+ monthly users, integrating REST APIs, PostgreSQL, asynchronous messaging, and AWS-backed observability.
+
+Redesigned a high-volume data access path with SQLAlchemy and versioned cache snapshots, collapsing 6.15M keys into 4,000 hash maps across 1,539 cities; reduced database calls 93% and shared database load ~28%.
+
+Cut CI build time ~50% (25--30 to 12--15 minutes) across the largest monorepo by restructuring dependency layers and adding Docker BuildKit cache mounts, saving ~5.5 engineering hours daily for 90+ developers.
+
+Decomposed legacy inventory workflows into a standalone FastAPI service with PostgreSQL dual writes and reconciliation, verifying 100% data consistency before retiring the monolith path.
+
+Associate Software Development Engineer
+CarTrade Tech
+Aug. 2024 -- Mar. 2025
+
+Reduced downstream API calls 22% and p90 latency ~31% (84ms to 58ms) by caching typed response models for frequently requested location data with bounded TTLs and stampede protection.
+
+Designed a debounced cache-expiry strategy for nightly updates, reducing invalidation operations from 30,400 to 476 (65x fewer) while preventing partially refreshed results.
+
+Audited production dashboards and removed a duplicate static asset, eliminating 150GB/week of CloudFront transfer and saving ~$600 annually.
+
+Software Development Intern
+YourEngineer
+Apr. 2022 -- Jun. 2024
+
+Migrated a WordPress application to a modern platform with a Python REST API, React, PostgreSQL, and AWS CI/CD, contributing to a 110% increase in organic traffic.
+
+Created isolated development and production environments with commit-based deployments, enabling repeatable testing and faster feedback.
+
+Independently built a Reddit-style community platform with authenticated post and comment APIs, supporting 1,000+ monthly users at 99.99% uptime.
+
+Led a MongoDB-to-relational SQL migration for structured records, redesigning schemas and queries to reduce latency and improve data consistency.
+
+Projects
+
+Energy Flex API | FastAPI, SQLAlchemy, PostgreSQL, Alembic, AWS
+Aug. 2026 -- Oct. 2026
+
+Built versioned REST endpoints for generation and storage assets, validating telemetry with Pydantic and persisting dispatch availability, constraints, and market bids through SQLAlchemy and Alembic migrations.
+
+Integrated a market-data provider with OAuth2/JWT, bounded retries, idempotency keys, ETag/If-Match concurrency, and pytest contract tests; documented OpenAPI and targeted under 200ms p95 reads across 10k assets.
+
+Containerized the service with Docker and an AWS RDS/SQS/Secrets Manager deployment path; CI ran lint, mypy, unit and mocked-provider integration tests to gate API and migration changes.
+
+Ring A Friend | Python, FastAPI, PostgreSQL, Webhooks, Docker
+Jan. 2024 -- Present
+
+Maintained a webhook-driven notification service used by personal availability and restock bots; modeled typed requests, persisted delivery state, and added retry-safe event handling to sustain long-running operation.
+
+Technical Skills
+
+Languages: Python, SQL, JavaScript, TypeScript, Java, Kotlin, C#, C/C++
+Backend: FastAPI, Flask, REST, OpenAPI, Pydantic, SQLAlchemy, Alembic, PostgreSQL, MySQL, pytest
+Cloud & DevOps: AWS, Docker, CI/CD, Git, BuildKit, RabbitMQ, OAuth2/JWT, Linux
+Practices: Unit/integration testing, type hints, schema design, migrations, API documentation, retries, observability

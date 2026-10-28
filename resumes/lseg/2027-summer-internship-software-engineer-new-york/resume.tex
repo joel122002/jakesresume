@@ -1,0 +1,193 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Reworked a high-volume catalog cache in a \textbf{Python} service, grouping 6.15M version-city keys into 4,000 version-level hashmaps; cut database calls by \textbf{93\%} and shared \textbf{MySQL} load by \textbf{$\sim$28\%}.}
+\resumeItem{Cut CI build time \textbf{$\sim$50\%} (25--30 to 12--15 minutes) across the largest monorepo by migrating to PNPM workspaces and adding Docker BuildKit cache mounts, saving \textbf{$\sim$5.5 engineering hours daily} across 90+ developers.}
+\resumeItem{Decomposed used-car inventory management from a legacy monolith into a standalone \textbf{Python} microservice; used dual writes and reconciliation checks to verify \textbf{100\% data consistency} before retiring the legacy path.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Applied \textbf{Python} service-side DTO caching to high-traffic home and model pages, targeting \textbf{22\% fewer} downstream calls and \textbf{$\sim$31\% lower} p90 API latency (84ms to 58ms).}
+\resumeItem{Designed a debounced cache-expiry workflow for nightly popularity updates, reducing invalidation operations \textbf{65x} (30,400 to 476) and preventing users from seeing partially updated filter results.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Migrated a WordPress application to \textbf{Node.js, React, PostgreSQL, and AWS}; built CI/CD and infrastructure-as-code workflows supporting a \textbf{110\% increase in organic traffic}.}
+\resumeItem{Created separate development and production environments with commit-based hosting to enable rapid testing, release validation, and product feedback cycles.}
+\resumeItem{Led migration of highly structured application data from \textbf{MongoDB to SQL}, reducing query latency and improving system performance.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Client Trade Data Quality Pipeline} $|$ \emph{Python, pandas, AWS Lambda, S3, RDS, pytest}}{Jun. 2026 -- Aug. 2026}
+\resumeItemListStart
+\resumeItem{Built a repeatable \textbf{Python} workflow validating client trade and position files for schema, stale prices, duplicates, and balance rules; compares trades with Analytics pricing outputs, runs \textbf{pandas} checks in Lambda on versioned \textbf{S3} inputs, persists exceptions in RDS, and returns actionable feedback. Pytest fixtures, idempotent run IDs, and audit logs delivered sub-2-minute checks on 100K-row batches.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Optimization Job Queue and Worker Pool} $|$ \emph{Python, AWS SQS, Lambda, EC2, RDS, CloudWatch}}{Aug. 2026 -- Oct. 2026}
+\resumeItemListStart
+\resumeItem{Implemented a queued optimization-run service that accepts validated jobs, prioritizes work by deadline, and dispatches idempotent Python workers across Lambda and EC2; added bounded retries, dead-letter recovery, persisted state in RDS, and CloudWatch queue-age alarms. Load-tested 10K simulated jobs, reaching 30\% higher worker utilization and p95 completion under 3 minutes.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Optimization Results Portal} $|$ \emph{React, TypeScript, Python, PostgreSQL}}{Jan. 2026 -- Mar. 2026}
+\resumeItemListStart
+\resumeItem{Built a product-team portal over Python APIs to compare optimization runs, inspect data-quality findings, and adjust client parameters; added sortable result tables, validation feedback, and run-history views, reducing review time by 35\% across 40 simulated portfolios.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Python, SQL, JavaScript, TypeScript, Shell, Java, C/C++} \\
+        \textbf{Data \& Services}{: pandas, NumPy, PostgreSQL, MySQL, RDS, REST APIs, RabbitMQ, SQS, data validation, financial data, ETL} \\
+        \textbf{Cloud \& Engineering}{: AWS (Lambda, S3, EC2, CloudWatch), Docker, CI/CD, infrastructure as code, pytest, Git, UNIX command line} \\
+        \textbf{Frontend}{: React, Node.js, HTML/CSS}
+        }}
+\end{itemize}
+
+%-------------------------------------------
+\end{document}
+
+
+

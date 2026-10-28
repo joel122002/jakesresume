@@ -1,0 +1,40 @@
+Joel Varghese
+(408) 982-6552 | joel02varghese@gmail.com | linkedin.com/in/joel02varghese/ | github.com/joel122002
+
+Education
+San Jose State University | San Jose, CA
+MS in Software Engineering | Aug. 2026 -- May. 2028
+
+Experience
+Software Development Engineer - I | CarTrade Tech | Apr. 2025 -- Jul. 2026
+• Built distributed services with .NET, C#, React, gRPC, RabbitMQ, MySQL, Memcached, and AWS, serving 80M+ monthly users.
+• Reworked Memcached data layout in a .NET 8 service from 6.15M version-city keys to 4,000 version hashmaps covering 1,539 cities, cutting database calls 93% and shared MySQL EC2 load about 28%.
+• Cut monorepo CI/CD build time 50% (25–30 to 12–15 min) by migrating Lerna to PNPM and adding Docker BuildKit layer and package-cache reuse, saving 5.5 engineering hours daily across 90+ developers.
+• Decomposed used-car inventory from a legacy monolith into a standalone microservice; used dual writes and reconciliation to verify 100% data consistency before retiring the legacy system.
+
+Associate Software Development Engineer | CarTrade Tech | Aug. 2024 -- Mar. 2025
+• Added DTO-level Memcached caching for location data, reducing downstream calls 22% and p90 latency 31% (84 to 58 ms) while lowering pod resource use.
+• Designed and implemented a debounced cache-expiry strategy for nightly popularity updates, reducing invalidation operations 65x (30,400 to 476) and preventing users from seeing partially updated filter rankings.
+• Audited CloudFront asset metrics, found and removed a duplicate icon request present across pages for two years, eliminating 150 GB/week of transfer and about $600/year in cost.
+
+Software Development Intern | YourEngineer | Apr. 2022 -- Jun. 2024
+• Migrated WordPress to Node.js, React, PostgreSQL, and AWS; built CI/CD and infrastructure-as-code workflows, increasing organic traffic 110%.
+• Created isolated development and production environments with commit-based hosting to speed testing and feedback.
+• Independently built a Reddit-style community platform with posts and comments, supporting 1,000+ monthly users at 99.99% uptime.
+• Led migration of structured data from MongoDB to SQL, reducing query latency and improving system performance.
+
+Projects
+Ring A Friend | Kotlin, Android, Node.js, PostgreSQL, WebSockets, GCP | Jan. 2024 -- Present
+• Built an Android alerting app with an authenticated Node.js API, WebSockets, and cloud push notifications, letting external services deliver text-bearing alerts even when the phone is silenced.
+
+Backup Integrity and Recovery Service | Go, AWS S3, KMS, Docker, Linux | Jan. 2026 -- May 2026
+• Built a Go backup service streaming objects to versioned S3, recording SHA-256 manifests, encrypting metadata with KMS, and separating least-privilege backup and recovery roles; added immutable retention, integrity scans, and failure-injected restore drills, modeling 99.9% verified-object coverage and 1 TB recovery within 30 minutes.
+
+Resilient Backup Control Plane | Go, gRPC, Kubernetes, AWS, Prometheus | Jun. 2026 -- Aug. 2026
+• Implemented a Go/gRPC control plane for tenant backup/restore queues with bounded concurrency, idempotent retries, Kubernetes health checks, and Prometheus metrics; tested worker restarts and storage faults, modeling 1,000 concurrent jobs with under 1% retry exhaustion.
+
+Technical Skills
+Languages: Go, Java, Kotlin, Python, C/C++, C#, SQL, JavaScript, TypeScript, Shell
+Systems & Cloud: Distributed systems, concurrency, Linux, AWS, Kubernetes, Docker, S3, KMS, gRPC, RabbitMQ
+Data & Services: PostgreSQL, MySQL, Memcached, React, Node.js, .NET, WebSockets
+Engineering: CI/CD, infrastructure as code, integration testing, observability, Git, Grafana, Prometheus

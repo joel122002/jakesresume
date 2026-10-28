@@ -1,0 +1,202 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Built and operated distributed services and evaluation tooling for a consumer platform serving \textbf{80M+ monthly users}, applying observability, automated validation, and cross-team code reviews.}
+\resumeItem{Optimized a high-volume data retrieval path by batching 1,539 city values per version and protecting cache refreshes from stampedes; reduced database calls \textbf{93\%} and shared cluster load \textbf{$\sim$28\%}.}
+\resumeItem{Cut monorepo CI build time \textbf{$\sim$50\%} (25--30 to 12--15 minutes) with dependency and container-layer caching, saving \textbf{$\sim$5.5 engineering hours daily} across 90+ developers.}
+\resumeItem{Decomposed used-car inventory from a legacy monolith into an independently deployable service; dual writes and reconciliation verified \textbf{100\% data consistency} before cutover.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Cached frequently requested location and model data, reducing downstream calls \textbf{22\%} and p90 latency \textbf{$\sim$31\%} (84ms to 58ms) while lowering service resource use.}
+\resumeItem{Analyzed refresh behavior and introduced debounced invalidation, reducing cache clears \textbf{65x} (30,400 to 476) and preventing inconsistent results during peak-hour updates.}
+\resumeItem{Audited CDN usage telemetry and removed a duplicate asset request, eliminating \textbf{150GB/week} of redundant transfer and saving \textbf{$\sim$\$600 annually}.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Modernized a production application and its CI/CD workflows, supporting a \textbf{110\% increase in organic traffic} through measured releases and iterative performance improvements.}
+\resumeItem{Proposed and led migration of structured application data from MongoDB to SQL, improving query performance and data consistency.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Camera-LiDAR Tracking and Scene Fusion} $|$ \emph{Python, C++, ROS 2, PyTorch, Open3D}}{Feb. 2026 -- Apr. 2026}
+\resumeItemListStart
+\resumeItem{Fused timestamped camera detections and LiDAR clusters in a ROS 2 pipeline using calibrated coordinates and a gated Kalman tracker; replay and regression evaluation on public driving sequences reduced ID switches \textbf{15\%} versus camera-only tracking.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Comfort-Aware Local Trajectory Planner} $|$ \emph{Python, C++, PyTorch, ROS 2, CasADi}}{May. 2026 -- Aug. 2026}
+\resumeItemListStart
+\resumeItem{Implemented a receding-horizon planner scoring candidate paths for collision risk, traffic rules, kinematic feasibility, and jerk; closed-loop scenario evaluation and failure review reduced constraint violations \textbf{20\%} at comparable travel time.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Autonomy Scenario Replay and Metrics} $|$ \emph{Python, ROS 2, DuckDB, Plotly}}{Sep. 2026 -- Oct. 2026}
+\resumeItemListStart
+\resumeItem{Built a reproducible log-replay and visualization tool that aligns ego state, perception, and planner outputs; generated per-scenario collision, rule-compliance, and comfort reports with failure clips, cutting regression triage time \textbf{40\%}.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Python, C++, C, SQL, Java, C\#, JavaScript, TypeScript} \\
+        \textbf{Autonomy \& ML}{: PyTorch, ROS 2, Open3D, sensor fusion, object tracking, trajectory prediction, motion planning, trajectory optimization, vehicle kinematics} \\
+        \textbf{Evaluation \& Systems}{: closed-loop simulation, scenario testing, dataset curation, CMake, Docker, AWS, CI/CD, Grafana, automated testing, Git}
+        }}
+\end{itemize}
+
+
+%-------------------------------------------
+\end{document}

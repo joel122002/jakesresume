@@ -1,0 +1,35 @@
+Joel Varghese
+(408) 982-6552 | joel02varghese@gmail.com | linkedin.com/in/joel02varghese/ | github.com/joel122002
+
+Education
+San Jose State University | San Jose, CA
+MS in Software Engineering | Aug. 2026 -- May. 2028
+
+Experience
+Software Development Engineer - I | CarTrade Tech | Apr. 2025 -- Jul. 2026
+- Engineered distributed microservices serving 80M+ monthly users, applying C/C++, Python, Git, and automated validation practices to build deterministic, observable backend services.
+- Restructured a high-volume cache into 4,000 version-level hashmaps covering 1,539 cities, cutting database calls 93% and shared MySQL cluster load ~28%; used bounded data structures and cache-stampede protection to keep response behavior predictable.
+- Cut CI build time ~50% (25--30 to 12--15 minutes) across the largest monorepo using Claude Code to accelerate the migration to PNPM workspaces and Docker BuildKit dependency-layer caching, saving ~5.5 engineering hours daily for 90+ developers.
+- Decomposed legacy used-car inventory workflows into a standalone service, using dual writes, reconciliation checks, and staged cutover to verify 100% data consistency before retiring the monolith path.
+
+Associate Software Development Engineer | CarTrade Tech | Aug. 2024 -- Mar. 2025
+- Cached assembled page data for high-traffic locations, reducing downstream service calls 22% and p90 latency ~31% (84ms to 58ms); instrumented results in Grafana to validate the change under production traffic.
+- Replaced repeated cache clears during a peak-hour update job with debounced expiry, reducing invalidation operations 65x (30,400 to 476) and preventing users from seeing partially updated filter state.
+
+Software Development Intern | YourEngineer | Apr. 2022 -- Jun. 2024
+- Modernized a WordPress application with Node.js, React, PostgreSQL, AWS, CI/CD, and infrastructure as code, contributing to a 110% increase in organic traffic.
+- Built a community platform for posts and comments serving 1,000+ monthly users with 99.99% uptime, emphasizing resilient service behavior and operational monitoring.
+
+Projects
+Flight Sensor Monitor | C++, Python, CMake, GoogleTest, Docker | Jan. 2026 -- Apr. 2026
+- Built a deterministic C++ sensor-fusion and anomaly-detection simulator that ingests timestamped IMU, air-data, and GPS streams, applies bounded queues and explicit stale-sensor rules, and emits health flags with traceable input-to-output logs.
+- Added Python scenario generation, fault injection, replayable test vectors, and GoogleTest boundary/overflow cases; targeted 100% pass rate across 500 nominal and injected-fault scenarios with worst-case processing below 5ms per frame.
+
+Avionics Control Loop HIL Bench | C++, Python, Linux, Git, CI | May 2026 -- Aug. 2026
+- Created a hardware-in-the-loop style flight-control harness with a C++ control-loop component and Python plant simulator, exchanging timestamped sensor/actuator packets over a documented interface to test latency, dropped frames, and degraded modes.
+- Automated reproducible fault-injection runs, log review, and regression gates in CI; structured requirements-to-test traceability, secure-coding checks, and defensive coding in a DO-178C-inspired verification workflow, targeting repeatable recovery in under 100ms.
+
+Technical Skills
+Languages: C, C++, Python, Java, Kotlin, SQL, JavaScript, TypeScript, Shell
+Embedded & Systems: deterministic software, sensor fusion, anomaly detection, fault injection, simulation, HIL, requirements traceability, defensive coding
+Tools & Practices: Git, CMake, GoogleTest, Docker, CI/CD, AWS, Grafana, Linux, AI-assisted development, DO-178C concepts

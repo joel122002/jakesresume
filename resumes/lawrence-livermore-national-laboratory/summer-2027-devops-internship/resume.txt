@@ -1,0 +1,62 @@
+Education
+San Jose State University
+San Jose, CA
+MS in Software Engineering
+Aug. 2026 -- May. 2028
+
+Experience
+
+Software Development Engineer - I
+CarTrade Tech
+Apr. 2025 -- Jul. 2026
+
+Supported production microservices serving 80M+ monthly users across AWS, monitoring service health and performance with Grafana and coordinating changes across distributed services.
+
+Improved production service efficiency by redesigning a Memcached data path from 6.15M individual keys to 4,000 version-level hashmaps, cutting database calls by 93% and shared MySQL EC2 load by ~28%; verified impact in Grafana and database logs.
+
+Optimized CI/CD for the organization’s largest monorepo by migrating Lerna to PNPM workspaces and adding Docker BuildKit layer caching with mounted PNPM and NuGet cache volumes, cutting build time ~50% and saving ~5.5 engineering hours daily across 90+ developers.
+
+Decomposed a legacy monolith into a standalone inventory microservice; used dual writes, reconciliation checks, and staged production cutover to verify 100% data consistency before retiring the legacy system.
+
+Associate Software Development Engineer
+CarTrade Tech
+Aug. 2024 -- Mar. 2025
+
+Reduced downstream service calls by 22% and p90 API latency by ~31% (84ms to 58ms) through DTO-level Memcached caching; used production metrics to confirm lower service load.
+
+Led a team design review and implemented a debounced cache-expiry workflow that reduced cache invalidation operations by 98%, avoiding inconsistent data during scheduled production updates.
+
+Audited CloudFront dashboards, traced 150GB/week of redundant transfer to a duplicate site-wide icon, and removed it, improving operational efficiency and saving ~$600 annually.
+
+Software Development Intern
+YourEngineer
+Apr. 2022 -- Jun. 2024
+
+Migrated a WordPress application to Node.js, React, and PostgreSQL on AWS, building automated CI/CD pipelines and infrastructure-as-code workflows that supported a 110% increase in organic traffic.
+
+Configured isolated development and production environments with commit-based deployments, enabling repeatable testing and faster feedback before releases.
+
+Independently developed and operated a Reddit-style community platform with posts and comments, supporting 1,000+ monthly users at 99.99% uptime.
+
+Led migration from MongoDB to relational SQL for structured data, simplifying queries and improving application performance.
+
+Projects
+
+Kubernetes LLM Inference Platform | Python, FastAPI, Docker, Kubernetes, Helm
+Jan. 2026 -- Apr. 2026
+
+Containerized a FastAPI model-serving API and deployed it to Kubernetes with Helm, resource requests, health probes, autoscaling, and persistent model storage; CI validates images and manifests before deployment.
+
+Added Prometheus metrics, structured logs, and load-test gates for latency, errors, and recovery; documented rollback and operations, targeting 99% successful requests under a reproducible 20-request/second test.
+
+Ring A Friend Alert Service | Node.js, PostgreSQL, WebSockets
+Jan. 2024 -- Present
+
+Built an event-driven alert service with authenticated REST/WebSocket endpoints, PostgreSQL persistence, and GCP push notifications, connecting external scripts to reliable mobile alerts.
+
+Added delivery logging and documented the API and deployment steps for external alert triggers.
+
+Technical Skills
+Languages: Python, JavaScript/TypeScript, Java, Kotlin, C/C++, SQL, Shell
+Cloud & DevOps: AWS, GCP, Docker, Kubernetes, Helm, CI/CD, Git, GitHub Actions, IaC, Linux
+Services & Tools: Node.js, React, FastAPI, PostgreSQL, MySQL, Grafana, Prometheus, pytest, Selenium, Word, Excel, PowerPoint

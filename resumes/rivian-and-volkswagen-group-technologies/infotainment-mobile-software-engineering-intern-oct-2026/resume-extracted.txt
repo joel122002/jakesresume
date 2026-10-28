@@ -1,0 +1,66 @@
+                                         Joel Varghese
+        (408) 982-6552 | joel02varghese@gmail.com | linkedin.com/in/joel02varghese/ | github.com/joel122002
+
+Education
+ San Jose State University                                                                             San Jose, CA
+ MS in Software Engineering                                                                    Aug. 2026 – May. 2028
+Experience
+ Software Development Engineer - I                                                             Apr. 2025 – Jul. 2026
+ CarTrade Tech
+    • Developed customer-facing features across distributed services and React applications serving 80M+ monthly
+
+      users, using Java, Spring Boot, gRPC, RabbitMQ, MySQL, Memcached, and AWS.
+    • Reworked a Java service’s Memcached data model from 6.15M version-city keys to 4,000 version hashmaps
+
+      covering 1,539 cities; reduced database calls 93% and shared MySQL cluster load ∼28%.
+    • Cut CI build time ∼50% (25–30 to 12–15 minutes) across the largest monorepo by migrating to PNPM workspaces
+
+      and adding Docker BuildKit dependency-cache mounts, saving ∼5.5 engineering hours daily for 90+ developers.
+
+    •   Decomposed a legacy inventory monolith into a standalone Java/Spring Boot service, using dual writes and
+        reconciliation to verify 100% data consistency before retiring the legacy path.
+ Associate Software Development Engineer                                                         Aug. 2024 – Mar. 2025
+    • Reduced downstream service calls 22% and p90 API latency ∼31% (84 to 58 ms) by caching assembled
+
+      location-aware page DTOs in Memcached, lowering service pod utilization.
+    • Diagnosed inconsistent filter state during nightly popularity updates and implemented a debounced Memcached
+
+      expiry strategy, cutting invalidations 65x (30,400 to 476) and reducing cache operations 98%.
+    • Audited CloudFront asset metrics, found a duplicate icon fetched on every page for two years, and removed it to
+
+      eliminate 150 GB/week transfer and save ∼$600/year.
+ Software Development Intern                                                                  Apr. 2022 – Jun. 2024
+ YourEngineer
+    • Migrated a WordPress application to React, Node.js, and PostgreSQL on AWS, adding CI/CD and
+
+      infrastructure-as-code workflows that supported a 110% increase in organic traffic.
+    • Created isolated development and production environments with commit-based deployments for faster feature
+
+      testing and feedback.
+    • Independently built a Reddit-style community app with posts and comments, serving 1,000+ monthly users at
+
+      99.99% uptime.
+    • Led migration of highly structured data from MongoDB to PostgreSQL, reducing query latency and improving
+
+      application performance.
+
+Projects
+ Ring A Friend | Kotlin, Android, Jetpack Compose, MVVM, WebSockets, PostgreSQL               Jan. 2024 – Present
+    • Built and maintain a native Android alert app with a Jetpack Compose UI, MVVM architecture, authenticated
+
+      REST/WebSocket APIs, and a PostgreSQL backend; webhook clients trigger persistent, high-priority alerts.
+    • Added Firebase Cloud Messaging and Android background handling to deliver alerts through silent-mode use
+
+      cases; self-hosted and monitored the service for more than two years.
+ EV Infotainment Companion | Kotlin, Android Automotive OS, AndroidX, JUnit, Espresso        Aug. 2026 – Oct. 2026
+    • Built a driver-safe vehicle status and trip-log app for an Android Automotive OS emulator, reading vehicle
+
+       properties through CarPropertyManager; tested lifecycle and reconnect paths with JUnit and Espresso, targeting
+       recovery in under 2 seconds.
+
+Technical Skills
+ Languages: Kotlin, Java, Python, C/C++, SQL, JavaScript, TypeScript
+ Android: Android SDK, Android Automotive OS, Jetpack Compose, AndroidX, MVVM, Firebase Cloud Messaging
+ Backend: Spring Boot, Node.js, REST, WebSockets, gRPC, RabbitMQ, PostgreSQL, MySQL, Memcached
+ Testing & Tools: JUnit, Espresso, Selenium, Cypress, Android Studio, Grafana, Git, Docker, AWS, CI/CD
+

@@ -1,0 +1,170 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable (ATS parsable)
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{}
+\resumeItemListStart
+\resumeItem{Built features across a distributed microservices platform using \textbf{.NET}, \textbf{C\#}, \textbf{React}, \textbf{gRPC}, \textbf{RabbitMQ}, \textbf{MySQL}, \textbf{Memcached}, and \textbf{AWS}, serving \textbf{80M+ monthly users}.}
+\resumeItem{Redesigned \textbf{Memcached} in a \textbf{.NET 8} service from 6.15M keys to 4,000 version-level hashmaps of 1,539 city entries, cutting database calls \textbf{93\%} and shared \textbf{MySQL EC2} cluster load \textbf{$\sim$28\%}.}
+\resumeItem{Used \textbf{Claude Code} to accelerate a \textbf{PNPM} workspace and \textbf{Docker BuildKit} cache migration across the largest monorepo, validating changes while reducing CI builds \textbf{$\sim$50\%} (25--30 to 12--15 min) and saving \textbf{$\sim$5.5 engineering hours daily} across \textbf{90+ developers}.}
+\resumeItem{Decomposed used-car inventory from a legacy monolith into a standalone microservice; dual writes and reconciliation achieved 100\% data consistency before legacy retirement.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Added DTO-level \textbf{Memcached} caching for home and model pages, reducing downstream service calls \textbf{22\%} and p90 API latency \textbf{$\sim$31\%} (84ms to 58ms).}
+\resumeItem{Led a cache-clearing redesign after identifying unnecessary invalidations, reducing cache calls and clearances \textbf{98\%}.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{}
+\resumeItemListStart
+\resumeItem{Migrated WordPress to \textbf{Node.js}, \textbf{React}, \textbf{PostgreSQL}, and \textbf{AWS}; built custom CI/CD and infrastructure-as-code workflows, contributing to a \textbf{110\% increase in organic traffic}.}
+\resumeItem{Independently built a \textbf{Reddit-style community platform} with posts and comments, supporting \textbf{1,000+ monthly users} at \textbf{99.99\% uptime}.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Clinical Note Copilot} $|$ \emph{Python, FastAPI, LangChain, PostgreSQL, pgvector, React}}{Mar. 2026 -- May 2026}
+\resumeItemListStart
+\resumeItem{Built a clinician-reviewed note workflow that chunks visit transcripts, retrieves terminology and encounter context with \textbf{pgvector}, and chains structured LLM calls into a \textbf{FHIR}-aligned SOAP draft with sentence-level source links; audit logs and editable React review cut drafting time 30\% in a 50-visit synthetic benchmark.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Clinical AI Evaluation Harness} $|$ \emph{Python, LlamaIndex, pytest, LangSmith, Docker}}{May 2026 -- Jul. 2026}
+\resumeItemListStart
+\resumeItem{Created a versioned evaluation pipeline for synthetic visits that scores note completeness, evidence support, and robustness to accents, omissions, and malformed inputs; clinician-authored reference cases, prompt/model regression gates, and failure reports achieved $>$95\% evidence-linked statements.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Ring A Friend} $|$ \emph{Node.js, PostgreSQL, Kotlin, Jetpack Compose, WebSockets}}{Jan. 2024 -- Present}
+\resumeItemListStart
+\resumeItem{Built an Android emergency-alert app and Express backend with authenticated REST/WebSocket triggers and Firebase push notifications, enabling trusted users and external tools to ring a phone through silent mode.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Python, Java, Kotlin, C\#, JavaScript, TypeScript, SQL} \\
+        \textbf{Frameworks \& AI}{: React, Node.js, .NET, FastAPI, LangChain, LlamaIndex, LangSmith, pgvector, FHIR} \\
+        \textbf{Systems \& Tools}{: PostgreSQL, MySQL, Memcached, RabbitMQ, gRPC, AWS, Docker, CI/CD, Grafana, Claude Code, Cursor}
+        }}
+\end{itemize}
+
+\end{document}

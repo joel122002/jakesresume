@@ -1,0 +1,195 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% This resume is the base resume which is heavy on data.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[default]{comfortaa}
+% \usepackage[T1]{fontenc}
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+  \textbf{\Huge \scshape Joel Varghese} \\ \vspace{1pt}
+  \small (408) 982-6552 $|$ \href{mailto:joel02varghese@gmail.com}{\underline{joel02varghese@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/joel02varghese/}{\underline{linkedin.com/in/joel02varghese/}} $|$
+  \href{https://github.com/joel122002}{\underline{github.com/joel122002}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{San Jose State University}{San Jose, CA}
+{MS in Software Engineering}{Aug. 2026 -- May. 2028}
+\resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Development Engineer - I}{Apr. 2025 -- Jul. 2026}
+{CarTrade Tech}{ }
+\resumeItemListStart
+\resumeItem{Restructured a \textbf{.NET 8} service's \textbf{Memcached} strategy from 6.15M version-city keys to 4,000 version-level hashmaps containing 1,539 city entries, reducing database calls \textbf{93\%} and shared \textbf{MySQL} cluster load \textbf{$\sim$28\%} for a platform serving \textbf{80M+ monthly users}.}
+\resumeItem{Cut CI build times \textbf{$\sim$50\%} (25--30 to 12--15 min) across the largest monorepo by migrating a \textbf{React} workspace from Lerna to \textbf{PNPM} and adding \textbf{Docker BuildKit} dependency caching, saving \textbf{$\sim$5.5 engineering hours daily} for \textbf{90+ developers}.}
+\resumeItem{Decomposed a legacy inventory monolith into a standalone microservice; used dual writes, reconciliation, and staged cutover to verify \textbf{100\% data consistency} before retiring the legacy path.}
+\resumeItemListEnd
+\resumeSubSubheading
+{Associate Software Development Engineer}{Aug. 2024 -- Mar. 2025}
+\resumeItemListStart
+\resumeItem{Added DTO-level \textbf{Memcached} caching for home and model APIs across city-unset and top 10 cities, reducing downstream service calls \textbf{22\%} and p90 latency \textbf{$\sim$31\%} (84ms to 58ms).}
+\resumeItem{Designed a debounced cache-expiry strategy for nightly popularity updates, cutting invalidations \textbf{65x} (30,400 to 476) and preventing users from seeing partially reordered filters.}
+\resumeItem{Audited \textbf{CloudFront} usage and removed a duplicate site icon request, eliminating \textbf{150GB/week} of redundant transfer and saving \textbf{$\sim$\$600/year}.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Development Intern}{Apr. 2022 -- Jun. 2024}
+{YourEngineer}{ }
+\resumeItemListStart
+\resumeItem{Migrated a WordPress application to \textbf{Node.js}, \textbf{React}, \textbf{PostgreSQL}, and \textbf{AWS}, building \textbf{CI/CD} and infrastructure-as-code workflows that supported a \textbf{110\% increase in organic traffic}.}
+\resumeItem{Independently shipped a \textbf{Node.js/React} community platform with posts and comments for \textbf{1,000+ monthly users}, sustaining \textbf{99.99\% uptime}.}
+\resumeItem{Led migration of structured application data from \textbf{MongoDB} to \textbf{SQL}, improving query latency and overall system performance.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Ring A Friend} $|$ \emph{Node.js, PostgreSQL, Kotlin, Jetpack Compose, Android, WebSockets}}{Jan. 2024 -- Present}
+\resumeItemListStart
+\resumeItem{Built and maintain an Android alerting app with an Express API, authenticated WebSockets, and Firebase push notifications; external scripts and AI agents trigger text-bearing alerts that ring through silent mode.}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Enterprise Knowledge Assistant} $|$ \emph{Python, FastAPI, React, PostgreSQL, pgvector, AWS}}{May 2026 -- Aug. 2026}
+\resumeItemListStart
+\resumeItem{Built a searchable knowledge assistant that ingests documents, chunks and embeds content, applies user-level access filters during hybrid retrieval, and returns cited answers; added connector sync retries, audit logs, and a 200-query relevance suite targeting 90\% citation precision.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Java, Kotlin, Python, C/C++, C\#, SQL (PostgreSQL, MySQL), JavaScript, TypeScript, HTML/CSS, Shell} \\
+        \textbf{Technologies}{: React, Node.js, .NET, ASP.NET, FastAPI, Spring Boot, Angular, Jetpack Compose, RabbitMQ, gRPC, Memcached, PostgreSQL, MongoDB} \\
+        \textbf{Cloud \& DevOps}{: AWS, Docker, Docker BuildKit, CI/CD, CloudFront, Infrastructure as Code, PNPM, Git} \\
+        \textbf{Developer Tools}{: Grafana, Git, VS Code, IntelliJ IDEA, PyCharm, Android Studio, Cursor AI} \\
+        \textbf{Libraries \& Testing}{: Redux, Axios, Selenium, Cypress, Requests, API testing, regression testing}
+        }}
+\end{itemize}
+
+
+%-------------------------------------------
+\end{document}
